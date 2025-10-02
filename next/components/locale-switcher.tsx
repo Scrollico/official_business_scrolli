@@ -4,30 +4,22 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
-import { useSlugContext } from '@/app/context/SlugContext';
 import { cn } from '@/lib/utils';
 
 export function LocaleSwitcher({ currentLocale }: { currentLocale: string }) {
-  const { state } = useSlugContext();
-  const { localizedSlugs } = state;
-
   const pathname = usePathname(); // Current path
   const segments = pathname.split('/'); // Split path into segments
+
+  // Available locales
+  const locales = ['en', 'tr'];
 
   // Generate localized path for each locale
   const generateLocalizedPath = (locale: string): string => {
     if (!pathname) return `/${locale}`; // Default to root path for the locale
 
-    // Handle homepage (e.g., "/en" -> "/fr")
+    // Handle homepage (e.g., "/en" -> "/tr")
     if (segments.length <= 2) {
       return `/${locale}`;
-    }
-
-    // Handle dynamic paths (e.g., "/en/blog/[slug]")
-    if (localizedSlugs[locale]) {
-      segments[1] = locale; // Replace the locale
-      segments[segments.length - 1] = localizedSlugs[locale]; // Replace slug if available
-      return segments.join('/');
     }
 
     // Fallback to replace only the locale
@@ -38,7 +30,7 @@ export function LocaleSwitcher({ currentLocale }: { currentLocale: string }) {
   return (
     <div className="flex gap-2 p-1 rounded-md">
       {!pathname.includes('/products/') &&
-        Object.keys(localizedSlugs).map((locale) => (
+        locales.map((locale) => (
           <Link key={locale} href={generateLocalizedPath(locale)}>
             <div
               className={cn(

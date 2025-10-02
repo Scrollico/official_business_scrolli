@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "buildCommand": "cd next && npm run build",
+  "outputDirectory": "next/.next",
+  "installCommand": "cd next && npm install --legacy-peer-deps",
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": "https://scrolli.co",
+    "PREVIEW_SECRET": "scrolli-production-secret-2024"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}

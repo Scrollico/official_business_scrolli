@@ -81,7 +81,7 @@ export const MobileNavbar = ({
                     {navItem.children.map((childNavItem: any, idx: number) => (
                       <Link
                         key={`link=${idx}`}
-                        href={`/${locale}${childNavItem.URL}`}
+                        href={`${childNavItem.URL?.startsWith('http') ? '' : `/${locale}`}${childNavItem.URL?.startsWith('/') ? childNavItem.URL : `/${childNavItem.URL || ''}`}`}
                         onClick={() => setOpen(false)}
                         className="relative max-w-[15rem] text-left text-2xl"
                       >
@@ -94,9 +94,9 @@ export const MobileNavbar = ({
                 ) : (
                   <Link
                     key={`link=${idx}`}
-                    href={`/${locale}${navItem.URL}`}
+                    href={`${navItem.URL?.startsWith('http') ? '' : `/${locale}`}${navItem.URL?.startsWith('/') ? navItem.URL : `/${navItem.URL || ''}`}`}
                     onClick={() => setOpen(false)}
-                    className="relative"
+                    className="relative z-50"
                   >
                     <span className="block text-[26px] text-white">
                       {navItem.text}
@@ -114,7 +114,7 @@ export const MobileNavbar = ({
                   index === rightNavbarItems.length - 1 ? 'primary' : 'simple'
                 }
                 as={Link}
-                href={`/${locale}${item.URL}`}
+                href={`${item.URL?.startsWith('http') ? '' : `/${locale}`}${item.URL?.startsWith('/') ? item.URL : `/${item.URL || ''}`}`}
               >
                 {item.text}
               </Button>

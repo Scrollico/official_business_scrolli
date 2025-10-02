@@ -22,7 +22,7 @@ export const TestimonialsMarquee = ({
         <Marquee>
           {levelOne.map((testimonial: any, index: any) => (
             <Card
-              key={`testimonial-${testimonial.id}-${index}`}
+              key={`testimonial-${index}`}
               className="max-w-xl h-60 mx-4"
             >
               <Quote>{testimonial?.text}</Quote>
@@ -53,7 +53,7 @@ export const TestimonialsMarquee = ({
         <Marquee direction="right" speed={20}>
           {levelTwo.map((testimonial: any, index: any) => (
             <Card
-              key={`testimonial-${testimonial.id}-${index}`}
+              key={`testimonial-${index + 8}`}
               className="max-w-xl h-60 mx-4"
             >
               <Quote>{testimonial.text}</Quote>

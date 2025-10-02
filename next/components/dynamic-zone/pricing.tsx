@@ -1,7 +1,7 @@
 'use client';
 
 import { IconCheck, IconPlus, IconReceipt2 } from '@tabler/icons-react';
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { Container } from '../container';
 import { Button } from '../elements/button';
@@ -38,9 +38,10 @@ export const Pricing = ({
   sub_heading: string;
   plans: any[];
 }) => {
-  const onClick = (plan: Plan) => {
-    console.log('click', plan);
-  };
+  const enterprisePlans = useMemo(
+    () => plans.filter((p) => p?.name?.toLowerCase().includes('enterprise')),
+    [plans]
+  );
   return (
     <div className="pt-40">
       <Container>
@@ -49,9 +50,9 @@ export const Pricing = ({
         </FeatureIconContainer>
         <Heading className="pt-4">{heading}</Heading>
         <Subheading className="max-w-3xl mx-auto">{sub_heading}</Subheading>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto gap-4 py-20 lg:items-start">
-          {plans.map((plan) => (
-            <Card onClick={() => onClick(plan)} key={plan.name} plan={plan} />
+        <div className="flex justify-center py-20">
+          {enterprisePlans.map((plan) => (
+            <Card key={plan.name} plan={plan} />
           ))}
         </div>
       </Container>
@@ -59,11 +60,11 @@ export const Pricing = ({
   );
 };
 
-const Card = ({ plan, onClick }: { plan: Plan; onClick: () => void }) => {
+const Card = ({ plan }: { plan: Plan }) => {
   return (
     <div
       className={cn(
-        'p-4 md:p-4 rounded-3xl bg-neutral-900 border-2 border-neutral-800',
+        'p-4 md:p-4 rounded-3xl bg-neutral-900 border-2 border-neutral-800 max-w-md',
         plan.featured && 'border-neutral-50 bg-neutral-100'
       )}
     >
@@ -89,31 +90,9 @@ const Card = ({ plan, onClick }: { plan: Plan; onClick: () => void }) => {
           )}
         </div>
         <div className="mt-8">
-          {plan.price && (
-            <span
-              className={cn(
-                'text-lg font-bold text-neutral-500',
-                plan.featured && 'text-neutral-700'
-              )}
-            >
-              $
-            </span>
-          )}
-          <span
-            className={cn('text-4xl font-bold', plan.featured && 'text-black')}
-          >
-            {plan.price || plan?.CTA?.text}
-          </span>
-          {plan.price && (
-            <span
-              className={cn(
-                'text-lg font-normal text-neutral-500 ml-2',
-                plan.featured && 'text-neutral-700'
-              )}
-            >
-              / launch
-            </span>
-          )}
+          <p className={cn('text-lg font-medium text-neutral-400', plan.featured && 'text-neutral-600')}>
+            Strategic Intelligence Solutions
+          </p>
         </div>
         <Button
           variant="outline"
@@ -122,9 +101,8 @@ const Card = ({ plan, onClick }: { plan: Plan; onClick: () => void }) => {
             plan.featured &&
               'bg-black text-white hover:bg-black/80 hover:text-white'
           )}
-          onClick={onClick}
         >
-          {plan?.CTA?.text}
+          Schedule Consultation
         </Button>
       </div>
       <div className="mt-1 p-4">

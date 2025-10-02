@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "lib/next-metadata.ts"
+    "lib/next-metadata.ts",
+    "types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

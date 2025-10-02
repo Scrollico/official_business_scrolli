@@ -7,7 +7,7 @@ import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar';
 import { CartProvider } from '@/context/cart-context';
 import { generateMetadataObject } from '@/lib/shared/metadata';
-import fetchContentType from '@/lib/strapi/fetchContentType';
+import { getGlobalData } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
 const inter = Inter({
@@ -21,17 +21,10 @@ export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
-  const pageData = await fetchContentType(
-    'global',
-    {
-      filters: { locale: params.locale },
-      populate: 'seo.metaImage',
-    },
-    true
-  );
+  const pageData = await getGlobalData(params.locale);
 
   const seo = pageData?.seo;
-  const metadata = generateMetadataObject(seo);
+  const metadata = generateMetadataObject(seo, params.locale);
   return metadata;
 }
 
@@ -45,11 +38,7 @@ export default async function LocaleLayout(props: {
 
   const { children } = props;
 
-  const pageData = await fetchContentType(
-    'global',
-    { filters: { locale } },
-    true
-  );
+  const pageData = await getGlobalData(locale);
   return (
     <ViewTransitions>
       <CartProvider>

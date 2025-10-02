@@ -50,7 +50,7 @@ export const DesktopNavbar = ({
   return (
     <motion.div
       className={cn(
-        'w-full flex relative justify-between px-4 py-3 rounded-md  transition duration-200 bg-transparent mx-auto'
+        'w-full flex relative justify-between px-4 py-3 rounded-md transition duration-200 bg-transparent mx-auto z-50'
       )}
       animate={{
         width: showBackground ? '80%' : '100%',
@@ -78,7 +78,7 @@ export const DesktopNavbar = ({
         <div className="flex items-center gap-1.5">
           {leftNavbarItems.map((item) => (
             <NavbarItem
-              href={`/${locale}${item.URL}` as never}
+              href={`${item.URL?.startsWith('http') ? '' : `/${locale}`}${item.URL?.startsWith('/') ? item.URL : `/${item.URL || ''}`}` as never}
               key={item.text}
               target={item.target}
             >
@@ -97,7 +97,7 @@ export const DesktopNavbar = ({
               index === rightNavbarItems.length - 1 ? 'primary' : 'simple'
             }
             as={Link}
-            href={`/${locale}${item.URL}`}
+            href={`${item.URL?.startsWith('http') ? '' : `/${locale}`}${item.URL?.startsWith('/') ? item.URL : `/${item.URL || ''}`}`}
           >
             {item.text}
           </Button>

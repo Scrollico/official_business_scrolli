@@ -6,6 +6,7 @@ import {
   IconBrandX,
 } from '@tabler/icons-react';
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 import { Button } from '../elements/button';
 import ShootingStars from '@/components/decorations/shooting-star';
@@ -25,24 +26,40 @@ export function FormNextToSection({
   section: any;
   social_media_icon_links: any;
 }) {
+  useEffect(() => {
+    // Load Calendly script
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, []);
+
   const socials = [
     {
       title: 'twitter',
-      href: 'https://twitter.com/strapijs',
+      href: 'https://twitter.com/scrolli',
       icon: (
         <IconBrandX className="h-5 w-5 text-muted  hover:text-neutral-100" />
       ),
     },
     {
       title: 'github',
-      href: 'https://github.com/strapi',
+      href: 'https://github.com/scrolli',
       icon: (
         <IconBrandGithub className="h-5 w-5 text-muted  hover:text-neutral-100" />
       ),
     },
     {
       title: 'linkedin',
-      href: 'https://linkedin.com/strapi',
+      href: 'https://linkedin.com/company/scrolli',
       icon: (
         <IconBrandLinkedin className="h-5 w-5 text-muted  hover:text-neutral-100" />
       ),
@@ -50,60 +67,18 @@ export function FormNextToSection({
   ];
 
   return (
-    <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 relative overflow-hidden">
-      <div className="flex relative z-20 items-center w-full justify-center px-4 py-4 lg:py-40 sm:px-6 lg:flex-none lg:px-20  xl:px-24">
-        <div className="mx-auto w-full max-w-md">
-          <div>
-            <h1 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-white">
-              {heading}
-            </h1>
-            <p className="mt-4 text-muted   text-sm max-w-sm">{sub_heading}</p>
+    <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 relative">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 xl:px-14 py-6 lg:py-20 lg:flex-none mt-20">
+        <div className="mx-auto w-full max-w-xl h-[calc(100vh-8rem)]">
+          <div className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900 p-2 h-full">
+            <div
+              className="calendly-inline-widget h-full"
+              data-url="https://calendly.com/scrolli-info/30min?hide_gdpr_banner=1&primary_color=6c66e5"
+              style={{ minWidth: '320px', height: '100%' }}
+            ></div>
           </div>
-
-          <div className="py-10">
-            <div>
-              <form className="space-y-4">
-                {form &&
-                  form?.inputs?.map((input: any, index: number) => (
-                    <div key={`form-input-${index}`}>
-                      {input.type !== 'submit' && (
-                        <label
-                          htmlFor="name"
-                          className="block text-sm font-medium leading-6 text-neutral-400 "
-                        >
-                          {input.name}
-                        </label>
-                      )}
-
-                      <div className="mt-2">
-                        {input.type === 'textarea' ? (
-                          <textarea
-                            rows={5}
-                            id="message"
-                            placeholder={input.placeholder}
-                            className="block w-full bg-neutral-900  px-4 rounded-md border-0 py-1.5  shadow-aceternity text-neutral-100 placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 "
-                          />
-                        ) : input.type === 'submit' ? (
-                          <div>
-                            <Button className="w-full mt-6">
-                              {input.name}
-                            </Button>
-                          </div>
-                        ) : (
-                          <input
-                            id="name"
-                            type={input.type}
-                            placeholder={input.placeholder}
-                            className="block w-full bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-aceternity text-neutral-100 placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 "
-                          />
-                        )}
-                      </div>
-                    </div>
-                  ))}
-              </form>
-            </div>
-          </div>
-          <div className="flex items-center justify-center space-x-4 py-4">
+          
+          <div className="flex items-center justify-center space-x-4 py-4 mt-6">
             {socials.map((social) => (
               <Link href={social.href} target="_blank" key={social.title}>
                 {social.icon}
@@ -112,27 +87,31 @@ export function FormNextToSection({
           </div>
         </div>
       </div>
-      <div className="relative w-full z-20 hidden md:flex border-l border-charcoal overflow-hidden bg-neutral-900 items-center justify-center">
+      <div className="relative w-full z-10 hidden md:flex border-l border-charcoal overflow-hidden bg-neutral-900 items-center justify-center">
         <StarBackground />
         <ShootingStars />
-        <div className="max-w-sm mx-auto">
-          <div className="flex flex-row items-center justify-center mb-10 w-full">
-            <AnimatedTooltip items={section.users} />
+        <div className="max-w-sm mx-auto text-center">
+          <h2 className="font-semibold text-xl text-white mb-4">
+            {section?.heading || "Why Choose Scrolli?"}
+          </h2>
+          <div className="space-y-4 text-neutral-300">
+            <div className="flex items-center space-x-3">
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span>Fortune 500 trusted intelligence partner</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span>98% client satisfaction rate</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+              <span>50+ industries served</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+              <span>Strategic consulting expertise</span>
+            </div>
           </div>
-          <p
-            className={
-              'font-semibold text-xl text-center  text-muted text-balance'
-            }
-          >
-            {section.heading}
-          </p>
-          <p
-            className={
-              'font-normal text-base text-center text-neutral-500  mt-8 text-balance'
-            }
-          >
-            {section.sub_heading}
-          </p>
         </div>
       </div>
     </div>

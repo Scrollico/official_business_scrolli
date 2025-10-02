@@ -10,23 +10,23 @@ import { FeatureIconContainer } from '@/components/dynamic-zone/features/feature
 import { Heading } from '@/components/elements/heading';
 import { Subheading } from '@/components/elements/subheading';
 import { generateMetadataObject } from '@/lib/shared/metadata';
-import fetchContentType from '@/lib/strapi/fetchContentType';
+import { getArticlesData } from '@/lib/data';
 import { Article } from '@/types/types';
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
-  const pageData = await fetchContentType(
-    'blog-page',
-    {
-      filters: { locale: params.locale },
-      populate: 'seo.metaImage',
-    },
-    true
-  );
-
-  const seo = pageData?.seo;
+  
+  const seo = {
+    metaTitle: "Blog - LaunchPad",
+    metaDescription: "Read the latest articles and insights about content delivery and LaunchPad features.",
+    metaImage: {
+      url: "/images/blog.jpg",
+      alt: "LaunchPad Blog"
+    }
+  };
+  
   const metadata = generateMetadataObject(seo);
   return metadata;
 }
@@ -35,28 +35,15 @@ export default async function Blog(props: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const params = await props.params;
-  const blogPage = await fetchContentType(
-    'blog-page',
-    {
-      filters: { locale: params.locale },
-    },
-    true
-  );
-  const articles = await fetchContentType(
-    'articles',
-    {
-      filters: { locale: params.locale },
-    },
-    false
-  );
+  
+  const blogPage = {
+    heading: "Blog",
+    sub_heading: "Read the latest articles and insights about content delivery and LaunchPad features."
+  };
+  
+  const articles = await getArticlesData(params.locale);
 
-  const localizedSlugs = blogPage.localizations?.reduce(
-    (acc: Record<string, string>, localization: any) => {
-      acc[localization.locale] = 'blog';
-      return acc;
-    },
-    { [params.locale]: 'blog' }
-  );
+  const localizedSlugs = { [params.locale]: 'blog' };
 
   return (
     <div className="relative overflow-hidden py-20 md:py-0">
@@ -75,7 +62,7 @@ export default async function Blog(props: {
           </Subheading>
         </div>
 
-        {articles.data.slice(0, 1).map((article: Article) => (
+        {articles.slice(0, 1).map((article: Article) => (
           <BlogCard
             article={article}
             locale={params.locale}
@@ -83,7 +70,7 @@ export default async function Blog(props: {
           />
         ))}
 
-        <BlogPostRows articles={articles.data} />
+        <BlogPostRows articles={articles} />
       </Container>
     </div>
   );

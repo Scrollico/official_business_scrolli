@@ -2,28 +2,27 @@ import { Link } from 'next-view-transitions';
 import React from 'react';
 
 import { BlurImage } from './blur-image';
-import { strapiImage } from '@/lib/strapi/strapiImage';
+// Removed Strapi dependency
 import { Image } from '@/types/types';
+import logoWhite from '@/public/logos/scrolli-logo.png';
 
 export const Logo = ({ image, locale }: { image?: Image; locale?: string }) => {
-  if (image) {
-    return (
-      <Link
-        href={`/${locale || 'en'}`}
-        className="font-normal flex space-x-2 items-center text-sm mr-4  text-black   relative z-20"
-      >
-        <BlurImage
-          src={strapiImage(image?.url)}
-          alt={image.alternativeText}
-          width={200}
-          height={200}
-          className="h-10 w-10 rounded-xl mr-2"
-        />
+  // Force the logo to use the provided Strapi URL, bypassing CMS field
+  const imageUrl = `${process.env.NEXT_PUBLIC_API_URL}uploads/logos/Primary-alternative3.png` || (logoWhite as unknown as string);
 
-        <span className="text-white font-bold">LaunchPad</span>
-      </Link>
-    );
-  }
-
-  return;
+  return (
+    <Link
+      href={`/${locale || 'en'}`}
+      className="font-normal flex space-x-2 items-center text-sm mr-4  text-black   relative z-20"
+    >
+      <BlurImage
+        src={imageUrl}
+        alt={(image && image.alternativeText) || 'Scrolli Logo'}
+        width={140}
+        height={36}
+        className="h-8 w-auto object-contain"
+        unoptimized
+      />
+    </Link>
+  );
 };

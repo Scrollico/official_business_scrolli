@@ -9,17 +9,13 @@ interface StrapiImageProps
 }
 
 export function getStrapiMedia(url: string | null) {
-  const strapiURL = process.env.NEXT_PUBLIC_API_URL;
   if (url == null) return null;
   if (url.startsWith('data:')) return url;
   if (url.startsWith('http') || url.startsWith('//')) return url;
   if (url.startsWith('/')) {
-    if (!strapiURL && document?.location.host.endsWith('.strapidemo.com')) {
-      return `https://${document.location.host.replace('client-', 'api-')}${url}`;
-    }
-    return strapiURL + url;
+    return url; // Use relative paths directly
   }
-  return `${strapiURL}${url}`;
+  return url;
 }
 
 export function StrapiImage({

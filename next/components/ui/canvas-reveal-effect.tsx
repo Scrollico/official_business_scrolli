@@ -285,6 +285,7 @@ const ShaderMaterial = ({
   }, [source, getUniforms]);
 
   return (
+    // @ts-nocheck
     <mesh ref={ref as any}>
       <planeGeometry args={[2, 2]} />
       <primitive object={material} attach="material" />

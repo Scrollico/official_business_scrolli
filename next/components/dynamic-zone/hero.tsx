@@ -44,11 +44,11 @@ export const Hero = ({
       </Subheading>
       <div className="flex space-x-2 items-center mt-8">
         {CTAs &&
-          CTAs.map((cta) => (
+          CTAs.map((cta, index) => (
             <Button
-              key={cta?.id}
+              key={`cta-${index}`}
               as={Link}
-              href={`/${locale}${cta.URL}`}
+              href={`${cta.URL?.startsWith('http') ? '' : `/${locale}`}${cta.URL?.startsWith('/') ? cta.URL : `/${cta.URL || ''}`}`}
               {...(cta.variant && { variant: cta.variant })}
             >
               {cta.text}

@@ -37,7 +37,7 @@ export const CTA = ({
               <Button
                 as={Link}
                 key={index}
-                href={`/${locale}${cta.URL}`}
+                href={`${cta.URL?.startsWith('http') ? '' : `/${locale}`}${cta.URL?.startsWith('/') ? cta.URL : `/${cta.URL || ''}`}`}
                 variant={cta.variant}
                 className="py-3"
               >
