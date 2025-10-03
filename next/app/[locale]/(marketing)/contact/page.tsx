@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Script from 'next/script';
 
 import { Container } from '@/components/container';
 import { AmbientColor } from '@/components/decorations/ambient-color';
@@ -114,11 +115,10 @@ export default async function Contact(props: {
                  data-url="https://calendly.com/nihatavci/consultation" 
                  style={{ minWidth: '320px', height: '700px' }}>
             </div>
-            <script 
-              type="text/javascript" 
+            <Script 
               src="https://assets.calendly.com/assets/external/widget.js" 
-              async>
-            </script>
+              strategy="afterInteractive"
+            />
           </div>
         </div>
 
