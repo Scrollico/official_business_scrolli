@@ -56,62 +56,12 @@ export default async function Contact(props: {
           }
         </Subheading>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          {/* Email */}
-          <div className="text-center">
-            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <IconMail className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              {isTurkish ? "E-posta" : "Email"}
-            </h3>
-            <p className="text-neutral-400">
-              info@scrolli.com
-            </p>
-          </div>
-
-          {/* Phone */}
-          <div className="text-center">
-            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <IconPhone className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              {isTurkish ? "Telefon" : "Phone"}
-            </h3>
-            <p className="text-neutral-400">
-              +1 (555) 123-4567
-            </p>
-          </div>
-
-          {/* Location */}
-          <div className="text-center">
-            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <IconMapPin className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              {isTurkish ? "Konum" : "Location"}
-            </h3>
-            <p className="text-neutral-400">
-              {isTurkish ? "İstanbul, Türkiye" : "Istanbul, Turkey"}
-            </p>
-          </div>
-        </div>
 
         {/* Calendly Integration */}
         <div className="max-w-7xl mx-auto mt-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Side - Calendly Widget */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <h2 className="text-2xl font-bold text-white mb-6 text-center">
-                {isTurkish ? "Randevu Planlayın" : "Schedule a Consultation"}
-              </h2>
-              <p className="text-neutral-400 text-center mb-8">
-                {isTurkish 
-                  ? "Scrolli ile stratejik istihbarat hizmetleri hakkında konuşmak için bir randevu planlayın."
-                  : "Schedule a consultation to discuss strategic intelligence services with Scrolli."
-                }
-              </p>
-              
               {/* Calendly Widget */}
               <div 
                 className="calendly-inline-widget" 
