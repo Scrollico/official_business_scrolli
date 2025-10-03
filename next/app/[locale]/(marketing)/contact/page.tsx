@@ -57,65 +57,19 @@ export default async function Contact(props: {
         </Subheading>
 
 
-        {/* Split Screen: Calendly Left, Content Right */}
+        {/* Calendly Widget */}
         <div className="w-full mt-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-screen">
-            {/* Left Side - Calendly Widget */}
-            <div className="p-8">
-              <div 
-                className="calendly-inline-widget" 
-                data-url="https://calendly.com/scrolli-info/30min" 
-                style={{ minWidth: '100%', height: '100vh' }}
-              >
-              </div>
-              <Script 
-                src="https://assets.calendly.com/assets/external/widget.js" 
-                strategy="afterInteractive"
-              />
+          <div className="p-8">
+            <div 
+              className="calendly-inline-widget" 
+              data-url="https://calendly.com/scrolli-info/30min" 
+              style={{ minWidth: '100%', height: '100vh' }}
+            >
             </div>
-
-            {/* Right Side - Content */}
-            <div className="p-8 flex flex-col justify-center">
-              {/* Profile Images */}
-              <div className="flex justify-center mb-8">
-                <div className="flex -space-x-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 border-2 border-white/20 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">AA</span>
-                  </div>
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-blue-600 border-2 border-white/20 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">GK</span>
-                  </div>
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-pink-600 border-2 border-white/20 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">SM</span>
-                  </div>
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-orange-500 to-red-600 border-2 border-white/20 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">JD</span>
-                  </div>
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-teal-500 to-green-600 border-2 border-white/20 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">MR</span>
-                  </div>
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 border-2 border-white/20 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">LS</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Trust Statement */}
-              <h2 className="text-3xl font-bold text-white text-center mb-6">
-                {isTurkish 
-                  ? "Scrolli binlerce iş lideri tarafından güveniliyor" 
-                  : "Scrolli is trusted by thousands of business leaders"
-                }
-              </h2>
-
-              {/* Call to Action */}
-              <p className="text-neutral-400 text-center text-lg leading-relaxed">
-                {isTurkish 
-                  ? "Fikirlerini gerçeğe dönüştürmek için Scrolli'yi kullanan başarılı girişimcilerin arasına katılın."
-                  : "Join the ranks of successful entrepreneurs who have used Scrolli to turn their ideas into reality."
-                }
-              </p>
-            </div>
+            <Script 
+              src="https://assets.calendly.com/assets/external/widget.js" 
+              strategy="afterInteractive"
+            />
           </div>
         </div>
       </Container>
