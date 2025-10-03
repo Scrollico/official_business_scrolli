@@ -22,7 +22,7 @@ export const globalData = {
         }
       },
       left_navbar_items: [
-        { text: "Services", URL: "/services" },
+        { text: "Services", URL: "/#pricing" },
         { text: "Research", URL: "/research" },
         { text: "About", URL: "/about" },
         { text: "Contact", URL: "/contact" },
@@ -93,7 +93,7 @@ export const globalData = {
         }
       },
       left_navbar_items: [
-        { text: "Hizmetler", URL: "/services" },
+        { text: "Hizmetler", URL: "/#pricing" },
         { text: "Araştırma", URL: "/research" },
         { text: "Hakkımızda", URL: "/about" },
         { text: "İletişim", URL: "/contact" },

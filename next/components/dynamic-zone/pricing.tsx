@@ -40,7 +40,7 @@ export const Pricing = ({
   plans: any[];
 }) => {
   return (
-    <div className="pt-40">
+    <div id="pricing" className="pt-40">
       <Container>
         <FeatureIconContainer className="flex justify-center items-center overflow-hidden">
           <IconReceipt2 className="h-6 w-6 text-white" />
