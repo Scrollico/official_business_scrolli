@@ -17,7 +17,6 @@ A modern, responsive website built with Next.js, showcasing Scrolli's business i
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Icons**: Tabler Icons, React Icons
-- **3D Graphics**: Three.js, React Three Fiber
 - **Language**: TypeScript
 
 ## Getting Started
@@ -32,8 +31,8 @@ A modern, responsive website built with Next.js, showcasing Scrolli's business i
 1. Clone the repository:
 
 ```bash
-git clone <your-repo-url>
-cd next
+git clone https://github.com/nihatavci/strapi.git
+cd strapi/next
 ```
 
 2. Install dependencies:
@@ -52,11 +51,11 @@ yarn dev
 
 ## Deployment
 
-This project is configured for static export and can be deployed to:
+This project is configured for deployment to:
 
-- GitHub Pages
-- Vercel
-- Netlify
+- **Vercel** (Recommended)
+- **GitHub Pages**
+- **Netlify**
 - Any static hosting service
 
 ### Build for Production
@@ -65,7 +64,7 @@ This project is configured for static export and can be deployed to:
 yarn build
 ```
 
-The static files will be generated in the `out` directory.
+The optimized production build will be generated in the `.next` directory.
 
 ## Project Structure
 

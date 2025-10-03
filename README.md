@@ -1,111 +1,118 @@
-# LaunchPad - Official Strapi Demo
+# Scrolli - Business Intelligence & Research Excellence
 
-![LaunchPad](./LaunchPad.jpg)
+![Scrolli](./LaunchPad.jpg)
 
-Welcome aboard **LaunchPad**, the official Strapi demo application, where we launch your content into the stratosphere at the speed of _"we-can't-even-measure-it!"_.
-This repository contains the following:
+**Scrolli** is a leading business intelligence consultancy providing strategic research, market analysis, and media partnerships to drive organizational excellence.
 
-- A Strapi project with content-types and data already onboard
-- A Next.js client that's primed and ready to fetch the content from Strapi faster than you can say "blast off!"
+This repository contains a modern, responsive website built with Next.js, showcasing Scrolli's comprehensive business intelligence solutions and strategic research services.
 
-## 🌌 Get started
+## 🌟 Features
 
-Strap yourself in! You can get started with this project on your local machine by following the instructions below, or you can [request a private instance on our website](https://strapi.io/demo)
+- 🌐 **Multi-language Support** - English & Turkish localization
+- 📱 **Fully Responsive** - Optimized for all devices
+- ⚡ **High Performance** - Built with Next.js 15 and Turbopack
+- 🎨 **Modern UI** - Tailwind CSS and Framer Motion animations
+- 📊 **Interactive Components** - Dynamic content sections
+- 🚀 **SEO Optimized** - Search engine friendly
+- 💼 **Business Intelligence Focus** - Strategic insights and analytics
 
-## 1. Clone Launchpad
+## 🛠️ Tech Stack
 
-To infinity and beyond! 🚀 Clone the repo with this command:
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Tabler Icons, React Icons
+- **Language**: TypeScript
+- **Deployment**: Vercel, GitHub Pages
 
-```
-git clone https://github.com/strapi/launchpad.git
-```
+## 🚀 Getting Started
 
-- Navigate to your project folder by running `cd launchpad`.
+### Prerequisites
 
-## 2. Set up environment variables
+- Node.js 18+
+- Yarn package manager
 
-Before you take off, set up the required environment variables for both Strapi and Next.js.
+### Installation
 
-To create the Strapi .env file, copy the content of the `./strapi/.env.example` file into a new file named `./strapi/.env`, then modify the values to match your setup:
+1. Clone the repository:
 
-```sh
-cp ./strapi/.env.example ./strapi/.env
-```
-
-Then do the same for the Next.js .env file, and modify it too:
-
-```sh
-cp ./next/.env.example ./next/.env
-```
-
-## 3. Start Strapi
-
-Take a deep breath. It's time to power up the Strapi engines. Navigate to your ./my-projects/launchpad/strapi folder by running:
-
-Navigate to your `./my-projects/launchpad/strapi` folder by running `cd strapi` from your command line.
-
-- Run the following command in your `./launchpad/strapi` folder:
-
-```
-yarn && yarn seed && yarn develop
+```bash
+git clone https://github.com/nihatavci/strapi.git
+cd strapi/next
 ```
 
-This will install dependencies, sprinkle in some data magic, and run the server. (You can run these commands separately, but why not be efficient?)
+2. Install dependencies:
 
-## 4. Start Next.js
-
-We're almost ready for lift-off! Next.js is your sleek, futuristic interface for getting all that glorious content out into the world. 🚀
-
-Open a new terminal tab or window to leave Strapi running, and navigate to your `./my-projects/launchpad/next` folder by running `cd next`.
-
-- Run the following command in your `./launchpad/next` folder
-
-```
-yarn && yarn build && yarn start
+```bash
+yarn install
 ```
 
-This installs dependencies, builds your project, and starts your server. You’re now a spacefaring content master!
+3. Run the development server:
 
-## Features Overview ✨
+```bash
+yarn dev
+```
 
-### User
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-<br />
+## 📦 Build & Deployment
 
-**An intuitive, minimal editor** The editor allows you to pull in dynamic blocks of content. It’s 100% open-source, and it’s fully extensible.<br />
-**Media Library** Upload images, video or any files and crop and optimize their sizes, without quality loss.<br />
-**Flexible content management** Build any type of category, section, format or flow to adapt to your needs. <br />
-**Sort and Filter** Built-in sorting and filtering: you can manage thousands of entries without effort.<br />
-**User-friendly interface** The most user-friendly open-source interface on the market.<br />
-**SEO optimized** Easily manage your SEO metadata with a repeatable field and use our Media Library to add captions, notes, and custom filenames to optimize the SEO of media assets.<br /><br />
+### Build for Production
 
-### Global
+```bash
+yarn build
+```
 
-<br />
+### Deployment Options
 
-[Customizable API](https://strapi.io/features/customizable-api): Automatically build out the schema, models, controllers for your API from the editor. Get REST or GraphQL API out of the box without writing a single line of code.<br />
-[Media Library](https://strapi.io/features/media-library): The media library allows you to store your images, videos and files in your Strapi admin panel with many ways to visualize and manage them.<br />
-[Role-Based Access Control (RBAC)](https://strapi.io/features/custom-roles-and-permissions): Role-Based Access Control is a feature available in the Administration Panel settings that let your team members have access rights only to the information they need.<br />
-[Internationalization (i18n)](https://strapi.io/features/internationalization): Internationalization (i18n) lets you create many content versions, also called locales, in different languages and for different countries.<br />
-[Audit Logs](https://strapi.io/blog/reasons-and-best-practices-for-using-audit-logs-in-your-application)The Audit Logs section provides a searchable and filterable display of all activities performed by users of the Strapi application<br />
-[Data transfer](https://strapi.io/blog/importing-exporting-and-transferring-data-with-the-strapi-cli) Streams your data from one Strapi instance to another Strapi instance.<br />
-[Review Worfklows](https://docs.strapi.io/user-docs/settings/review-workflows) Create and manage any desired review stages for your content, enabling your team to collaborate in the content creation flow from draft to publication. <br />
+This project is configured for deployment to:
 
-## Resources
+- **Vercel** (Recommended)
+- **GitHub Pages**
+- **Netlify**
+- Any static hosting service
 
-[Docs](https://docs.strapi.io) • [Demo](https://strapi.io/demo) • [Forum](https://forum.strapi.io/) • [Discord](https://discord.strapi.io) • [Youtube](https://www.youtube.com/c/Strapi/featured) • [Strapi Design System](https://design-system.strapi.io/) • [Marketplace](https://market.strapi.io/) • [Cloud Free Trial](https://cloud.strapi.io)
+## 📁 Project Structure
 
-## Todo
+```
+next/
+├── app/                    # Next.js app directory
+│   ├── [locale]/          # Internationalization
+│   │   ├── (marketing)/   # Marketing pages
+│   │   └── sign-up/       # Sign-up page
+│   └── globals.css        # Global styles
+├── components/            # Reusable components
+│   ├── dynamic-zone/      # Page sections
+│   ├── elements/          # Basic UI elements
+│   ├── ui/                # Complex UI components
+│   └── navbar/            # Navigation components
+├── lib/                   # Utility functions
+│   ├── data/              # Static data
+│   └── utils.ts           # Helper functions
+├── public/                # Static assets
+│   └── logos/             # Company logos
+└── types/                 # TypeScript definitions
+```
 
-- [ ] Implement the official Strapi SEO plugin
-- [ ] Implement the community Strapi preview plugin
-- [ ] Create localized content for the pricing plans and products
-- [ ] Populate creator fields when it'll work on Strapi 5 (article authors information are missing)
+## 🎯 Services
 
-## Customization
+- **Market Intelligence** - Deep-dive market analysis and competitive intelligence
+- **Data Analytics** - Advanced analytics and business intelligence solutions
+- **Strategic Dashboard** - Real-time insights and performance monitoring
+- **Media Partnerships** - Strategic media partnerships and thought leadership
 
-- The Strapi application contains a custom population middleware in order to populate more data than what it is set by default. You can find it in the `./strapi/src/middlewares/deepPopulate.ts` file.
+## 📞 Contact
 
-- The Strapi application contains a postinstall script that will regenerate an uuid for the project in order to get some anonymous usage information concerning this demo. You can disable it by removing the uuid inside the `./strapi/packages.json` file.
+For business inquiries and strategic intelligence services:
 
-- The Strapi application contains a patch for the @strapi/admin package. It is only necessary for the hosted demos since we automatically create the Super Admin users for them when they request this demo on our website.
+- **Website**: [scrolli.com](https://scrolli.com)
+- **Email**: info@scrolli.com
+- **LinkedIn**: [Scrolli](https://linkedin.com/company/scrolli)
+
+## 📄 License
+
+This project is proprietary to **Scrolli INC**.
+
+---
+
+*Transform your organization with strategic insights, data-driven research, and media partnerships that drive sustainable growth.*
