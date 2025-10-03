@@ -115,4 +115,4 @@ This project is proprietary to **Scrolli INC**.
 
 ---
 
-*Transform your organization with strategic insights, data-driven research, and media partnerships that drive sustainable growth.*
+_Transform your organization with strategic insights, data-driven research, and media partnerships that drive sustainable growth._
