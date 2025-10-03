@@ -8,6 +8,7 @@ import { Heading } from '@/components/elements/heading';
 import { Subheading } from '@/components/elements/subheading';
 import { generateMetadataObject } from '@/lib/shared/metadata';
 import { IconMail, IconPhone, IconMapPin } from '@tabler/icons-react';
+import Prism from '@/components/ui/prism';
 
 export async function generateStaticParams() {
   // Return supported locales for static export
@@ -40,30 +41,18 @@ export default async function Contact(props: {
   const isTurkish = params.locale === 'tr';
 
   return (
-    <div className="relative overflow-hidden w-full">
+    <div className="relative overflow-hidden w-full min-h-screen">
       <AmbientColor />
-      <Container className="pt-40 pb-40">
-        <FeatureIconContainer className="flex justify-center items-center overflow-hidden">
-          <IconMail className="h-6 w-6 text-white" />
-        </FeatureIconContainer>
-        <Heading as="h1" className="pt-4">
-          {isTurkish ? "İletişim" : "Contact"}
-        </Heading>
-        <Subheading className="max-w-3xl mx-auto">
-          {isTurkish 
-            ? "Scrolli ile iletişime geçin. Stratejik istihbarat ve iş zekası hizmetleri için bizimle iletişime geçin."
-            : "Get in touch with Scrolli. Contact us for strategic intelligence and business intelligence services."
-          }
-        </Subheading>
-
-
-        {/* Calendly Widget */}
-        <div className="w-full mt-16">
-          <div className="p-8">
+      
+      {/* Full Viewport Split Screen: Calendly Left, Content Right */}
+      <div className="w-full min-h-screen pt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+          {/* Left Side - Calendly Widget */}
+          <div className="min-h-screen bg-black flex items-center justify-center">
             <div 
               className="calendly-inline-widget" 
               data-url="https://calendly.com/scrolli-info/30min" 
-              style={{ minWidth: '100%', height: '100vh' }}
+              style={{ minWidth: '90%', height: '120vh' }}
             >
             </div>
             <Script 
@@ -71,8 +60,77 @@ export default async function Contact(props: {
               strategy="afterInteractive"
             />
           </div>
+
+          {/* Right Side - Call Expectations */}
+          <div className="min-h-screen flex flex-col justify-center items-center text-center relative bg-black pt-20">
+            {/* Prism Background */}
+            <div className="absolute inset-0">
+              <Prism
+                animationType="rotate"
+                timeScale={0.3}
+                height={2.5}
+                baseWidth={4.0}
+                scale={2.8}
+                hueShift={0.2}
+                colorFrequency={0.8}
+                noise={0.3}
+                glow={0.8}
+              />
+            </div>
+            
+            <div className="relative z-10 px-8">
+              <h2 className="text-4xl font-bold text-white mb-12">
+                {isTurkish 
+                  ? "Bu Görüşmede Neler Bekleyebilirsiniz?" 
+                  : "What to Expect from This Call"
+                }
+              </h2>
+              
+              <div className="space-y-6 max-w-lg">
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-neutral-300 text-lg">
+                    {isTurkish 
+                      ? "İş zekası ihtiyaçlarınızın analizi"
+                      : "Analysis of your business intelligence needs"
+                    }
+                  </p>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-neutral-300 text-lg">
+                    {isTurkish 
+                      ? "Özelleştirilmiş çözüm önerileri"
+                      : "Customized solution recommendations"
+                    }
+                  </p>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-neutral-300 text-lg">
+                    {isTurkish 
+                      ? "Uygulama roadmap'i ve maliyet tahmini"
+                      : "Implementation roadmap and cost estimate"
+                    }
+                  </p>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-neutral-300 text-lg">
+                    {isTurkish 
+                      ? "Soru-cevap oturumu"
+                      : "Q&A session"
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </Container>
+      </div>
     </div>
   );
 }
