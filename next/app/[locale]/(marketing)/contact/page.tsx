@@ -96,12 +96,44 @@ export default async function Contact(props: {
           </div>
         </div>
 
-        {/* Contact Form */}
+        {/* Calendly Integration */}
+        <div className="max-w-4xl mx-auto mt-16">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">
+              {isTurkish ? "Randevu Planlayın" : "Schedule a Consultation"}
+            </h2>
+            <p className="text-neutral-400 text-center mb-8">
+              {isTurkish 
+                ? "Scrolli ile stratejik istihbarat hizmetleri hakkında konuşmak için bir randevu planlayın."
+                : "Schedule a consultation to discuss strategic intelligence services with Scrolli."
+              }
+            </p>
+            
+            {/* Calendly Widget */}
+            <div className="calendly-inline-widget" 
+                 data-url="https://calendly.com/scrolli/consultation" 
+                 style={{ minWidth: '320px', height: '700px' }}>
+            </div>
+            <script 
+              type="text/javascript" 
+              src="https://assets.calendly.com/assets/external/widget.js" 
+              async>
+            </script>
+          </div>
+        </div>
+
+        {/* Alternative Contact Form */}
         <div className="max-w-2xl mx-auto mt-16">
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
             <h2 className="text-2xl font-bold text-white mb-6 text-center">
-              {isTurkish ? "Bizimle İletişime Geçin" : "Get In Touch"}
+              {isTurkish ? "Hızlı Mesaj" : "Quick Message"}
             </h2>
+            <p className="text-neutral-400 text-center mb-6">
+              {isTurkish 
+                ? "Randevu planlamak istemiyorsanız, hızlı bir mesaj gönderebilirsiniz."
+                : "If you prefer not to schedule, you can send us a quick message."
+              }
+            </p>
             
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -143,7 +175,7 @@ export default async function Contact(props: {
                   {isTurkish ? "Mesaj" : "Message"}
                 </label>
                 <textarea
-                  rows={6}
+                  rows={4}
                   className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                   placeholder={isTurkish ? "Mesajınızı yazın..." : "Write your message..."}
                 ></textarea>
