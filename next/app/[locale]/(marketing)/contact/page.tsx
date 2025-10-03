@@ -57,85 +57,25 @@ export default async function Contact(props: {
         </Subheading>
 
 
-        {/* Contact Form & Trust Section */}
+        {/* Split Screen: Calendly Left, Content Right */}
         <div className="w-full mt-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4 md:px-10 xl:px-4">
-            {/* Left Side - Contact Form */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                {isTurkish ? "İletişim" : "Contact Us"}
-              </h2>
-              <p className="text-neutral-400 mb-8">
-                {isTurkish 
-                  ? "Bizimle iletişime geçin, size en kısa sürede dönüş yapalım."
-                  : "Please reach out to us and we will get back to you at the speed of light."
-                }
-              </p>
-              
-              <form className="space-y-6">
-                <div>
-                  <label htmlFor="fullName" className="block text-sm font-medium text-white mb-2">
-                    {isTurkish ? "Ad Soyad" : "Full Name"}
-                  </label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    defaultValue="Manu Arora"
-                    className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                    {isTurkish ? "E-posta Adresi" : "Email address"}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    defaultValue="hello@scrolli.com"
-                    className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-white mb-2">
-                    {isTurkish ? "Şirket" : "Company"}
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    defaultValue="Scrolli"
-                    className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-                    {isTurkish ? "Mesaj" : "Message"}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    placeholder={isTurkish ? "Mesajınızı buraya yazın" : "Enter your message here"}
-                    className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                  />
-                </div>
-                
-                <button
-                  type="submit"
-                  className="w-full bg-white text-black font-semibold py-3 px-6 rounded-lg hover:bg-neutral-200 transition-colors duration-300"
-                >
-                  {isTurkish ? "Gönder" : "Submit"}
-                </button>
-              </form>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-screen">
+            {/* Left Side - Calendly Widget */}
+            <div className="p-8">
+              <div 
+                className="calendly-inline-widget" 
+                data-url="https://calendly.com/scrolli-info/30min" 
+                style={{ minWidth: '100%', height: '100vh' }}
+              >
+              </div>
+              <Script 
+                src="https://assets.calendly.com/assets/external/widget.js" 
+                strategy="afterInteractive"
+              />
             </div>
 
-            {/* Right Side - Trust & Testimonials */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 flex flex-col justify-center">
+            {/* Right Side - Content */}
+            <div className="p-8 flex flex-col justify-center">
               {/* Profile Images */}
               <div className="flex justify-center mb-8">
                 <div className="flex -space-x-4">
