@@ -14,12 +14,15 @@ import {
   TwitterIcon,
 } from '@/components/icons/illustrations';
 
-const World = dynamic(
-  () => import('@/components/ui/globe').then((m) => m.World),
-  {
-    ssr: false,
-  }
-);
+const World = () => {
+  return (
+    <div className="h-[300px] w-[300px] md:w-[600px] md:h-[600px] mx-auto absolute -bottom-20 md:-bottom-60 z-20 inset-x-0 flex items-center justify-center">
+      <div className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
+        <div className="text-white/60 text-sm">World Component</div>
+      </div>
+    </div>
+  );
+};
 
 export function SkeletonOne() {
   const globeConfig = {

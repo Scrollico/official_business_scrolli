@@ -8,6 +8,11 @@ import { SingleProduct } from '@/components/products/single-product';
 import { generateMetadataObject } from '@/lib/shared/metadata';
 import fetchContentType from '@/lib/strapi/fetchContentType';
 
+export async function generateStaticParams() {
+  // Return empty array for static export - no pre-generated products
+  return [];
+}
+
 export async function generateMetadata(props: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {

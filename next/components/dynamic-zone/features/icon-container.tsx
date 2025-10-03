@@ -10,11 +10,12 @@ export const IconContainer: React.FC<HTMLAttributes<HTMLDivElement>> = ({
   return (
     <div
       className={cn(
-        'flex items-center justify-center h-16 w-16 rounded-lg border-2 bg-[rgba(40,40,40)] relative',
-        'border-[rgba(255,_255,_255,_0.20)]',
-        'shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)_inset]',
+        'flex items-center justify-center h-16 w-16 rounded-lg border-2 bg-white/10 backdrop-blur-sm relative',
+        'border-white/30',
+        'shadow-[0px_0px_20px_0px_rgba(255,255,255,0.1)_inset,0px_4px_12px_-4px_rgba(0,0,0,0.3)]',
         'flex-shrink-0',
-        'hover:scale-[0.98] transition duration-200 mx-4',
+        'hover:scale-105 hover:bg-white/20 transition-all duration-300 mx-4',
+        'hover:shadow-[0px_0px_30px_0px_rgba(255,255,255,0.2)_inset,0px_8px_20px_-8px_rgba(0,0,0,0.4)]',
         className
       )}
       {...props}

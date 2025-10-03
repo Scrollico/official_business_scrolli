@@ -5,6 +5,13 @@ import PageContent from '@/lib/shared/PageContent';
 import { generateMetadataObject } from '@/lib/shared/metadata';
 import { getPageData } from '@/lib/data';
 
+export async function generateStaticParams() {
+  // Return empty array for static export - no dynamic pages
+  return [];
+}
+
+export const dynamicParams = false;
+
 export async function generateMetadata(props: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {

@@ -1,45 +1,108 @@
-# 🌟 Next.js Multilingual Blog Template
+# Scrolli - Business Intelligence & Research Excellence
 
-Welcome to our cutting-edge Next.js Multilingual Blog Template! This powerful and flexible template is designed to help you create stunning, multilingual blogs with ease.
+A modern, responsive website built with Next.js, showcasing Scrolli's business intelligence and strategic research services.
 
-## ✨ Features
+## Features
 
-- 🌐 Multilingual support (English and French)
+- 🌐 Multi-language support (English & Turkish)
 - 📱 Fully responsive design
-- 🎨 Customizable themes
-- 🖼️ Image optimization
-- 🔍 SEO-friendly
-- 🚀 Fast performance with Next.js
+- ⚡ Built with Next.js 15 and Turbopack
+- 🎨 Modern UI with Tailwind CSS and Framer Motion
+- 📊 Interactive components and animations
+- 🚀 Optimized for performance
 
-## 🚀 Getting Started
+## Tech Stack
 
-1. Clone this repository
-2. Install dependencies: `npm install`
-3. Copy `.env.example` to `.env.local` and update the variables
-4. Run the development server: `npm run dev`
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Tabler Icons, React Icons
+- **3D Graphics**: Three.js, React Three Fiber
+- **Language**: TypeScript
 
-## 🛠️ Customization
+## Getting Started
 
-- Modify `config.ts` to change language settings
-- Update `next.config.mjs` for advanced configurations
-- Add your own MDX files in the `blog` page directly
+### Prerequisites
 
-## 🤝 Contributing
+- Node.js 18+
+- Yarn package manager
 
-We welcome contributions! Please see our [contributing guidelines](link-to-contributing-guidelines) for more information.
+### Installation
 
-## 📄 License
+1. Clone the repository:
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```bash
+git clone <your-repo-url>
+cd next
+```
 
----
+2. Install dependencies:
 
-<footer>
-<p align="center">
-  Made by <a href="https://aceternity.com">Aceternity</a><br>
-  Powered by <a href="https://nextjs.org/">Next.js</a> | <a href="https://tailwindcss.com/">Tailwind CSS</a> | <a href="https://framer.com/motion">Framer Motion</a> | <a href="https://ui.aceternity.com">Aceternity UI</a>
-</p>
-</footer>
+```bash
+yarn install
+```
 
-++ Deploy
+3. Run the development server:
+
+```bash
+yarn dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deployment
+
+This project is configured for static export and can be deployed to:
+
+- GitHub Pages
+- Vercel
+- Netlify
+- Any static hosting service
+
+### Build for Production
+
+```bash
+yarn build
+```
+
+The static files will be generated in the `out` directory.
+
+## Project Structure
+
+```
+next/
+├── app/                    # Next.js app directory
+│   ├── [locale]/          # Internationalization
+│   ├── api/               # API routes
+│   └── globals.css        # Global styles
+├── components/            # Reusable components
+│   ├── dynamic-zone/      # Page sections
+│   ├── elements/          # Basic UI elements
+│   ├── ui/                # Complex UI components
+│   └── ...
+├── lib/                   # Utility functions
+│   ├── data/              # Static data
+│   └── utils.ts           # Helper functions
+├── public/                # Static assets
+└── types/                 # TypeScript definitions
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is proprietary to Scrolli INC.
+
+## Contact
+
+For questions or support, please contact:
+
+- Website: [scrolli.com](https://scrolli.com)
+- Email: info@scrolli.com
+- LinkedIn: [Scrolli](https://linkedin.com/company/scrolli)

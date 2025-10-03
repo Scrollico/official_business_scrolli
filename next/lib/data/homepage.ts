@@ -1,43 +1,43 @@
 export const homepageData = {
   en: {
     locale: "en",
-    seo: {
+  seo: {
       metaTitle: "Scrolli - Business Intelligence & Research Excellence",
       metaDescription: "Scrolli provides cutting-edge business intelligence, strategic research, and media partnerships to help companies navigate complex market dynamics and achieve sustainable growth.",
-      metaImage: {
+    metaImage: {
         url: "/images/scrolli.jpg",
-        width: 1920,
-        height: 967,
+      width: 1920,
+      height: 967,
         alt: "Scrolli - Business Intelligence & Research Excellence"
-      }
-    },
-    dynamic_zone: [
-      {
-        __component: "dynamic-zone.hero",
+    }
+  },
+  dynamic_zone: [
+    {
+      __component: "dynamic-zone.hero",
         heading: "Navigate Business Complexity with Intelligence",
         sub_heading: "Transform your organization with strategic insights, data-driven research, and media partnerships that drive sustainable growth.",
-        CTAs: [
-          {
+      CTAs: [
+        {
             text: "Schedule Consultation",
             URL: "/contact",
-            variant: "primary"
-          }
-        ]
-      },
-      {
-        __component: "dynamic-zone.features",
+          variant: "primary"
+        }
+      ]
+    },
+    {
+      __component: "dynamic-zone.features",
         heading: "Strategic Intelligence Services",
         sub_heading: "Scrolli delivers comprehensive business intelligence solutions designed to transform your organization's decision-making capabilities.",
-        globe_card: {
+      globe_card: {
           title: "Market Intelligence",
           description: "Deep-dive market analysis and competitive intelligence to drive strategic decisions.",
-          span: "two"
-        },
-        ray_card: {
+        span: "two"
+      },
+      ray_card: {
           title: "Data Analytics",
           description: "Advanced analytics and business intelligence solutions for data-driven insights.",
-          span: "one",
-          before_ray_items: {
+        span: "one",
+        before_ray_items: {
             item_1: "500+ Studies",
             item_2: "2,500+ Reports",
             item_3: "50+ Industries"
@@ -77,36 +77,39 @@ export const homepageData = {
         sub_heading: "Hear from industry leaders who have transformed their organizations with Scrolli's strategic intelligence.",
         testimonials: [
           {
-            content: "Scrolli's strategic intelligence transformed our decision-making process. Their insights helped us enter three new markets successfully.",
+            text: "Scrolli's strategic intelligence transformed our decision-making process. Their insights helped us enter three new markets successfully.",
             user: {
-              name: "Afsin Avci",
+              firstname: "Afsin",
+              lastname: "Avci",
               job: "Strategic Advisor",
               image: {
-                url: "https://media.licdn.com/dms/image/D4E03AQF6XK8yQqZqHQ/profile-displayphoto-shrink_400_400/0/1704385234567?e=1721865600&v=beta&t=example",
+                url: "https://inflownetwork.com/wp-content/uploads/2020/10/afsinavci-1-e1603639515828.png",
                 alt: "Afsin Avci"
               },
               linkedin: "https://www.linkedin.com/in/afsinavci"
             }
           },
           {
-            content: "The depth of analysis and actionable insights Scrolli provided exceeded our expectations. Truly exceptional strategic intelligence.",
+            text: "The depth of analysis and actionable insights Scrolli provided exceeded our expectations. Truly exceptional strategic intelligence.",
             user: {
-              name: "Ghassan Khalife",
+              firstname: "Ghassan",
+              lastname: "Khalife",
               job: "Business Intelligence Expert",
               image: {
-                url: "https://media.licdn.com/dms/image/C4E03AQF6XK8yQqZqHQ/profile-displayphoto-shrink_400_400/0/1704385234567?e=1721865600&v=beta&t=example",
+                url: "https://media.licdn.com/dms/image/v2/D4D03AQH6VJP1rBowBg/profile-displayphoto-shrink_200_200/B4DZT8kTxSHAAY-/0/1739404165005?e=2147483647&v=beta&t=We-3z2KqJFMCOyYdqu_xkID-ne_Opiw17-JQDubxjYk",
                 alt: "Ghassan Khalife"
               },
               linkedin: "https://www.linkedin.com/in/ghassan-khalife-41149893"
             }
           },
           {
-            content: "Scrolli's market intelligence helped us identify opportunities we never knew existed. Game-changing strategic insights.",
+            text: "Scrolli's market intelligence helped us identify opportunities we never knew existed. Game-changing strategic insights.",
             user: {
-              name: "Afsin Avci",
+              firstname: "Afsin",
+              lastname: "Avci",
               job: "Strategic Advisor",
               image: {
-                url: "https://media.licdn.com/dms/image/D4E03AQF6XK8yQqZqHQ/profile-displayphoto-shrink_400_400/0/1704385234567?e=1721865600&v=beta&t=example",
+                url: "https://inflownetwork.com/wp-content/uploads/2020/10/afsinavci-1-e1603639515828.png",
                 alt: "Afsin Avci"
               },
               linkedin: "https://www.linkedin.com/in/afsinavci"
@@ -121,19 +124,23 @@ export const homepageData = {
         steps: [
           {
             title: "Discovery & Analysis",
-            description: "Comprehensive analysis of your business landscape, challenges, and opportunities."
+            description: "Comprehensive analysis of your business landscape, challenges, and opportunities.",
+            timeframe: "1-2 weeks"
           },
           {
             title: "Intelligence Gathering",
-            description: "Advanced research and data collection using cutting-edge methodologies."
+            description: "Advanced research and data collection using cutting-edge methodologies.",
+            timeframe: "2-3 weeks"
           },
           {
             title: "Strategic Planning",
-            description: "Development of actionable strategies and recommendations tailored to your goals."
+            description: "Development of actionable strategies and recommendations tailored to your goals.",
+            timeframe: "1-2 weeks"
           },
           {
             title: "Implementation & Monitoring",
-            description: "Support for strategy implementation with ongoing monitoring and optimization."
+            description: "Support for strategy implementation with ongoing monitoring and optimization.",
+            timeframe: "Ongoing"
           }
         ]
       },
@@ -142,14 +149,14 @@ export const homepageData = {
         heading: "Trusted by Industry Leaders",
         sub_heading: "Scrolli is trusted by Fortune 500 companies and leading organizations across diverse industries.",
         logos: [
-          { name: "Microsoft", url: "https://microsoft.com" },
-          { name: "Amazon", url: "https://amazon.com" },
-          { name: "Google", url: "https://google.com" },
-          { name: "Apple", url: "https://apple.com" },
-          { name: "Tesla", url: "https://tesla.com" },
-          { name: "Meta", url: "https://meta.com" },
-          { name: "Netflix", url: "https://netflix.com" },
-          { name: "Uber", url: "https://uber.com" }
+          { name: "Microsoft", url: "https://microsoft.com", image: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" },
+          { name: "Amazon", url: "https://amazon.com", image: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
+          { name: "Google", url: "https://google.com", image: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
+          { name: "Apple", url: "https://apple.com", image: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" },
+          { name: "Tesla", url: "https://tesla.com", image: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Tesla_T_symbol.svg" },
+          { name: "Meta", url: "https://meta.com", image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" },
+          { name: "Netflix", url: "https://netflix.com", image: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
+          { name: "Uber", url: "https://uber.com", image: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" }
         ]
       },
       {
@@ -158,21 +165,8 @@ export const homepageData = {
         sub_heading: "Choose the intelligence package that aligns with your strategic objectives.",
         plans: [
           {
-            name: "Strategic Insight",
-            price: 5000,
-            description: "Essential business intelligence for growing organizations.",
-            perks: [
-              { text: "Market Analysis Report" },
-              { text: "Competitive Intelligence" },
-              { text: "Strategic Recommendations" }
-            ],
-            additional_perks: [],
-            CTA: { text: "Schedule Consultation" },
-            featured: false
-          },
-          {
             name: "Business Intelligence",
-            price: 15000,
+            price: null,
             description: "Comprehensive intelligence solutions for established companies.",
             perks: [
               { text: "Advanced Market Research" },
@@ -186,42 +180,6 @@ export const homepageData = {
             ],
             CTA: { text: "Schedule Consultation" },
             featured: true
-          },
-          {
-            name: "Enterprise Intelligence",
-            price: 50000,
-            description: "Full-scale strategic intelligence for enterprise organizations.",
-            perks: [
-              { text: "Comprehensive Market Intelligence" },
-              { text: "Advanced Analytics" },
-              { text: "Strategic Consulting" },
-              { text: "Media Partnerships" },
-              { text: "Executive Briefings" }
-            ],
-            additional_perks: [
-              { text: "24/7 Support" },
-              { text: "Custom Solutions" },
-              { text: "Dedicated Team" }
-            ],
-            CTA: { text: "Schedule Consultation" },
-            featured: false
-          },
-          {
-            name: "Consulting Partnership",
-            price: null,
-            description: "Strategic partnership for long-term intelligence needs.",
-            perks: [
-              { text: "Ongoing Strategic Support" },
-              { text: "Custom Intelligence Solutions" },
-              { text: "Executive Advisory" },
-              { text: "Market Entry Support" }
-            ],
-            additional_perks: [
-              { text: "Priority Access" },
-              { text: "Custom Pricing" }
-            ],
-            CTA: { text: "Contact Sales" },
-            featured: false
           }
         ]
       },
@@ -348,157 +306,118 @@ export const homepageData = {
         sub_heading: "Scrolli'nin stratejik istihbaratı ile organizasyonlarını dönüştüren sektör liderlerinden dinleyin.",
         testimonials: [
           {
-            content: "Scrolli'nin stratejik istihbaratı karar verme sürecimizi dönüştürdü. İçgörüleri sayesinde üç yeni pazara başarıyla girdik.",
+            text: "Scrolli'nin stratejik istihbaratı karar verme sürecimizi dönüştürdü. İçgörüleri sayesinde üç yeni pazara başarıyla girdik.",
             user: {
-              name: "Sarah Chen",
-              job: "Baş Strateji Sorumlusu",
+              firstname: "Afsin",
+              lastname: "Avci",
+              job: "Stratejik Danışman",
               image: {
-                url: "/images/testimonials/sarah-chen.jpg",
-                alt: "Sarah Chen"
-              }
+                url: "https://inflownetwork.com/wp-content/uploads/2020/10/afsinavci-1-e1603639515828.png",
+                alt: "Afsin Avci"
+              },
+              linkedin: "https://www.linkedin.com/in/afsinavci"
             }
           },
           {
-            content: "Scrolli'nin sağladığı analiz derinliği ve uygulanabilir içgörüler beklentilerimizi aştı. Gerçekten olağanüstü stratejik istihbarat.",
-            user: {
-              name: "Michael Rodriguez",
-              job: "CEO",
+            text: "Scrolli'nin sağladığı analiz derinliği ve uygulanabilir içgörüler beklentilerimizi aştı. Gerçekten olağanüstü stratejik istihbarat.",
+          user: {
+              firstname: "Ghassan",
+              lastname: "Khalife",
+              job: "İş Zekası Uzmanı",
               image: {
-                url: "/images/testimonials/michael-rodriguez.jpg",
-                alt: "Michael Rodriguez"
-              }
+                url: "https://media.licdn.com/dms/image/v2/D4D03AQH6VJP1rBowBg/profile-displayphoto-shrink_200_200/B4DZT8kTxSHAAY-/0/1739404165005?e=2147483647&v=beta&t=We-3z2KqJFMCOyYdqu_xkID-ne_Opiw17-JQDubxjYk",
+                alt: "Ghassan Khalife"
+              },
+              linkedin: "https://www.linkedin.com/in/ghassan-khalife-41149893"
             }
           },
           {
-            content: "Scrolli'nin pazar istihbaratı hiç bilmediğimiz fırsatları keşfetmemize yardımcı oldu. Oyun değiştiren stratejik içgörüler.",
-            user: {
-              name: "Emily Watson",
-              job: "Strateji VP'si",
+            text: "Scrolli'nin pazar istihbaratı hiç bilmediğimiz fırsatları keşfetmemize yardımcı oldu. Oyun değiştiren stratejik içgörüler.",
+          user: {
+              firstname: "Afsin",
+              lastname: "Avci",
+              job: "Stratejik Danışman",
               image: {
-                url: "/images/testimonials/emily-watson.jpg",
-                alt: "Emily Watson"
-              }
-            }
+                url: "https://inflownetwork.com/wp-content/uploads/2020/10/afsinavci-1-e1603639515828.png",
+                alt: "Afsin Avci"
+              },
+              linkedin: "https://www.linkedin.com/in/afsinavci"
           }
-        ]
-      },
-      {
-        __component: "dynamic-zone.how-it-works",
+        }
+      ]
+    },
+    {
+      __component: "dynamic-zone.how-it-works",
         heading: "Stratejik Sürecimiz",
         sub_heading: "Scrolli'nin kanıtlanmış metodolojisini keşfedin: karmaşık iş zorluklarını uygulanabilir stratejik istihbarata dönüştürme.",
-        steps: [
-          {
+      steps: [
+        {
             title: "Keşif ve Analiz",
-            description: "İş ortamınız, zorluklarınız ve fırsatlarınızın kapsamlı analizi."
-          },
-          {
+            description: "İş ortamınız, zorluklarınız ve fırsatlarınızın kapsamlı analizi.",
+            timeframe: "1-2 hafta"
+        },
+        {
             title: "İstihbarat Toplama",
-            description: "Son teknoloji metodolojiler kullanarak gelişmiş araştırma ve veri toplama."
-          },
-          {
+            description: "Son teknoloji metodolojiler kullanarak gelişmiş araştırma ve veri toplama.",
+            timeframe: "2-3 hafta"
+        },
+        {
             title: "Stratejik Planlama",
-            description: "Hedeflerinize özel uygulanabilir stratejiler ve öneriler geliştirme."
-          },
-          {
+            description: "Hedeflerinize özel uygulanabilir stratejiler ve öneriler geliştirme.",
+            timeframe: "1-2 hafta"
+        },
+        {
             title: "Uygulama ve İzleme",
-            description: "Devam eden izleme ve optimizasyon ile strateji uygulaması için destek."
-          }
-        ]
-      },
-      {
-        __component: "dynamic-zone.brands",
+            description: "Devam eden izleme ve optimizasyon ile strateji uygulaması için destek.",
+            timeframe: "Devam eden"
+        }
+      ]
+    },
+    {
+      __component: "dynamic-zone.brands",
         heading: "Sektör Liderleri Tarafından Güveniliyor",
         sub_heading: "Scrolli, Fortune 500 şirketleri ve çeşitli sektörlerdeki önde gelen organizasyonlar tarafından güveniliyor.",
-        logos: [
-          { name: "Microsoft", url: "https://microsoft.com" },
-          { name: "Amazon", url: "https://amazon.com" },
-          { name: "Google", url: "https://google.com" },
-          { name: "Apple", url: "https://apple.com" },
-          { name: "Tesla", url: "https://tesla.com" },
-          { name: "Meta", url: "https://meta.com" },
-          { name: "Netflix", url: "https://netflix.com" },
-          { name: "Uber", url: "https://uber.com" }
-        ]
-      },
-      {
-        __component: "dynamic-zone.pricing",
+      logos: [
+          { name: "Microsoft", url: "https://microsoft.com", image: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" },
+          { name: "Amazon", url: "https://amazon.com", image: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
+          { name: "Google", url: "https://google.com", image: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
+          { name: "Apple", url: "https://apple.com", image: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" },
+          { name: "Tesla", url: "https://tesla.com", image: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Tesla_T_symbol.svg" },
+          { name: "Meta", url: "https://meta.com", image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" },
+          { name: "Netflix", url: "https://netflix.com", image: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
+          { name: "Uber", url: "https://uber.com", image: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" }
+      ]
+    },
+    {
+      __component: "dynamic-zone.pricing",
         heading: "Stratejik İstihbarat Paketleri",
         sub_heading: "Stratejik hedeflerinizle uyumlu istihbarat paketini seçin.",
-        plans: [
-          {
-            name: "Stratejik İçgörü",
-            price: 5000,
-            description: "Büyüyen organizasyonlar için temel iş zekası.",
-            perks: [
-              { text: "Pazar Analiz Raporu" },
-              { text: "Rekabet İstihbaratı" },
-              { text: "Stratejik Öneriler" }
-            ],
-            additional_perks: [],
-            CTA: { text: "Danışma Planla" },
-            featured: false
-          },
+      plans: [
           {
             name: "İş Zekası",
-            price: 15000,
+            price: null,
             description: "Kurulu şirketler için kapsamlı istihbarat çözümleri.",
-            perks: [
+          perks: [
               { text: "Gelişmiş Pazar Araştırması" },
               { text: "Rekabet Analizi" },
               { text: "Stratejik Planlama" },
               { text: "Performans İzleme" }
-            ],
-            additional_perks: [
+          ],
+          additional_perks: [
               { text: "Üç Aylık Değerlendirmeler" },
               { text: "Özel Dashboardlar" }
             ],
             CTA: { text: "Danışma Planla" },
             featured: true
-          },
-          {
-            name: "Kurumsal İstihbarat",
-            price: 50000,
-            description: "Kurumsal organizasyonlar için tam kapsamlı stratejik istihbarat.",
-            perks: [
-              { text: "Kapsamlı Pazar İstihbaratı" },
-              { text: "Gelişmiş Analitik" },
-              { text: "Stratejik Danışmanlık" },
-              { text: "Medya Ortaklıkları" },
-              { text: "Yönetici Brifingleri" }
-            ],
-            additional_perks: [
-              { text: "7/24 Destek" },
-              { text: "Özel Çözümler" },
-              { text: "Özel Ekip" }
-            ],
-            CTA: { text: "Danışma Planla" },
-            featured: false
-          },
-          {
-            name: "Danışmanlık Ortaklığı",
-            price: null,
-            description: "Uzun vadeli istihbarat ihtiyaçları için stratejik ortaklık.",
-            perks: [
-              { text: "Devam Eden Stratejik Destek" },
-              { text: "Özel İstihbarat Çözümleri" },
-              { text: "Yönetici Danışmanlığı" },
-              { text: "Pazar Giriş Desteği" }
-            ],
-            additional_perks: [
-              { text: "Öncelikli Erişim" },
-              { text: "Özel Fiyatlandırma" }
-            ],
-            CTA: { text: "Satış Ekibiyle İletişim" },
-            featured: false
           }
-        ]
-      },
-      {
-        __component: "dynamic-zone.launches",
+      ]
+    },
+    {
+      __component: "dynamic-zone.launches",
         heading: "Son Stratejik Girişimler",
         sub_heading: "Müşteri organizasyonlarını dönüştüren en son stratejik istihbarat projelerimiz.",
-        launches: [
-          {
+      launches: [
+        {
             title: "Küresel Teknoloji Devi için Pazar Giriş Stratejisi",
             description: "Avrupa genişlemesi için kapsamlı pazar analizi ve giriş stratejisi.",
             image: {
@@ -521,22 +440,22 @@ export const homepageData = {
               url: "/images/launches/partnerships.jpg",
               alt: "Stratejik Ortaklıklar"
             }
-          }
-        ]
-      },
-      {
-        __component: "dynamic-zone.cta",
+        }
+      ]
+    },
+    {
+      __component: "dynamic-zone.cta",
         heading: "Stratejik İstihbaratınızı Dönüştürmeye Hazır mısınız?",
         sub_heading: "Sürdürülebilir büyüme ve rekabet avantajı sağlayan içgörüler ve stratejik istihbaratı keşfetmek için Scrolli ile ortak olun.",
-        CTAs: [
-          {
+      CTAs: [
+        {
             text: "Danışma Planla",
-            URL: "/contact",
-            variant: "primary"
-          }
-        ]
-      }
-    ]
+          URL: "/contact",
+          variant: "primary"
+        }
+      ]
+    }
+  ]
   }
 };
 

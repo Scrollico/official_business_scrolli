@@ -13,6 +13,14 @@ import { generateMetadataObject } from '@/lib/shared/metadata';
 import { getArticlesData } from '@/lib/data';
 import { Article } from '@/types/types';
 
+export async function generateStaticParams() {
+  // Return supported locales for static export
+  return [
+    { locale: 'en' },
+    { locale: 'tr' }
+  ];
+}
+
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {

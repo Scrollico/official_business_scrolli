@@ -1,10 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  turbopack: {
-    root: process.cwd().replace('/next', ''),
-  },
   images: {
-    remotePatterns: [{ hostname: process.env.IMAGE_HOSTNAME || 'localhost' }],
+    remotePatterns: [
+      { hostname: 'media.licdn.com' },
+      { hostname: 'static.licdn.com' },
+      { hostname: 'cdn.licdn.com' },
+      { hostname: 'via.placeholder.com' },
+      { hostname: 'inflownetwork.com' },
+      { hostname: 'upload.wikimedia.org' }
+    ],
   },
   pageExtensions: ['ts', 'tsx'],
   typescript: {
@@ -14,28 +18,6 @@ const nextConfig = {
   eslint: {
     // Temporarily ignore ESLint errors during build
     ignoreDuringBuilds: true,
-  },
-  async redirects() {
-    let redirections = [];
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/redirections`
-      );
-      const result = await res.json();
-      const redirectItems = result.data.map(({ source, destination }) => {
-        return {
-          source: `/:locale${source}`,
-          destination: `/:locale${destination}`,
-          permanent: false,
-        };
-      });
-
-      redirections = redirections.concat(redirectItems);
-
-      return redirections;
-    } catch (error) {
-      return [];
-    }
   },
 };
 

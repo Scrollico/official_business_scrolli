@@ -4,6 +4,14 @@ import ClientSlugHandler from '../../ClientSlugHandler';
 import { BlogLayout } from '@/components/blog-layout';
 import { getArticleData } from '@/lib/data';
 
+export async function generateStaticParams() {
+  // Return empty array for static export - no dynamic blog posts
+  // For dynamic params like [slug], we need to return empty array to allow fallback
+  return [];
+}
+
+export const dynamicParams = false;
+
 export default async function SingleArticlePage(props: {
   params: Promise<{ slug: string; locale: string }>;
 }) {

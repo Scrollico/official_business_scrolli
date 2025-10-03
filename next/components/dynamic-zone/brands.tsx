@@ -76,11 +76,11 @@ export const Brands = ({
               className="relative"
             >
               <StrapiImage
-                src={logo?.image?.url || '/logos/Primary-alternative3.png'}
-                alt={logo?.image?.alternativeText || logo?.title || 'Logo'}
+                src={logo?.image || '/logos/Primary-alternative3.png'}
+                alt={logo?.name || 'Logo'}
                 width={400}
                 height={400}
-                className="md:h-20 md:w-60 h-10 w-40 object-contain filter"
+                className="md:h-12 md:w-32 h-8 w-24 object-contain filter grayscale opacity-60 hover:opacity-80 transition-opacity"
                 draggable={false}
               />
             </motion.div>

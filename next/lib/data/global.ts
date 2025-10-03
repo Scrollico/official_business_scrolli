@@ -15,7 +15,7 @@ export const globalData = {
       logo: {
         company: "Scrolli",
         image: {
-          url: "/logos/Primary-alternative2.png",
+          url: "/logos/Primary-alternative3.png",
           width: 1024,
           height: 1024,
           alt: "Scrolli Logo"
@@ -34,13 +34,13 @@ export const globalData = {
     },
     footer: {
       description: "Scrolli is a leading business intelligence consultancy providing strategic research, market analysis, and media partnerships to drive organizational excellence.",
-      copyright: "Copyright © 2024 Scrolli INC",
-      designed_developed_by: "Designed and Developed by Scrolli & Aceternity",
+      copyright: "Copyright © 2025 Scrolli LTD",
+      designed_developed_by: "Designed and Developed by Scrolli",
       built_with: "built with Next.js, Tailwind CSS, Framer Motion, Aceternity UI, and icons8",
       logo: {
         company: "Scrolli",
         image: {
-          url: "/logos/Primary-alternative2.png",
+          url: "/logos/Primary-alternative3.png",
           width: 1024,
           height: 1024,
           alt: "Scrolli Logo"
@@ -86,7 +86,7 @@ export const globalData = {
       logo: {
         company: "Scrolli",
         image: {
-          url: "/logos/Primary-alternative2.png",
+          url: "/logos/Primary-alternative3.png",
           width: 1024,
           height: 1024,
           alt: "Scrolli Logo"
@@ -111,7 +111,7 @@ export const globalData = {
       logo: {
         company: "Scrolli",
         image: {
-          url: "/logos/Primary-alternative2.png",
+          url: "/logos/Primary-alternative3.png",
           width: 1024,
           height: 1024,
           alt: "Scrolli Logo"

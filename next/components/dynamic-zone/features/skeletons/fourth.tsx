@@ -112,9 +112,9 @@ export const SkeletonFour = () => {
       {icons.map((icon) => (
         <IconContainer
           className={cn(
-            'rounded-full opacity-20 mx-2 absolute',
+            'rounded-full opacity-60 mx-2 absolute hover:opacity-100 transition-opacity duration-300',
             icon.className,
-            active.title === icon.title && 'opacity-100'
+            active.title === icon.title && 'opacity-100 scale-110'
           )}
           key={icon.title}
         >
@@ -122,7 +122,7 @@ export const SkeletonFour = () => {
           {active.title === icon.title && (
             <motion.div
               layoutId="bubble"
-              className="absolute h-16 w-16 inset-0 rounded-full border-2  -ml-0.5 -mt-0.5 border-indigo-500"
+              className="absolute h-16 w-16 inset-0 rounded-full border-2 -ml-0.5 -mt-0.5 border-blue-400 shadow-lg shadow-blue-400/50"
             ></motion.div>
           )}
         </IconContainer>

@@ -38,10 +38,6 @@ export const Pricing = ({
   sub_heading: string;
   plans: any[];
 }) => {
-  const enterprisePlans = useMemo(
-    () => plans.filter((p) => p?.name?.toLowerCase().includes('enterprise')),
-    [plans]
-  );
   return (
     <div className="pt-40">
       <Container>
@@ -51,7 +47,7 @@ export const Pricing = ({
         <Heading className="pt-4">{heading}</Heading>
         <Subheading className="max-w-3xl mx-auto">{sub_heading}</Subheading>
         <div className="flex justify-center py-20">
-          {enterprisePlans.map((plan) => (
+          {plans.map((plan) => (
             <Card key={plan.name} plan={plan} />
           ))}
         </div>
@@ -91,8 +87,18 @@ const Card = ({ plan }: { plan: Plan }) => {
         </div>
         <div className="mt-8">
           <p className={cn('text-lg font-medium text-neutral-400', plan.featured && 'text-neutral-600')}>
-            Strategic Intelligence Solutions
+            {plan.description}
           </p>
+          {plan.price && (
+            <p className={cn('text-3xl font-bold text-white mt-4', plan.featured && 'text-black')}>
+              ${plan.price.toLocaleString()}
+            </p>
+          )}
+          {!plan.price && (
+            <p className={cn('text-3xl font-bold text-white mt-4', plan.featured && 'text-black')}>
+              Custom Pricing
+            </p>
+          )}
         </div>
         <Button
           variant="outline"

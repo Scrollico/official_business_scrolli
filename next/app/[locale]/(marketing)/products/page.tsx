@@ -10,25 +10,25 @@ import { Subheading } from '@/components/elements/subheading';
 import { Featured } from '@/components/products/featured';
 import { ProductItems } from '@/components/products/product-items';
 import { generateMetadataObject } from '@/lib/shared/metadata';
-import fetchContentType from '@/lib/strapi/fetchContentType';
+
+export async function generateStaticParams() {
+  // Return supported locales for static export
+  return [
+    { locale: 'en' },
+    { locale: 'tr' }
+  ];
+}
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
 
-  const pageData = await fetchContentType(
-    'product-page',
-    {
-      filters: {
-        locale: params.locale,
-      },
-    },
-    true
-  );
-
-  const seo = pageData?.seo;
-  const metadata = generateMetadataObject(seo);
+  const metadata = generateMetadataObject({
+    metaTitle: "Products - Scrolli",
+    metaDescription: "Explore Scrolli's comprehensive business intelligence products and solutions.",
+    keywords: "business intelligence, products, solutions, analytics"
+  });
   return metadata;
 }
 
@@ -37,26 +37,32 @@ export default async function Products(props: {
 }) {
   const params = await props.params;
 
-  // Fetch the product-page and products data
-  const productPage = await fetchContentType(
-    'product-page',
-    {
-      filters: {
-        locale: params.locale,
-      },
-    },
-    true
-  );
-  const products = await fetchContentType('products');
+  // Static data for products page
+  const productPage = {
+    heading: params.locale === 'tr' ? "Ürünlerimiz" : "Our Products",
+    sub_heading: params.locale === 'tr' 
+      ? "Scrolli'nin kapsamlı iş zekası ürünleri ve çözümlerini keşfedin."
+      : "Explore Scrolli's comprehensive business intelligence products and solutions."
+  };
 
-  const localizedSlugs = productPage.localizations?.reduce(
-    (acc: Record<string, string>, localization: any) => {
-      acc[localization.locale] = 'products';
-      return acc;
-    },
-    { [params.locale]: 'products' }
-  );
-  const featured = products?.data.filter(
+  const localizedSlugs = { [params.locale]: 'products' };
+
+  // Mock products data
+  const products = {
+    data: [
+      {
+        id: 1,
+        name: params.locale === 'tr' ? "İş Zekası Paketi" : "Business Intelligence Package",
+        description: params.locale === 'tr' 
+          ? "Kurulu şirketler için kapsamlı istihbarat çözümleri."
+          : "Comprehensive intelligence solutions for established companies.",
+        featured: true,
+        price: null
+      }
+    ]
+  };
+
+  const featured = products.data.filter(
     (product: { featured: boolean }) => product.featured
   );
 
@@ -75,7 +81,7 @@ export default async function Products(props: {
           {productPage.sub_heading}
         </Subheading>
         <Featured products={featured} locale={params.locale} />
-        <ProductItems products={products?.data} locale={params.locale} />
+        <ProductItems products={products.data} locale={params.locale} />
       </Container>
     </div>
   );
