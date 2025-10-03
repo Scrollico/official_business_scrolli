@@ -111,7 +111,7 @@ export default async function Contact(props: {
             
             {/* Calendly Widget */}
             <div className="calendly-inline-widget" 
-                 data-url="https://calendly.com/scrolli/consultation" 
+                 data-url="https://calendly.com/nihatavci/consultation" 
                  style={{ minWidth: '320px', height: '700px' }}>
             </div>
             <script 
