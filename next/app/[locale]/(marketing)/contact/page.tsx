@@ -58,8 +58,8 @@ export default async function Contact(props: {
 
 
         {/* Calendly Integration */}
-        <div className="max-w-7xl mx-auto mt-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="w-full mt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4 md:px-10 xl:px-4">
             {/* Left Side - Calendly Widget */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
               {/* Calendly Widget */}
