@@ -57,22 +57,81 @@ export default async function Contact(props: {
         </Subheading>
 
 
-        {/* Calendly Integration */}
+        {/* Contact Form & Trust Section */}
         <div className="w-full mt-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4 md:px-10 xl:px-4">
-            {/* Left Side - Calendly Widget */}
+            {/* Left Side - Contact Form */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              {/* Calendly Widget */}
-              <div 
-                className="calendly-inline-widget" 
-                data-url="https://calendly.com/scrolli-info/30min" 
-                style={{ minWidth: '320px', height: '700px' }}
-              >
-              </div>
-              <Script 
-                src="https://assets.calendly.com/assets/external/widget.js" 
-                strategy="afterInteractive"
-              />
+              <h2 className="text-3xl font-bold text-white mb-4">
+                {isTurkish ? "İletişim" : "Contact Us"}
+              </h2>
+              <p className="text-neutral-400 mb-8">
+                {isTurkish 
+                  ? "Bizimle iletişime geçin, size en kısa sürede dönüş yapalım."
+                  : "Please reach out to us and we will get back to you at the speed of light."
+                }
+              </p>
+              
+              <form className="space-y-6">
+                <div>
+                  <label htmlFor="fullName" className="block text-sm font-medium text-white mb-2">
+                    {isTurkish ? "Ad Soyad" : "Full Name"}
+                  </label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    defaultValue="Manu Arora"
+                    className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                    {isTurkish ? "E-posta Adresi" : "Email address"}
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    defaultValue="hello@scrolli.com"
+                    className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-white mb-2">
+                    {isTurkish ? "Şirket" : "Company"}
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    defaultValue="Scrolli"
+                    className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+                    {isTurkish ? "Mesaj" : "Message"}
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    placeholder={isTurkish ? "Mesajınızı buraya yazın" : "Enter your message here"}
+                    className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  />
+                </div>
+                
+                <button
+                  type="submit"
+                  className="w-full bg-white text-black font-semibold py-3 px-6 rounded-lg hover:bg-neutral-200 transition-colors duration-300"
+                >
+                  {isTurkish ? "Gönder" : "Submit"}
+                </button>
+              </form>
             </div>
 
             {/* Right Side - Trust & Testimonials */}
@@ -116,28 +175,6 @@ export default async function Contact(props: {
                   : "Join the ranks of successful entrepreneurs who have used Scrolli to turn their ideas into reality."
                 }
               </p>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 mt-12">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">500+</div>
-                  <div className="text-sm text-neutral-400">
-                    {isTurkish ? "Proje" : "Projects"}
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">98%</div>
-                  <div className="text-sm text-neutral-400">
-                    {isTurkish ? "Memnuniyet" : "Satisfaction"}
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">50+</div>
-                  <div className="text-sm text-neutral-400">
-                    {isTurkish ? "Sektör" : "Industries"}
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
