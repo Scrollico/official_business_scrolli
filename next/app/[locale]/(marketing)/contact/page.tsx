@@ -75,83 +75,68 @@ export default async function Contact(props: {
               />
             </div>
 
-            {/* Right Side - Contact Information */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <h2 className="text-2xl font-bold text-white mb-6 text-center">
-                {isTurkish ? "İletişim Bilgileri" : "Contact Information"}
-              </h2>
-              
-              <div className="space-y-8">
-                {/* Email */}
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <IconMail className="h-8 w-8 text-white" />
+            {/* Right Side - Trust & Testimonials */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 flex flex-col justify-center">
+              {/* Profile Images */}
+              <div className="flex justify-center mb-8">
+                <div className="flex -space-x-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 border-2 border-white/20 flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">AA</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {isTurkish ? "E-posta" : "Email"}
-                  </h3>
-                  <p className="text-neutral-400 mb-4">
-                    info@scrolli.com
-                  </p>
-                  <a
-                    href="mailto:info@scrolli.com"
-                    className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
-                  >
-                    {isTurkish ? "E-posta Gönder" : "Send Email"}
-                  </a>
-                </div>
-
-                {/* Phone */}
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <IconPhone className="h-8 w-8 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-blue-600 border-2 border-white/20 flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">GK</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {isTurkish ? "Telefon" : "Phone"}
-                  </h3>
-                  <p className="text-neutral-400 mb-4">
-                    +1 (555) 123-4567
-                  </p>
-                  <a
-                    href="tel:+15551234567"
-                    className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
-                  >
-                    {isTurkish ? "Ara" : "Call"}
-                  </a>
-                </div>
-
-                {/* Location */}
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <IconMapPin className="h-8 w-8 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-pink-600 border-2 border-white/20 flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">SM</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {isTurkish ? "Konum" : "Location"}
-                  </h3>
-                  <p className="text-neutral-400 mb-4">
-                    {isTurkish ? "İstanbul, Türkiye" : "Istanbul, Turkey"}
-                  </p>
-                  <a
-                    href="https://maps.app.goo.gl/example"
-                    className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {isTurkish ? "Haritada Görüntüle" : "View on Map"}
-                  </a>
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-orange-500 to-red-600 border-2 border-white/20 flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">JD</span>
+                  </div>
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-teal-500 to-green-600 border-2 border-white/20 flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">MR</span>
+                  </div>
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 border-2 border-white/20 flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">LS</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="mt-12 p-6 bg-white/5 rounded-lg border border-white/10">
-                <h3 className="text-lg font-semibold text-white mb-4 text-center">
-                  {isTurkish ? "Hızlı İletişim" : "Quick Contact"}
-                </h3>
-                <p className="text-neutral-400 text-center text-sm">
-                  {isTurkish 
-                    ? "Randevu planlamak istemiyorsanız, doğrudan iletişime geçebilirsiniz."
-                    : "If you prefer not to schedule, you can contact us directly."
-                  }
-                </p>
+              {/* Trust Statement */}
+              <h2 className="text-3xl font-bold text-white text-center mb-6">
+                {isTurkish 
+                  ? "Scrolli binlerce iş lideri tarafından güveniliyor" 
+                  : "Scrolli is trusted by thousands of business leaders"
+                }
+              </h2>
+
+              {/* Call to Action */}
+              <p className="text-neutral-400 text-center text-lg leading-relaxed">
+                {isTurkish 
+                  ? "Fikirlerini gerçeğe dönüştürmek için Scrolli'yi kullanan başarılı girişimcilerin arasına katılın."
+                  : "Join the ranks of successful entrepreneurs who have used Scrolli to turn their ideas into reality."
+                }
+              </p>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-4 mt-12">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">500+</div>
+                  <div className="text-sm text-neutral-400">
+                    {isTurkish ? "Proje" : "Projects"}
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">98%</div>
+                  <div className="text-sm text-neutral-400">
+                    {isTurkish ? "Memnuniyet" : "Satisfaction"}
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">50+</div>
+                  <div className="text-sm text-neutral-400">
+                    {isTurkish ? "Sektör" : "Industries"}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
