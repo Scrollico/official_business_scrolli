@@ -1,6 +1,7 @@
 'use client';
 
 import { IconCheck, IconPlus, IconReceipt2 } from '@tabler/icons-react';
+import Link from 'next/link';
 import React, { useMemo } from 'react';
 
 import { Container } from '../container';
@@ -101,6 +102,8 @@ const Card = ({ plan }: { plan: Plan }) => {
           )}
         </div>
         <Button
+          as={Link}
+          href="/contact"
           variant="outline"
           className={cn(
             'w-full mt-10 mb-4',
