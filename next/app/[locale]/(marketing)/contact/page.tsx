@@ -78,7 +78,7 @@ export default async function Contact(props: {
               />
             </div>
             
-            <div className="relative z-10 px-8">
+            <div className="relative z-10 px-8 py-8">
               <h2 className="text-4xl font-bold text-white mb-12">
                 {isTurkish 
                   ? "Bu Görüşmede Neler Bekleyebilirsiniz?" 
@@ -86,7 +86,7 @@ export default async function Contact(props: {
                 }
               </h2>
               
-              <div className="space-y-6 max-w-lg">
+              <div className="space-y-6 max-w-lg pb-8">
                 <div className="flex items-start space-x-4">
                   <div className="w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                   <p className="text-neutral-300 text-lg">
