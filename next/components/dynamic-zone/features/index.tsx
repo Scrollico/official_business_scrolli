@@ -16,6 +16,10 @@ import { SkeletonOne } from './skeletons/first';
 import { SkeletonFour } from './skeletons/fourth';
 import { SkeletonTwo } from './skeletons/second';
 import { SkeletonThree } from './skeletons/third';
+import { ExecutiveDailySkeleton } from './skeletons/executive-daily';
+import { MarketIntelligenceSkeleton } from './skeletons/market-intelligence';
+import { AIContentStudioSkeleton } from './skeletons/ai-content-studio';
+import { TrustedAIInfrastructureSkeleton } from './skeletons/trusted-ai-infrastructure';
 
 const wordToNumber: { [key: string]: number } = {
   one: 1,
@@ -59,7 +63,11 @@ export const Features = ({
               <CardTitle>{globe_card.title}</CardTitle>
               <CardDescription>{globe_card.description}</CardDescription>
               <CardSkeletonContainer>
-                <SkeletonOne />
+                {globe_card.title === 'Executive Daily' ? (
+                  <ExecutiveDailySkeleton />
+                ) : (
+                  <SkeletonOne />
+                )}
               </CardSkeletonContainer>
             </Card>
           )}
@@ -67,9 +75,20 @@ export const Features = ({
           {ray_card && (
             <Card
               className={`md:col-span-${convertWordToNumber(ray_card?.span) || '1'}`}
+              hasVignette={ray_card.title === 'AI Content Studio'}
             >
               <CardSkeletonContainer className="max-w-[16rem] mx-auto">
-                <SkeletonTwo />
+                {ray_card.title === 'AI Content Studio' ? (
+                  <AIContentStudioSkeleton 
+                    contentTypes={ray_card.contentTypes}
+                    channels={ray_card.channels}
+                    contentOptions={ray_card.contentOptions}
+                  />
+                ) : ray_card.title === 'Market Intelligence' ? (
+                  <MarketIntelligenceSkeleton subtitle={ray_card.subtitle} />
+                ) : (
+                  <SkeletonTwo />
+                )}
               </CardSkeletonContainer>
               <CardTitle>{ray_card.title}</CardTitle>
               <CardDescription>{ray_card.description}</CardDescription>
@@ -79,12 +98,20 @@ export const Features = ({
           {graph_card && (
             <Card
               className={`md:col-span-${convertWordToNumber(graph_card?.span) || '2'}`}
+              hasVignette={graph_card.title === 'Market Intelligence'}
             >
-              <CardSkeletonContainer
-                showGradient={false}
-                className="max-w-[16rem] mx-auto"
-              >
-                <SkeletonThree />
+              <CardSkeletonContainer className="max-w-[16rem] mx-auto">
+                {graph_card.title === 'Market Intelligence' ? (
+                  <MarketIntelligenceSkeleton subtitle={graph_card.subtitle} />
+                ) : graph_card.title === 'AI Content Studio' ? (
+                  <AIContentStudioSkeleton 
+                    contentTypes={graph_card.contentTypes}
+                    channels={graph_card.channels}
+                    contentOptions={graph_card.contentOptions}
+                  />
+                ) : (
+                  <SkeletonThree />
+                )}
               </CardSkeletonContainer>
               <CardTitle>{graph_card.title}</CardTitle>
               <CardDescription>{graph_card.description}</CardDescription>
@@ -94,9 +121,14 @@ export const Features = ({
           {social_media_card && (
             <Card
               className={`md:col-span-${convertWordToNumber(social_media_card?.span) || '1'}`}
+              hasVignette={social_media_card.title === 'Trusted AI Infrastructure'}
             >
-              <CardSkeletonContainer showGradient={false}>
-                <SkeletonFour />
+              <CardSkeletonContainer>
+                {social_media_card.title === 'Trusted AI Infrastructure' ? (
+                  <TrustedAIInfrastructureSkeleton />
+                ) : (
+                  <SkeletonFour />
+                )}
               </CardSkeletonContainer>
               <CardTitle>{social_media_card.title}</CardTitle>
               <CardDescription>{social_media_card.description}</CardDescription>

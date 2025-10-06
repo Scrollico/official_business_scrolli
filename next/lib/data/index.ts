@@ -120,7 +120,7 @@ export const pagesData = [
         heading: "Still have questions?",
         sub_heading: "Book a 30‑minute discovery call with our team.",
         CTAs: [
-          { text: "Schedule Consultation", URL: "/contact", variant: "primary" }
+          { text: "Get a free 30‑minute strategy call", URL: "/contact", variant: "primary" }
         ]
       }
     ],
@@ -161,7 +161,7 @@ export const pagesData = [
     dynamic_zone: [
       {
         __component: "dynamic-zone.form-next-to-section",
-        heading: "Schedule a Strategic Consultation",
+        heading: "Get a Free 30‑Minute Strategy Call",
         sub_heading: "Book a consultation with our business intelligence experts to discuss your strategic challenges and opportunities.",
         form: {
           inputs: [
@@ -187,7 +187,7 @@ export const pagesData = [
             },
             {
               type: "submit",
-              name: "Schedule Consultation"
+              name: "Get a free 30‑minute strategy call"
             }
           ]
         },
@@ -352,4 +352,3 @@ export function getSEOData(data: any) {
     description: 'Scrolli provides cutting-edge business intelligence, strategic research, and media partnerships to help companies navigate complex market dynamics.',
   };
 }
-

@@ -111,7 +111,7 @@ const Card = ({ plan }: { plan: Plan }) => {
               'bg-black text-white hover:bg-black/80 hover:text-white'
           )}
         >
-          Schedule Consultation
+          {plan.CTA?.text || 'Schedule Consultation'}
         </Button>
       </div>
       <div className="mt-1 p-4">

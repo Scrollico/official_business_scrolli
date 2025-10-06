@@ -5,17 +5,32 @@ import { cn } from '@/lib/utils';
 export const Card = ({
   className,
   children,
+  hasVignette = false,
 }: {
   className?: string;
   children: React.ReactNode;
+  hasVignette?: boolean;
 }) => {
   return (
     <div
       className={cn(
-        'p-8 rounded-3xl border border-[rgba(255,255,255,0.10)] bg-[rgba(40,40,40,0.30)] shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] group',
+        'p-8 rounded-3xl border border-[rgba(255,255,255,0.10)] bg-[rgba(40,40,40,0.30)] shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] group relative',
         className
       )}
     >
+      {hasVignette && (
+        <div className="absolute inset-0 rounded-3xl pointer-events-none z-50" style={{
+          background: `
+            radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.3) 100%),
+            linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 50%, rgba(0,0,0,0.1) 100%)
+          `,
+          boxShadow: `
+            inset 0 0 20px rgba(0,0,0,0.2),
+            inset 0 0 40px rgba(0,0,0,0.1),
+            0 0 20px rgba(0,0,0,0.3)
+          `
+        }} />
+      )}
       {children}
     </div>
   );
