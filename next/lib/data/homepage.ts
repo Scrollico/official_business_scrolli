@@ -55,9 +55,9 @@ export const homepageData = {
       },
       {
         __component: 'dynamic-zone.features',
-        heading: 'Strategic Intelligence Services',
+        heading: 'Alara AI: Strategic Intelligence for Decision-Makers',
         sub_heading:
-          "Scrolli delivers comprehensive business intelligence solutions designed to transform your organization's decision-making capabilities.",
+          'Alara AI equips executives with AI-powered intelligence to anticipate change, manage uncertainty, and make better decisions. From daily briefings to predictive simulations, Alara AI transforms complex data and information into clarity and insight.',
         globe_card: {
           title: 'Executive Daily',
           description:
@@ -292,9 +292,9 @@ export const homepageData = {
       },
       {
         __component: 'dynamic-zone.features',
-        heading: 'Stratejik İstihbarat Hizmetleri',
+        heading: 'Alara AI: Karar Vericiler için Stratejik İstihbarat',
         sub_heading:
-          'Scrolli, organizasyonunuzun karar verme yeteneklerini dönüştürmek için tasarlanmış kapsamlı iş zekası çözümleri sunar.',
+          'Alara AI, yöneticileri değişimi öngörmeleri, belirsizliği yönetmeleri ve daha iyi kararlar almaları için yapay zeka destekli istihbaratla donatır. Günlük brifinglerden öngörü simülasyonlarına kadar, Alara AI karmaşık veri ve bilgiyi netlik ve içgörüye dönüştürür.',
         globe_card: {
           title: 'Executive Daily',
           description:
