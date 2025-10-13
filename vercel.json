@@ -1,0 +1,7 @@
+{
+  "framework": "nextjs",
+  "installCommand": "cd next && yarn install --frozen-lockfile || yarn install",
+  "buildCommand": "cd next && yarn build",
+  "outputDirectory": "next/.next",
+  "devCommand": "cd next && yarn dev"
+}
