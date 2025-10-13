@@ -2,7 +2,7 @@
 
 import { useScroll, useTransform } from 'framer-motion';
 import { motion } from 'framer-motion';
-import React, { useRef } from 'react';
+import React, { memo, useRef } from 'react';
 
 export const StickyScroll = ({
   content,
@@ -33,7 +33,7 @@ export const StickyScroll = ({
   );
 };
 
-export const ScrollContent = ({
+export const ScrollContent = memo(({ 
   item,
   index,
 }: {
@@ -50,8 +50,8 @@ export const ScrollContent = ({
     target: ref,
     offset: ['start end', 'end start'],
   });
-  const translate = useTransform(scrollYProgress, [0, 1], [0, 250]);
-  const translateContent = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, 240]);
+  const translateContent = useTransform(scrollYProgress, [0, 1], [0, 240]);
   const opacity = useTransform(
     scrollYProgress,
     [0, 0.05, 0.5, 0.7, 1],
@@ -71,7 +71,7 @@ export const ScrollContent = ({
         duration: 0.3,
       }}
       key={item.title + index}
-      className="my-40  relative grid grid-cols-2 gap-8"
+      className="my-40  relative grid grid-cols-2 gap-8 items-start"
     >
       <motion.div
         key={item.title + index}
@@ -92,7 +92,7 @@ export const ScrollContent = ({
           className=""
         >
           <div>{item.icon}</div>
-          <motion.h2 className="max-w-md mt-2 font-bold text-2xl lg:text-4xl inline-block bg-clip-text text-left text-transparent bg-gradient-to-b from-white  to-white">
+          <motion.h2 className="max-w-md mt-2 font-bold text-2xl lg:text-4xl leading-tight inline-block bg-clip-text text-left text-transparent bg-gradient-to-b from-white  to-white">
             {item.title}
           </motion.h2>
 
@@ -103,9 +103,9 @@ export const ScrollContent = ({
       </div>
     </motion.div>
   );
-};
+});
 
-export const ScrollContentMobile = ({
+export const ScrollContentMobile = memo(({ 
   item,
   index,
 }: {
@@ -145,4 +145,4 @@ export const ScrollContentMobile = ({
       </div>
     </motion.div>
   );
-};
+});

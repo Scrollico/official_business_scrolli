@@ -2,7 +2,8 @@
 
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 import { Link } from 'next-view-transitions';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { IoIosMenu } from 'react-icons/io';
 import { IoIosClose } from 'react-icons/io';
 
@@ -35,6 +36,7 @@ export const MobileNavbar = ({
   const [open, setOpen] = useState(false);
 
   const { scrollY } = useScroll();
+  const pathname = usePathname();
 
   const [showBackground, setShowBackground] = useState(false);
 
@@ -45,6 +47,12 @@ export const MobileNavbar = ({
       setShowBackground(false);
     }
   });
+
+  // Close the menu automatically on route changes
+  useEffect(() => {
+    if (open) setOpen(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   return (
     <div
@@ -115,6 +123,7 @@ export const MobileNavbar = ({
                 }
                 as={Link}
                 href={`${item.URL?.startsWith('http') ? '' : `/${locale}`}${item.URL?.startsWith('/') ? item.URL : `/${item.URL || ''}`}`}
+                onClick={() => setOpen(false)}
               >
                 {item.text}
               </Button>

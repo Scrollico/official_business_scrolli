@@ -57,7 +57,7 @@ export default async function Contact(props: {
             </div>
             <Script 
               src="https://assets.calendly.com/assets/external/widget.js" 
-              strategy="afterInteractive"
+              strategy="beforeInteractive"
             />
           </div>
 

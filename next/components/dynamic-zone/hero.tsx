@@ -34,7 +34,7 @@ export const Hero = ({
       </motion.div>
       <Heading
         as="h1"
-        className="text-4xl md:text-4xl lg:text-8xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-10  py-6"
+        className="text-3xl md:text-4xl lg:text-7xl font-semibold max-w-6xl mx-auto text-center mt-6 relative z-10  py-4"
       >
         {heading.substring(0, heading.lastIndexOf(' '))}{' '}
         <Cover>{heading.split(' ').pop()}</Cover>

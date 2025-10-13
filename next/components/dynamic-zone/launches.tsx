@@ -3,7 +3,7 @@
 import { IconRocket } from '@tabler/icons-react';
 import { motion, useMotionValueEvent } from 'framer-motion';
 import { useScroll } from 'framer-motion';
-import React, { useRef, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 
 import { Heading } from '../elements/heading';
 import { Subheading } from '../elements/subheading';
@@ -19,15 +19,19 @@ export const Launches = ({
   sub_heading: string;
   launches: any[];
 }) => {
-  const launchesWithDecoration = launches.map((entry) => ({
-    ...entry,
-    icon: <IconRocket className="h-8 w-8 text-secondary" />,
-    content: (
-      <p className="text-4xl md:text-7xl font-bold text-neutral-800">
-        {entry.mission_number}
-      </p>
-    ),
-  }));
+  const launchesWithDecoration = useMemo(
+    () =>
+      launches.map((entry) => ({
+        ...entry,
+        icon: <IconRocket className="h-8 w-8 text-secondary" />,
+        content: (
+          <p className="text-4xl md:text-7xl leading-none mt-1 md:mt-3 font-bold text-neutral-800">
+            {entry.mission_number}
+          </p>
+        ),
+      })),
+    [launches]
+  );
 
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({

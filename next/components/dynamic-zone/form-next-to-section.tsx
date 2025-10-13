@@ -27,18 +27,17 @@ export function FormNextToSection({
   social_media_icon_links: any;
 }) {
   useEffect(() => {
-    // Load Calendly script
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    document.head.appendChild(script);
-
+    // Load Calendly script idempotently
+    const src = 'https://assets.calendly.com/assets/external/widget.js';
+    const existing = document.querySelector(`script[src="${src}"]`);
+    if (!existing) {
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      document.head.appendChild(script);
+    }
     return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
-      if (existingScript) {
-        document.head.removeChild(existingScript);
-      }
+      // Keep Calendly script cached; don't remove on unmount to speed re-entry
     };
   }, []);
 

@@ -16,7 +16,7 @@ export const homepageData = {
       {
         __component: 'dynamic-zone.hero',
         heading:
-          'Navigate Business Uncertainty with Comprehensive Intelligence',
+          'Navigate Business Uncertainty with In-Depth Intelligence',
         sub_heading:
           "Transform your organization with AI-powered intelligence, premium media projects, and strategic communication offered by Scrolli, Türkiye's in-depth news media.",
         CTAs: [
