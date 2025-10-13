@@ -9,6 +9,7 @@ import { Subheading } from '@/components/elements/subheading';
 import { generateMetadataObject } from '@/lib/shared/metadata';
 import { IconMail, IconPhone, IconMapPin } from '@tabler/icons-react';
 import Prism from '@/components/ui/prism';
+import CalendlyInline from '@/components/CalendlyInline';
 
 export async function generateStaticParams() {
   // Return supported locales for static export
@@ -47,17 +48,11 @@ export default async function Contact(props: {
       {/* Full Viewport Split Screen: Calendly Left, Content Right */}
       <div className="w-full min-h-screen pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
-          {/* Left Side - Calendly Widget */}
+          {/* Left Side - Calendly Widget (client-only to avoid hydration mismatch) */}
           <div className="min-h-screen bg-black flex items-center justify-center">
-            <div 
-              className="calendly-inline-widget" 
-              data-url="https://calendly.com/scrolli-info/30min" 
+            <CalendlyInline
+              url="https://calendly.com/scrolli-info/30min"
               style={{ minWidth: '90%', height: '120vh' }}
-            >
-            </div>
-            <Script 
-              src="https://assets.calendly.com/assets/external/widget.js" 
-              strategy="beforeInteractive"
             />
           </div>
 
