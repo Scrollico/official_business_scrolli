@@ -31,6 +31,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://assets.calendly.com" />
         <link rel="preconnect" href="https://calendly.com" />
         <link rel="dns-prefetch" href="https://calendly.com" />
+        <link rel="preload" as="script" href="https://assets.calendly.com/assets/external/widget.js" />
       </head>
       <body suppressHydrationWarning>
         <Preview />

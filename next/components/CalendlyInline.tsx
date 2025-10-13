@@ -10,6 +10,7 @@ type CalendlyInlineProps = {
 
 export default function CalendlyInline({ url, style, className }: CalendlyInlineProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const hasLoadedRef = useRef(false);
 
   useEffect(() => {
     const src = 'https://assets.calendly.com/assets/external/widget.js';
@@ -25,12 +26,13 @@ export default function CalendlyInline({ url, style, className }: CalendlyInline
     const tryInit = () => {
       // @ts-expect-error Calendly global provided by external script
       const Calendly = (window as any).Calendly;
-      if (Calendly && containerRef.current) {
+      if (Calendly && containerRef.current && !hasLoadedRef.current) {
         try {
           Calendly.initInlineWidget({
             url,
             parentElement: containerRef.current,
           });
+          hasLoadedRef.current = true;
         } catch {}
       }
     };
@@ -47,13 +49,14 @@ export default function CalendlyInline({ url, style, className }: CalendlyInline
   }, [url]);
 
   return (
-    <div
-      ref={containerRef}
-      className={className ? className : 'calendly-inline-widget'}
-      data-url={url}
-      style={style}
-      suppressHydrationWarning
-    />
+    <div ref={containerRef} className={className ? className : ''} style={style} suppressHydrationWarning>
+      {/* Skeleton while Calendly initializes */}
+      {!hasLoadedRef.current && (
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="animate-pulse w-10 h-10 rounded-full bg-neutral-800" />
+        </div>
+      )}
+    </div>
   );
 }
 
