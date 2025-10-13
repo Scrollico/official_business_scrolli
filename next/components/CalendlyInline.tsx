@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type CalendlyInlineProps = {
   url: string;
@@ -10,7 +10,7 @@ type CalendlyInlineProps = {
 
 export default function CalendlyInline({ url, style, className }: CalendlyInlineProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const hasLoadedRef = useRef(false);
+  const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
     const src = 'https://assets.calendly.com/assets/external/widget.js';
@@ -22,36 +22,50 @@ export default function CalendlyInline({ url, style, className }: CalendlyInline
       document.head.appendChild(scriptEl);
     }
 
-    // Ensure Calendly initializes after script is present
+    let retries = 0;
+    const maxRetries = 10;
+    const retryDelayMs = 300;
+
     const tryInit = () => {
       // @ts-expect-error Calendly global provided by external script
       const Calendly = (window as any).Calendly;
-      if (Calendly && containerRef.current && !hasLoadedRef.current) {
+      if (Calendly && containerRef.current && !initialized) {
         try {
           Calendly.initInlineWidget({
             url,
             parentElement: containerRef.current,
           });
-          hasLoadedRef.current = true;
+          setInitialized(true);
+          return;
         } catch {}
+      }
+      if (!initialized && retries < maxRetries) {
+        retries += 1;
+        setTimeout(tryInit, retryDelayMs);
       }
     };
 
-    if (scriptEl?.readyState === 'complete') {
+    if ((scriptEl as any)?.readyState === 'complete') {
       tryInit();
     } else {
       scriptEl?.addEventListener('load', tryInit, { once: true });
+      setTimeout(tryInit, retryDelayMs);
     }
 
     return () => {
-      // Leave script cached; Calendly manages iframes itself
+      // keep script cached
     };
-  }, [url]);
+  }, [url, initialized]);
 
   return (
-    <div ref={containerRef} className={className ? className : ''} style={style} suppressHydrationWarning>
-      {/* Skeleton while Calendly initializes */}
-      {!hasLoadedRef.current && (
+    <div
+      ref={containerRef}
+      className={className ? className : 'calendly-inline-widget'}
+      data-url={url}
+      style={style}
+      suppressHydrationWarning
+    >
+      {!initialized && (
         <div className="w-full h-full flex items-center justify-center">
           <div className="animate-pulse w-10 h-10 rounded-full bg-neutral-800" />
         </div>
