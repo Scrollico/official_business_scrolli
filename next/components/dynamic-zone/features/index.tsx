@@ -121,10 +121,10 @@ export const Features = ({
           {social_media_card && (
             <Card
               className={`md:col-span-${convertWordToNumber(social_media_card?.span) || '1'}`}
-              hasVignette={social_media_card.title === 'Trusted AI Infrastructure'}
+              hasVignette={!!social_media_card?.logos?.length}
             >
               <CardSkeletonContainer>
-                {social_media_card.title === 'Trusted AI Infrastructure' ? (
+                {social_media_card?.logos?.length ? (
                   <TrustedAIInfrastructureSkeleton />
                 ) : (
                   <SkeletonFour />
