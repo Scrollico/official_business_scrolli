@@ -312,24 +312,11 @@ export const homepageData = {
             item_2: '%98 Müşteri Memnuniyeti',
             item_3: '50+ Küresel Pazar',
           },
-          contentTypes: [
-            { id: 'article', label: 'Makale' },
-            { id: 'newsletter', label: 'Bülten' },
-          ],
-          channels: [
-            { id: 'linkedin', label: 'LinkedIn' },
-            { id: 'email', label: 'E-posta' },
-          ],
-          contentOptions: [
-            { id: 'generate', label: 'İçerik Üret' },
-            { id: 'select-articles', label: 'Makale Seç' },
-          ],
         },
         graph_card: {
           title: 'Market Intelligence',
           description:
             'Stratejik kararları yönlendirmek için gelişmiş trend takibi, erken sinyal tespiti ve tahmine dayalı senaryo modelleme.',
-          subtitle: 'Gelişmiş trend takibi ve sinyal tespiti',
           span: 'one',
           before_ray_items: {
             item_1:
