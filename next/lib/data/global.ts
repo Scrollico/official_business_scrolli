@@ -26,7 +26,7 @@ export const globalData = {
         { text: 'Pricing', URL: '/#pricing' },
         {
           text: 'Alara AI',
-          URL: 'https://alara.scrolli.co/',
+          URL: 'https://alara.scrolli.co',
           target: '_blank',
         },
         { text: 'Contact', URL: '/contact' },
@@ -105,7 +105,7 @@ export const globalData = {
         { text: 'Fiyatlandırma', URL: '/#pricing' },
         {
           text: 'Alara AI',
-          URL: 'https://alara.scrolli.co/',
+          URL: 'https://alara.scrolli.co',
           target: '_blank',
         },
         { text: 'İletişim', URL: '/contact' },
