@@ -8,10 +8,14 @@
     "strapi"
   ],
   "scripts": {
+    "dev": "cd next && npm run dev",
     "dev:next": "cd next && npm run dev",
     "dev:strapi": "cd strapi && npm run develop",
+    "build": "cd next && npm run build",
     "build:next": "cd next && npm run build",
     "build:strapi": "cd strapi && npm run build",
+    "start": "cd next && npm run start",
+    "lint": "cd next && npm run lint",
     "install:all": "cd next && npm install && cd ../strapi && npm install",
     "clean": "cd next && rm -rf .next node_modules && cd ../strapi && rm -rf .cache build node_modules"
   },
