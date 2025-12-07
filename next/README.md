@@ -31,8 +31,8 @@ A modern, responsive website built with Next.js, showcasing Scrolli's business i
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/nihatavci/strapi.git
-cd strapi/next
+git clone https://github.com/Scrollico/official_business_scrolli.git
+cd official_business_scrolli/next
 ```
 
 2. Install dependencies:

@@ -58,7 +58,7 @@ export const globalData = {
         { text: 'FAQ', URL: '/faq' },
       ],
       external_links: [
-        { text: 'GitHub', URL: 'https://github.com/Scrollico' },
+        { text: 'GitHub', URL: 'https://github.com/Scrollico/official_business_scrolli/tree/main' },
         { text: 'LinkedIn', URL: 'https://linkedin.com/company/scrolli' },
         { text: 'X', URL: 'https://x.com/scrollico' },
       ],
@@ -72,7 +72,7 @@ export const globalData = {
         },
         {
           text: 'GitHub',
-          URL: 'https://github.com/Scrollico',
+          URL: 'https://github.com/Scrollico/official_business_scrolli/tree/main',
           target: '_blank',
         },
       ],
@@ -141,7 +141,7 @@ export const globalData = {
         { text: 'SSS', URL: '/faq' },
       ],
       external_links: [
-        { text: 'GitHub', URL: 'https://github.com/Scrollico' },
+        { text: 'GitHub', URL: 'https://github.com/Scrollico/official_business_scrolli/tree/main' },
         { text: 'LinkedIn', URL: 'https://linkedin.com/company/scrolli' },
         { text: 'X', URL: 'https://x.com/scrollico' },
       ],
@@ -155,7 +155,7 @@ export const globalData = {
         },
         {
           text: 'GitHub',
-          URL: 'https://github.com/Scrollico',
+          URL: 'https://github.com/Scrollico/official_business_scrolli/tree/main',
           target: '_blank',
         },
       ],

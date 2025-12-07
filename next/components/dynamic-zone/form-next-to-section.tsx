@@ -51,7 +51,7 @@ export function FormNextToSection({
     },
     {
       title: 'github',
-      href: 'https://github.com/scrolli',
+      href: 'https://github.com/Scrollico/official_business_scrolli/tree/main',
       icon: (
         <IconBrandGithub className="h-5 w-5 text-muted  hover:text-neutral-100" />
       ),
