@@ -86,48 +86,65 @@ export const MobileNavbar = ({
               <>
                 {navItem.children && navItem.children.length > 0 ? (
                   <>
-                    {navItem.children.map((childNavItem: any, idx: number) => (
-                      <Link
-                        key={`link=${idx}`}
-                        href={`${childNavItem.URL?.startsWith('http') ? '' : `/${locale}`}${childNavItem.URL?.startsWith('/') ? childNavItem.URL : `/${childNavItem.URL || ''}`}`}
-                        onClick={() => setOpen(false)}
-                        className="relative max-w-[15rem] text-left text-2xl"
-                      >
-                        <span className="block text-white">
-                          {childNavItem.text}
-                        </span>
-                      </Link>
-                    ))}
+                    {navItem.children.map((childNavItem: any, idx: number) => {
+                      const href = childNavItem.URL?.startsWith('http') 
+                        ? childNavItem.URL 
+                        : `/${locale}${childNavItem.URL?.startsWith('/') ? childNavItem.URL : `/${childNavItem.URL || ''}`}`;
+                      return (
+                        <Link
+                          key={`link=${idx}`}
+                          href={href}
+                          onClick={() => setOpen(false)}
+                          className="relative max-w-[15rem] text-left text-2xl"
+                        >
+                          <span className="block text-white">
+                            {childNavItem.text}
+                          </span>
+                        </Link>
+                      );
+                    })}
                   </>
                 ) : (
-                  <Link
-                    key={`link=${idx}`}
-                    href={`${navItem.URL?.startsWith('http') ? '' : `/${locale}`}${navItem.URL?.startsWith('/') ? navItem.URL : `/${navItem.URL || ''}`}`}
-                    onClick={() => setOpen(false)}
-                    className="relative z-50"
-                  >
-                    <span className="block text-[26px] text-white">
-                      {navItem.text}
-                    </span>
-                  </Link>
+                  (() => {
+                    const href = navItem.URL?.startsWith('http') 
+                      ? navItem.URL 
+                      : `/${locale}${navItem.URL?.startsWith('/') ? navItem.URL : `/${navItem.URL || ''}`}`;
+                    return (
+                      <Link
+                        key={`link=${idx}`}
+                        href={href}
+                        onClick={() => setOpen(false)}
+                        className="relative z-50"
+                      >
+                        <span className="block text-[26px] text-white">
+                          {navItem.text}
+                        </span>
+                      </Link>
+                    );
+                  })()
                 )}
               </>
             ))}
           </div>
           <div className="flex flex-row w-full items-start gap-2.5  px-8 py-4 ">
-            {rightNavbarItems.map((item, index) => (
-              <Button
-                key={item.text}
-                variant={
-                  index === rightNavbarItems.length - 1 ? 'primary' : 'simple'
-                }
-                as={Link}
-                href={`${item.URL?.startsWith('http') ? '' : `/${locale}`}${item.URL?.startsWith('/') ? item.URL : `/${item.URL || ''}`}`}
-                onClick={() => setOpen(false)}
-              >
-                {item.text}
-              </Button>
-            ))}
+            {rightNavbarItems.map((item, index) => {
+              const href = item.URL?.startsWith('http') 
+                ? item.URL 
+                : `/${locale}${item.URL?.startsWith('/') ? item.URL : `/${item.URL || ''}`}`;
+              return (
+                <Button
+                  key={item.text}
+                  variant={
+                    index === rightNavbarItems.length - 1 ? 'primary' : 'simple'
+                  }
+                  as={Link}
+                  href={href}
+                  onClick={() => setOpen(false)}
+                >
+                  {item.text}
+                </Button>
+              );
+            })}
           </div>
         </div>
       )}

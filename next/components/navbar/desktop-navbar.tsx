@@ -76,32 +76,42 @@ export const DesktopNavbar = ({
       <div className="flex flex-row gap-2 items-center">
         <Logo locale={locale} image={logo?.image} />
         <div className="flex items-center gap-1.5">
-          {leftNavbarItems.map((item) => (
-            <NavbarItem
-              href={`${item.URL?.startsWith('http') ? '' : `/${locale}`}${item.URL?.startsWith('/') ? item.URL : `/${item.URL || ''}`}` as never}
-              key={item.text}
-              target={item.target}
-            >
-              {item.text}
-            </NavbarItem>
-          ))}
+          {leftNavbarItems.map((item) => {
+            const href = item.URL?.startsWith('http') 
+              ? item.URL 
+              : `/${locale}${item.URL?.startsWith('/') ? item.URL : `/${item.URL || ''}`}`;
+            return (
+              <NavbarItem
+                href={href as never}
+                key={item.text}
+                target={item.target}
+              >
+                {item.text}
+              </NavbarItem>
+            );
+          })}
         </div>
       </div>
       <div className="flex space-x-2 items-center">
         <LocaleSwitcher currentLocale={locale} />
 
-        {rightNavbarItems.map((item, index) => (
-          <Button
-            key={item.text}
-            variant={
-              index === rightNavbarItems.length - 1 ? 'primary' : 'simple'
-            }
-            as={Link}
-            href={`${item.URL?.startsWith('http') ? '' : `/${locale}`}${item.URL?.startsWith('/') ? item.URL : `/${item.URL || ''}`}`}
-          >
-            {item.text}
-          </Button>
-        ))}
+        {rightNavbarItems.map((item, index) => {
+          const href = item.URL?.startsWith('http') 
+            ? item.URL 
+            : `/${locale}${item.URL?.startsWith('/') ? item.URL : `/${item.URL || ''}`}`;
+          return (
+            <Button
+              key={item.text}
+              variant={
+                index === rightNavbarItems.length - 1 ? 'primary' : 'simple'
+              }
+              as={Link}
+              href={href}
+            >
+              {item.text}
+            </Button>
+          );
+        })}
       </div>
     </motion.div>
   );
