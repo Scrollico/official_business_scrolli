@@ -103,7 +103,10 @@ export const ScrollContent = memo(({
       </div>
     </motion.div>
   );
+}, (prevProps, nextProps) => {
+  return prevProps.item.title === nextProps.item.title && prevProps.index === nextProps.index;
 });
+ScrollContent.displayName = 'ScrollContent';
 
 export const ScrollContentMobile = memo(({ 
   item,
@@ -145,4 +148,7 @@ export const ScrollContentMobile = memo(({
       </div>
     </motion.div>
   );
+}, (prevProps, nextProps) => {
+  return prevProps.item.title === nextProps.item.title && prevProps.index === nextProps.index;
 });
+ScrollContentMobile.displayName = 'ScrollContentMobile';
