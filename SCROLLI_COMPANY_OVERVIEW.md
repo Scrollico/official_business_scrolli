@@ -161,7 +161,7 @@ Identification and development of strategic partnerships across key markets for 
 - **Website**: [scrolli.com](https://scrolli.com)
 - **Email**: info@scrolli.com
 - **LinkedIn**: [Scrolli](https://linkedin.com/company/scrolli)
-- **GitHub**: [Scrolli](https://github.com/scrolli)
+- **GitHub**: [Scrolli](https://github.com/Scrollico/official_business_scrolli/tree/main)
 - **X (Twitter)**: [@scrolli](https://x.com/scrolli)
 
 ### Schedule a Consultation
