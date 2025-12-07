@@ -104,7 +104,14 @@ export const ScrollContent = memo(({
     </motion.div>
   );
 }, (prevProps, nextProps) => {
-  return prevProps.item.title === nextProps.item.title && prevProps.index === nextProps.index;
+  // Compare all properties that are actually rendered in the component
+  return (
+    prevProps.index === nextProps.index &&
+    prevProps.item.title === nextProps.item.title &&
+    prevProps.item.description === nextProps.item.description &&
+    prevProps.item.icon === nextProps.item.icon &&
+    prevProps.item.content === nextProps.item.content
+  );
 });
 ScrollContent.displayName = 'ScrollContent';
 
@@ -149,6 +156,13 @@ export const ScrollContentMobile = memo(({
     </motion.div>
   );
 }, (prevProps, nextProps) => {
-  return prevProps.item.title === nextProps.item.title && prevProps.index === nextProps.index;
+  // Compare all properties that are actually rendered in the component
+  return (
+    prevProps.index === nextProps.index &&
+    prevProps.item.title === nextProps.item.title &&
+    prevProps.item.description === nextProps.item.description &&
+    prevProps.item.icon === nextProps.item.icon &&
+    prevProps.item.content === nextProps.item.content
+  );
 });
 ScrollContentMobile.displayName = 'ScrollContentMobile';
