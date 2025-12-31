@@ -154,7 +154,7 @@ Best regards,
   };
 
   return (
-    <div className="p-4 h-full relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-lg flex flex-col border border-white/10">
+    <div className="p-4 h-full relative overflow-hidden bg-[rgba(75,85,99,0.40)] rounded-lg flex flex-col border border-[rgba(255,255,255,0.10)] shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset]">
       <div
         className="absolute inset-0 rounded-lg pointer-events-none"
         style={{

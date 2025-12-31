@@ -34,9 +34,9 @@ export function LocaleSwitcher({ currentLocale }: { currentLocale: string }) {
           <Link key={locale} href={generateLocalizedPath(locale)}>
             <div
               className={cn(
-                'flex cursor-pointer items-center justify-center text-sm leading-[110%] w-8 py-1 rounded-md hover:bg-neutral-800 hover:text-white/80 text-white hover:shadow-[0px_1px_0px_0px_var(--neutral-600)_inset] transition duration-200',
+                'flex cursor-pointer items-center justify-center text-sm leading-[110%] w-8 py-1 rounded-md hover:bg-elevated hover:text-white/90 text-white hover:shadow-[0px_1px_0px_0px_var(--borderLight)_inset] transition duration-200',
                 locale === currentLocale
-                  ? 'bg-neutral-800 text-white shadow-[0px_1px_0px_0px_var(--neutral-600)_inset]'
+                  ? 'bg-elevated text-white shadow-[0px_1px_0px_0px_var(--borderLight)_inset]'
                   : ''
               )}
             >

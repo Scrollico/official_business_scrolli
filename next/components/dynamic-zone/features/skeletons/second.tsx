@@ -212,7 +212,7 @@ const Container = ({
     >
       <div
         className={cn(
-          'h-10  text-xs px-2 text-neutral-400  rounded-[5px] flex items-center justify-center bg-neutral-900 shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)]'
+          'h-10  text-xs px-2 text-neutral-400  rounded-[5px] flex items-center justify-center bg-[rgba(75,85,99,0.40)] shadow-[0px_0px_8px_0px_rgba(248,248,248,0.25)_inset,0px_32px_24px_-16px_rgba(0,0,0,0.40)]'
         )}
       >
         {children}

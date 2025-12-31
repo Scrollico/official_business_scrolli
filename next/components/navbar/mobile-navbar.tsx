@@ -59,7 +59,7 @@ export const MobileNavbar = ({
       className={cn(
         'flex justify-between bg-transparent items-center w-full rounded-md px-2.5 py-1.5 transition duration-200',
         showBackground &&
-          ' bg-neutral-900  shadow-[0px_-2px_0px_0px_var(--neutral-800),0px_2px_0px_0px_var(--neutral-800)]'
+          ' bg-elevated  shadow-[0px_-2px_0px_0px_var(--elevated),0px_2px_0px_0px_var(--elevated)]'
       )}
     >
       <Logo image={logo?.image} />

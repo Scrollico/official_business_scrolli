@@ -14,10 +14,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        charcoal: '#08090A',
+        charcoal: '#374152',
         lightblack: '#1C1C1C',
         secondary: '#E6E6E6',
         muted: 'var(--neutral-200)',
+        // Elevated surfaces - lighter for better contrast with new background
+        elevated: '#4B5563', // gray-600, lighter than previous #1f2937
+        // Lighter borders for better visibility
+        borderLight: '#6B7280', // gray-500
+        borderMedium: '#9CA3AF', // gray-400
       },
       boxShadow: {
         derek: `0px 0px 0px 1px rgb(0 0 0 / 0.06),

@@ -19,7 +19,7 @@ export const BlogCard = ({
 }) => {
   return (
     <Link
-      className="shadow-derek grid grid-cols-1 md:grid-cols-2  rounded-3xl group border border-transparent hover:border-neutral-800 w-full hover:bg-neutral-900  overflow-hidden  hover:scale-[1.02] transition duration-200"
+      className="shadow-derek grid grid-cols-1 md:grid-cols-2  rounded-3xl group border border-transparent hover:border-borderLight w-full hover:bg-elevated  overflow-hidden  hover:scale-[1.02] transition duration-200"
       href={`/${locale}/blog/${article.slug}`}
     >
       <div className="">
@@ -32,18 +32,18 @@ export const BlogCard = ({
             className="h-full object-cover object-top w-full rounded-3xl"
           />
         ) : (
-          <div className="h-full flex items-center justify-center group-hover:bg-neutral-900">
+          <div className="h-full flex items-center justify-center group-hover:bg-elevated">
             {/* <Logo /> */}
           </div>
         )}
       </div>
-      <div className="p-4 md:p-8 group-hover:bg-neutral-900 flex flex-col justify-between">
+      <div className="p-4 md:p-8 group-hover:bg-[rgba(75,85,99,0.40)] flex flex-col justify-between">
         <div>
           <div className="flex gap-4 flex-wrap mb-4">
             {article.categories?.map((category, idx) => (
               <p
                 key={`category-${idx}`}
-                className="text-xs font-bold text-muted px-4 py-2 rounded-full bg-neutral-800 capitalize"
+                className="text-xs font-bold text-muted px-4 py-2 rounded-full bg-elevated capitalize"
               >
                 {category.name}
               </p>
@@ -84,7 +84,7 @@ export const BlogCardVertical = ({
 }) => {
   return (
     <Link
-      className="shadow-derek   rounded-3xl group border border-transparent hover:border-neutral-800 w-full hover:bg-neutral-900  overflow-hidden  hover:scale-[1.02] transition duration-200"
+      className="shadow-derek   rounded-3xl group border border-transparent hover:border-borderLight w-full hover:bg-elevated  overflow-hidden  hover:scale-[1.02] transition duration-200"
       href={`/${locale}/blog/${article.slug}`}
     >
       <div className="">
@@ -97,18 +97,18 @@ export const BlogCardVertical = ({
             className=" h-64 md:h-96 object-cover object-top w-full rounded-3xl"
           />
         ) : (
-          <div className=" h-64 md:h-96 flex items-center justify-center group-hover:bg-neutral-900">
+          <div className=" h-64 md:h-96 flex items-center justify-center group-hover:bg-elevated">
             {/* <Logo /> */}
           </div>
         )}
       </div>
-      <div className="p-4 md:p-8 group-hover:bg-neutral-900 flex flex-col justify-between">
+      <div className="p-4 md:p-8 group-hover:bg-[rgba(75,85,99,0.40)] flex flex-col justify-between">
         <div>
           <div className="flex gap-4 flex-wrap mb-4">
             {article.categories?.map((category, idx) => (
               <p
                 key={`category-${idx}`}
-                className="text-xs font-bold text-muted px-4 py-2 rounded-full bg-neutral-800 capitalize"
+                className="text-xs font-bold text-muted px-4 py-2 rounded-full bg-elevated capitalize"
               >
                 {category.name}
               </p>

@@ -25,7 +25,7 @@ export const Launches = ({
         ...entry,
         icon: <IconRocket className="h-8 w-8 text-secondary" />,
         content: (
-          <p className="text-4xl md:text-7xl leading-none mt-1 md:mt-3 font-bold text-neutral-800">
+          <p className="text-4xl md:text-7xl leading-none mt-1 md:mt-3 font-bold text-white">
             {entry.mission_number}
           </p>
         ),
@@ -38,7 +38,7 @@ export const Launches = ({
     target: ref,
     offset: ['start end', 'end start'],
   });
-  const backgrounds = ['var(--charcoal)', 'var(--zinc-900)', 'var(--charcoal)'];
+  const backgrounds = ['var(--charcoal)', 'var(--charcoal)', 'var(--charcoal)'];
 
   const [gradient, setGradient] = useState(backgrounds[0]);
 

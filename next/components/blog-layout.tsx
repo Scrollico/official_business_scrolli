@@ -34,7 +34,7 @@ export async function BlogLayout({
             alt={article.title}
           />
         ) : (
-          <div className="h-40 md:h-96 w-full aspect-squace rounded-3xl shadow-derek bg-neutral-900 flex items-center justify-center">
+          <div className="h-40 md:h-96 w-full aspect-squace rounded-3xl shadow-derek bg-elevated flex items-center justify-center">
             {/* <Logo /> */}
           </div>
         )}
@@ -46,7 +46,7 @@ export async function BlogLayout({
               {article.categories?.map((category, idx) => (
                 <p
                   key={`category-${idx}`}
-                  className="text-xs font-bold text-muted px-2 py-1 rounded-full bg-neutral-800 capitalize"
+                  className="text-xs font-bold text-muted px-2 py-1 rounded-full bg-elevated capitalize"
                 >
                   {category.name}
                 </p>
@@ -58,7 +58,7 @@ export async function BlogLayout({
               </h1>
             </header>
             <div className="mt-8 prose prose-sm prose-invert">{children}</div>
-            <div className="flex space-x-2 items-center pt-12 border-t border-neutral-800 mt-12">
+            <div className="flex space-x-2 items-center pt-12 border-t border-borderLight mt-12">
               <div className="flex space-x-2 items-center ">
                 {/* <StrapiImage 
                   src={article.authorAvatar}

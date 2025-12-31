@@ -45,11 +45,17 @@ export default async function Contact(props: {
     <div className="relative overflow-hidden w-full min-h-screen">
       <AmbientColor />
       
+      {/* Preload Calendly script early for faster loading */}
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="afterInteractive"
+      />
+      
       {/* Full Viewport Split Screen: Calendly Left, Content Right */}
       <div className="w-full min-h-screen pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           {/* Left Side - Calendly Widget (client-only to avoid hydration mismatch) */}
-          <div className="min-h-screen bg-black flex items-center justify-center">
+          <div className="min-h-screen bg-charcoal flex items-center justify-center">
             <CalendlyInline
               url="https://calendly.com/scrolli-info/30min"
               style={{ minWidth: '90%', height: '120vh' }}
@@ -57,7 +63,7 @@ export default async function Contact(props: {
           </div>
 
           {/* Right Side - Call Expectations */}
-          <div className="min-h-screen flex flex-col justify-center items-center text-center relative bg-black pt-20">
+          <div className="min-h-screen flex flex-col justify-center items-center text-center relative bg-charcoal pt-20">
             {/* Prism Background */}
             <div className="absolute inset-0">
               <Prism

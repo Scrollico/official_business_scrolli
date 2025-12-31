@@ -22,12 +22,12 @@ export const Register = () => {
         <input
           type="email"
           placeholder="Email Address"
-          className="h-10 pl-4 w-full mb-4 rounded-md text-sm bg-charcoal border border-neutral-800 text-white placeholder-neutral-500 outline-none focus:outline-none active:outline-none focus:ring-2 focus:ring-neutral-800"
+          className="h-10 pl-4 w-full mb-4 rounded-md text-sm bg-charcoal border border-borderLight text-white placeholder-neutral-500 outline-none focus:outline-none active:outline-none focus:ring-2 focus:ring-borderLight"
         />
         <input
           type="password"
           placeholder="Password"
-          className="h-10 pl-4 w-full mb-4 rounded-md text-sm bg-charcoal border border-neutral-800 text-white placeholder-neutral-500 outline-none focus:outline-none active:outline-none focus:ring-2 focus:ring-neutral-800"
+          className="h-10 pl-4 w-full mb-4 rounded-md text-sm bg-charcoal border border-borderLight text-white placeholder-neutral-500 outline-none focus:outline-none active:outline-none focus:ring-2 focus:ring-borderLight"
         />
         <Button variant="muted" type="submit" className="w-full py-3">
           <span className="text-sm">Sign up</span>

@@ -75,7 +75,6 @@ export const Features = ({
           {ray_card && (
             <Card
               className={`md:col-span-${convertWordToNumber(ray_card?.span) || '1'}`}
-              hasVignette={ray_card.title === 'AI Content Studio'}
             >
               <CardSkeletonContainer className="max-w-[16rem] mx-auto">
                 {ray_card.title === 'AI Content Studio' ? (
@@ -98,7 +97,6 @@ export const Features = ({
           {graph_card && (
             <Card
               className={`md:col-span-${convertWordToNumber(graph_card?.span) || '2'}`}
-              hasVignette={graph_card.title === 'Market Intelligence'}
             >
               <CardSkeletonContainer className="max-w-[16rem] mx-auto">
                 {graph_card.title === 'Market Intelligence' ? (
@@ -121,7 +119,6 @@ export const Features = ({
           {social_media_card && (
             <Card
               className={`md:col-span-${convertWordToNumber(social_media_card?.span) || '1'}`}
-              hasVignette={!!social_media_card?.logos?.length}
             >
               <CardSkeletonContainer>
                 {social_media_card?.logos?.length ? (

@@ -14,7 +14,7 @@ export const Featured = ({
 }) => {
   return (
     <div className="py-20">
-      <h2 className="text-2xl md:text-4xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-white to-white mb-2">
+      <h2 className="text-2xl md:text-4xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-500 via-white to-white mb-2">
         Featured
       </h2>
       <p className="text-neutral-500 text-lg mt-4 mb-10">

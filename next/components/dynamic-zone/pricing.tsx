@@ -61,13 +61,13 @@ const Card = ({ plan }: { plan: Plan }) => {
   return (
     <div
       className={cn(
-        'p-4 md:p-4 rounded-3xl bg-neutral-900 border-2 border-neutral-800 max-w-md',
+        'p-4 md:p-4 rounded-3xl bg-elevated border-2 border-borderLight max-w-md',
         plan.featured && 'border-neutral-50 bg-neutral-100'
       )}
     >
       <div
         className={cn(
-          'p-4 bg-neutral-800 rounded-2xl shadow-[0px_-1px_0px_0px_var(--neutral-700)]',
+          'p-4 bg-neutral-700 rounded-2xl shadow-[0px_-1px_0px_0px_var(--borderLight)]',
           plan.featured && 'bg-white shadow-aceternity'
         )}
       >
@@ -78,7 +78,7 @@ const Card = ({ plan }: { plan: Plan }) => {
           {plan.featured && (
             <div
               className={cn(
-                'font-medium text-xs px-3 py-1 rounded-full relative bg-neutral-900'
+                'font-medium text-xs px-3 py-1 rounded-full relative bg-elevated'
               )}
             >
               <div className="absolute inset-x-0 bottom-0 w-3/4 mx-auto h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
@@ -174,13 +174,13 @@ const Divider = ({ featured }: { featured?: boolean }) => {
       />
       <div
         className={cn(
-          'w-full h-px bg-neutral-800',
+          'w-full h-px bg-borderLight',
           featured && 'bg-neutral-200'
         )}
       />
       <div
         className={cn(
-          'absolute inset-0 h-5 w-5 m-auto rounded-xl bg-neutral-800 shadow-[0px_-1px_0px_0px_var(--neutral-700)] flex items-center justify-center',
+          'absolute inset-0 h-5 w-5 m-auto rounded-xl bg-elevated shadow-[0px_-1px_0px_0px_var(--borderLight)] flex items-center justify-center',
           featured && 'bg-white shadow-aceternity'
         )}
       >

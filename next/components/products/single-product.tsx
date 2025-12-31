@@ -18,7 +18,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
   const { addToCart } = useCart();
 
   return (
-    <div className="bg-gradient-to-b from-neutral-900 to-neutral-950  p-4 md:p-10 rounded-md">
+    <div className="bg-gradient-to-b from-elevated to-neutral-950  p-4 md:p-10 rounded-md">
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
           {/* <AnimatePresence initial={false} mode="popLayout"> */}
@@ -90,7 +90,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
               product.plans.map((plan, index) => (
                 <li
                   key={index}
-                  className=" bg-neutral-800 text-sm text-white px-3 py-1 rounded-full font-medium"
+                  className=" bg-elevated text-sm text-white px-3 py-1 rounded-full font-medium"
                 >
                   {plan.name}
                 </li>
@@ -105,7 +105,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
               product.categories?.map((category, idx) => (
                 <li
                   key={`category-${idx}`}
-                  className=" bg-neutral-800 text-sm text-white px-3 py-1 rounded-full font-medium"
+                  className=" bg-elevated text-sm text-white px-3 py-1 rounded-full font-medium"
                 >
                   {category.name}
                 </li>
@@ -122,7 +122,7 @@ const Divider = () => {
   return (
     <div className="relative">
       <div className="w-full h-px bg-neutral-950" />
-      <div className="w-full h-px bg-neutral-800" />
+      <div className="w-full h-px bg-borderLight" />
     </div>
   );
 };
