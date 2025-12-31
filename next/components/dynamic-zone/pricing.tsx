@@ -104,12 +104,8 @@ const Card = ({ plan }: { plan: Plan }) => {
         <Button
           as={Link}
           href="/contact"
-          variant="outline"
-          className={cn(
-            'w-full mt-10 mb-4',
-            plan.featured &&
-              'bg-black text-white hover:bg-black/80 hover:text-white'
-          )}
+          variant="primary"
+          className="w-full mt-10 mb-4"
         >
           {plan.CTA?.text || 'Schedule Consultation'}
         </Button>

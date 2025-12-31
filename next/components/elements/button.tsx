@@ -26,10 +26,18 @@ export const Button: React.FC<ButtonProps> = ({
       : variant === 'outline'
         ? 'bg-white relative z-10 hover:bg-secondary/90 hover:shadow-xl  text-black border border-black hover:text-black text-sm md:text-sm transition font-medium duration-200  rounded-md px-4 py-2  flex items-center justify-center'
         : variant === 'primary'
-          ? 'bg-secondary relative z-10 hover:bg-secondary/90  border border-secondary text-black text-sm md:text-sm transition font-medium duration-200  rounded-md px-4 py-2  flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF60_inset,_0px_1px_0px_0px_#FFFFFF60_inset  hover:-translate-y-1 active:-translate-y-0'
+          ? 'relative z-10 text-[#111827] font-medium rounded-md h-9 px-4 text-sm border-0 outline-none inline-flex items-center justify-center whitespace-nowrap transition-opacity duration-200 hover:opacity-80 disabled:pointer-events-none disabled:opacity-50'
           : variant === 'muted'
-            ? 'bg-elevated relative z-10 hover:bg-neutral-700  border border-transparent text-white text-sm md:text-sm transition font-medium duration-200  rounded-md px-4 py-2  flex items-center justify-center shadow-[0px_1px_0px_0px_#FFFFFF20_inset]'
+            ? 'relative z-10 text-[#111827] font-medium rounded-md h-9 px-4 text-sm border-0 outline-none inline-flex items-center justify-center whitespace-nowrap transition-opacity duration-200 hover:opacity-80 disabled:pointer-events-none disabled:opacity-50'
             : '';
+  
+  // Beige gradient style for primary and muted variants
+  const beigeGradientStyle = (variant === 'primary' || variant === 'muted')
+    ? {
+        background: 'linear-gradient(to top, #D4CFB8, #F8F5E4, #FEFCF7)',
+      }
+    : undefined;
+  
   const Element = Tag as any;
 
   return (
@@ -39,6 +47,7 @@ export const Button: React.FC<ButtonProps> = ({
         variantClass,
         className
       )}
+      style={beigeGradientStyle}
       {...props}
     >
       {children ?? `Get Started`}
