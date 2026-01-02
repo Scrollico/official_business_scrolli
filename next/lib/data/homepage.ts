@@ -21,7 +21,7 @@ export const homepageData = {
           "Transform your organization with AI-powered intelligence, premium media projects, and strategic communication offered by Scrolli, Türkiye's in-depth news media.",
         CTAs: [
           {
-            text: 'Get a free 30‑minute strategy call',
+            text: 'Schedule Consultation',
             URL: '/contact',
             variant: 'primary',
           },
@@ -258,7 +258,7 @@ export const homepageData = {
           "Organizasyonunuzu Türkiye'nin derinlemesine haber medyası Scrolli tarafından sunulan AI destekli istihbarat, premium medya projeleri ve stratejik iletişimle dönüştürün.",
         CTAs: [
           {
-            text: 'Ücretsiz Strateji Görüşmesi',
+            text: 'Danışma Planla',
             URL: '/contact',
             variant: 'primary',
           },
