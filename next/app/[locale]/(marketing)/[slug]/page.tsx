@@ -3,11 +3,13 @@ import { Metadata } from 'next';
 import ClientSlugHandler from '../ClientSlugHandler';
 import PageContent from '@/lib/shared/PageContent';
 import { generateMetadataObject } from '@/lib/shared/metadata';
-import { getPageData } from '@/lib/data';
+import { getPageData, pagesData } from '@/lib/data';
 
 export async function generateStaticParams() {
-  // Return empty array for static export - no dynamic pages
-  return [];
+  return pagesData.map((page) => ({
+    slug: page.slug,
+    locale: page.locale,
+  }));
 }
 
 export const dynamicParams = false;

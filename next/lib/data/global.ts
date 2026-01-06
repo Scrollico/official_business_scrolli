@@ -23,7 +23,8 @@ export const globalData = {
         },
       },
       left_navbar_items: [
-        { text: 'Discover', URL: 'https://scrolli.co', target: '_blank' },
+        { text: 'Discover', URL: '/' },
+        { text: 'Visit scrolli.co', URL: 'https://scrolli.co', target: '_blank' },
         {
           text: 'AI Business Suite',
           URL: '/services/ai-business-suite',
@@ -103,7 +104,8 @@ export const globalData = {
         },
       },
       left_navbar_items: [
-        { text: 'Keşfet', URL: 'https://scrolli.co', target: '_blank' },
+        { text: 'Keşfet', URL: '/' },
+        { text: 'scrolli.co\'yu Ziyaret Et', URL: 'https://scrolli.co', target: '_blank' },
         {
           text: 'AI Business Suite',
           URL: '/services/ai-business-suite',
