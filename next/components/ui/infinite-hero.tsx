@@ -255,14 +255,12 @@ export default function InfiniteHero({
     const rootRef = useRef<HTMLDivElement>(null);
     const bgRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
-    const gridRef = useRef<HTMLDivElement>(null);
 
 
     useGSAP(
         () => {
             // Initial states
             if (textRef.current) gsap.set(textRef.current, { opacity: 0, y: 30 });
-            if (gridRef.current) gsap.set(gridRef.current, { opacity: 0, y: 50 });
 
             const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
@@ -270,12 +268,7 @@ export default function InfiniteHero({
                 opacity: 1,
                 y: 0,
                 duration: 1.2,
-            }, 0.2)
-                .to(gridRef.current, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1.2,
-                }, 0.6);
+            }, 0.2);
 
         },
         { scope: rootRef },
@@ -288,32 +281,23 @@ export default function InfiniteHero({
         subtle: "text-secondary/70",
     };
 
-    const defaultImages = {
-        executive: "/images/mockups/executive daily.webp",
-        market: "/images/mockups/market intelligence.webp",
-        content: "/images/mockups/content studio.webp",
-        settings: "/images/mockups/settings.webp",
-    };
-
-    const activeImages = images || defaultImages;
-
     return (
         <div
             ref={rootRef}
-            className="relative min-h-screen w-full overflow-hidden bg-charcoal text-white"
+            className="relative h-svh w-full overflow-hidden bg-charcoal text-white"
         >
-            <div className="fixed inset-0 z-0" ref={bgRef}>
+            <div className="absolute inset-0 z-0" ref={bgRef}>
                 <ShaderBackground
                     className="h-full w-full"
                 />
             </div>
 
-            <div className="pointer-events-none fixed inset-0 z-0 [background:radial-gradient(120%_80%_at_50%_50%,_transparent_40%,_#374152_100%)]" />
+            <div className="pointer-events-none absolute inset-0 z-0 [background:radial-gradient(120%_80%_at_50%_50%,_transparent_40%,_#374152_100%)]" />
 
-            <div className="relative z-10 flex min-h-screen w-full flex-col items-center justify-start px-6 pt-32 pb-24 md:px-10 lg:px-16 xl:px-24">
+            <div className="relative z-10 flex h-svh w-full items-center justify-center px-6">
 
                 {/* 1. Header Section (Title/Desc) */}
-                <div ref={textRef} className="w-full max-w-7xl flex flex-col items-center text-center gap-6 mb-16">
+                <div ref={textRef} className="w-full max-w-7xl flex flex-col items-center text-center gap-6">
                     <div className={`inline-flex items-center gap-2 rounded-full border px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.4em] ${palette.border} bg-white/5`}>
                         Scrolli AI
                     </div>
@@ -330,76 +314,6 @@ export default function InfiniteHero({
                             {ctas}
                         </div>
                     )}
-                </div>
-
-                {/* 2. Grid Layout Underneath */}
-                <div ref={gridRef} className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-12 gap-6">
-
-                    {/* Main Feature: Executive Daily (Span 7) */}
-                    <div className={`col-span-1 md:col-span-7 relative group overflow-hidden rounded-[32px] border ${palette.border} ${palette.card} h-[300px] md:h-[500px]`}>
-                        <div className="absolute inset-x-0 top-0 p-6 z-20 flex justify-between items-start bg-gradient-to-b from-black/60 to-transparent">
-                            <h3 className="text-xs uppercase tracking-[0.35em] text-white">Executive Daily</h3>
-                            <span className="text-white/60 text-xs">01</span>
-                        </div>
-                        <div className="relative w-full h-full">
-                            <Image
-                                src={activeImages.executive}
-                                alt="Executive Daily Interface"
-                                fill
-                                className="object-cover object-top transition duration-700 ease-out group-hover:scale-[1.02]"
-                            />
-                            <div className="absolute inset-0 border-[0.5px] border-white/10 rounded-[32px] pointer-events-none" />
-                        </div>
-                    </div>
-
-                    {/* Secondary Feature: Market Intelligence (Span 5) */}
-                    <div className={`col-span-1 md:col-span-5 relative group overflow-hidden rounded-[32px] border ${palette.border} ${palette.card} h-[300px] md:h-[500px]`}>
-                        <div className="absolute inset-x-0 top-0 p-6 z-20 flex justify-between items-start bg-gradient-to-b from-black/60 to-transparent">
-                            <h3 className="text-xs uppercase tracking-[0.35em] text-white">Market Intelligence</h3>
-                            <span className="text-white/60 text-xs">02</span>
-                        </div>
-                        <div className="relative w-full h-full">
-                            <Image
-                                src={activeImages.market}
-                                alt="Market Intelligence Interface"
-                                fill
-                                className="object-cover object-left-top transition duration-700 ease-out group-hover:scale-[1.02]"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Third Feature: Content Studio (Span 6) */}
-                    <div className={`col-span-1 md:col-span-6 relative group overflow-hidden rounded-[32px] border ${palette.border} ${palette.card} h-[300px]`}>
-                        <div className="absolute inset-x-0 top-0 p-6 z-20 flex justify-between items-start bg-gradient-to-b from-black/60 to-transparent">
-                            <h3 className="text-xs uppercase tracking-[0.35em] text-white">Content Studio</h3>
-                            <span className="text-white/60 text-xs">03</span>
-                        </div>
-                        <div className="relative w-full h-full">
-                            <Image
-                                src={activeImages.content}
-                                alt="Content Studio Interface"
-                                fill
-                                className="object-cover object-top transition duration-700 ease-out group-hover:scale-[1.02]"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Fourth Feature: Settings (Span 6) */}
-                    <div className={`col-span-1 md:col-span-6 relative group overflow-hidden rounded-[32px] border ${palette.border} ${palette.card} h-[300px]`}>
-                        <div className="absolute inset-x-0 top-0 p-6 z-20 flex justify-between items-start bg-gradient-to-b from-black/60 to-transparent">
-                            <h3 className="text-xs uppercase tracking-[0.35em] text-white">Settings & Control</h3>
-                            <span className="text-white/60 text-xs">04</span>
-                        </div>
-                        <div className="relative w-full h-full">
-                            <Image
-                                src={activeImages.settings}
-                                alt="Settings Interface"
-                                fill
-                                className="object-cover object-top transition duration-700 ease-out group-hover:scale-[1.02]"
-                            />
-                        </div>
-                    </div>
-
                 </div>
 
             </div>

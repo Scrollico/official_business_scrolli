@@ -7,6 +7,7 @@ import { Heading } from '@/components/elements/heading';
 import { Subheading } from '@/components/elements/subheading';
 import { FeatureIconContainer } from '@/components/dynamic-zone/features/feature-icon-container';
 import InfiniteHero from '@/components/ui/infinite-hero';
+import BentoGridImages from '@/components/ui/bento-grid-images';
 import { AmbientColor } from '@/components/decorations/ambient-color';
 import { getAIBusinessSuiteData } from '@/lib/data/ai-business-suite';
 import { generateMetadataObject } from '@/lib/shared/metadata';
@@ -36,7 +37,7 @@ export default async function AIBusinessSuitePage(props: {
 
     return (
         <main className="relative min-h-screen overflow-hidden bg-charcoal">
-            {/* Unified Hero & Grid Section */}
+            {/* Hero Section */}
             <InfiniteHero
                 title={data.hero.headline}
                 description={data.hero.subheadline}
@@ -46,6 +47,9 @@ export default async function AIBusinessSuitePage(props: {
                     </Button>
                 }
             />
+
+            {/* Bento Grid Section */}
+            <BentoGridImages />
 
             {/* Decision Section */}
             <section className="relative py-20 md:py-32 bg-charcoal border-t border-white/5">
