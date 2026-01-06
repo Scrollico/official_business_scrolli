@@ -6,9 +6,9 @@ export const homepageData = {
       metaDescription:
         'Scrolli provides cutting-edge business intelligence, strategic research, and media partnerships to help companies navigate complex market dynamics and achieve sustainable growth.',
       metaImage: {
-        url: '/images/scrolli.jpg',
-        width: 1920,
-        height: 967,
+        url: '/images/businessscrolli.webp',
+        width: 1200,
+        height: 630,
         alt: 'Scrolli - Business Intelligence & Research Excellence',
       },
     },
@@ -197,9 +197,9 @@ export const homepageData = {
       metaDescription:
         'Scrolli, şirketlerin karmaşık pazar dinamiklerini yönetmesine ve sürdürülebilir büyüme elde etmesine yardımcı olmak için son teknoloji iş zekası, stratejik araştırma ve medya ortaklıkları sunar.',
       metaImage: {
-        url: '/images/scrolli.jpg',
-        width: 1920,
-        height: 967,
+        url: '/images/businessscrolli.webp',
+        width: 1200,
+        height: 630,
         alt: 'Scrolli - İş Zekası ve Araştırma Mükemmelliği',
       },
     },
