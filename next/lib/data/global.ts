@@ -23,17 +23,18 @@ export const globalData = {
         },
       },
       left_navbar_items: [
-        { text: 'Pricing', URL: '/#pricing' },
+        { text: 'Scrolli', URL: '/' },
         {
           text: 'Alara AI',
           URL: 'https://alara.scrolli.co',
           target: '_blank',
         },
+        { text: 'Strategic Comms & Content', URL: '/services' },
+        { text: 'About', URL: '/about' },
         { text: 'Contact', URL: '/contact' },
-        { text: 'FAQ', URL: '/faq' },
       ],
       right_navbar_items: [
-        { text: 'Get a free 30‑minute strategy call', URL: '/contact' },
+        { text: 'Schedule Consultation', URL: '/contact' },
       ],
     },
     footer: {
@@ -102,20 +103,18 @@ export const globalData = {
         },
       },
       left_navbar_items: [
-        { text: 'Fiyatlandırma', URL: '/#pricing' },
+        { text: 'Scrolli', URL: '/' },
         {
           text: 'Alara AI',
           URL: 'https://alara.scrolli.co',
           target: '_blank',
         },
+        { text: 'Stratejik İletişim ve İçerik', URL: '/services' },
+        { text: 'Hakkımızda', URL: '/about' },
         { text: 'İletişim', URL: '/contact' },
-        { text: 'SSS', URL: '/faq' },
       ],
       right_navbar_items: [
-        {
-          text: 'Ücretsiz 30 dakikalık strateji görüşmesi alın',
-          URL: '/contact',
-        },
+        { text: 'Danışma Planla', URL: '/contact' },
       ],
     },
     footer: {

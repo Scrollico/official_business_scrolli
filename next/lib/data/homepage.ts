@@ -15,10 +15,9 @@ export const homepageData = {
     dynamic_zone: [
       {
         __component: 'dynamic-zone.hero',
-        heading:
-          'Navigate Business Uncertainty with In-Depth Intelligence',
+        heading: 'Navigate Business Uncertainty with In-Depth Intelligence',
         sub_heading:
-          "Transform your organization with AI-powered intelligence, premium media projects, and strategic communication offered by Scrolli, Türkiye's in-depth news media.",
+          "Transform your organization with AI-powered intelligence, premium media projects, and strategic communication offered by Scrolli, Türkiye’s in-depth news media.",
         CTAs: [
           {
             text: 'Schedule Consultation',
@@ -30,51 +29,38 @@ export const homepageData = {
       {
         __component: 'dynamic-zone.how-it-works',
         heading: 'Our 360° Strategic Services',
-        sub_heading:
-          "Discover Scrolli's proven methodology: transforming complex business challenges into actionable strategic intelligence.",
+        sub_heading: '',
         steps: [
           {
-            title: 'Alara AI: Strategic Intelligence',
+            title: 'AI Business Suite',
             description:
-              "Real-time curation, executive-grade insights, and AI-powered dashboard that help you see what's next",
-            timeframe: 'Ongoing',
+              'Real-time curation, executive-grade insights, and AI-powered dashboard that help you see what’s next',
+            timeframe: '',
           },
           {
             title: 'Strategic Communication Partnership',
             description:
               'Scrolli provides impact-driven strategic communication partnership for corporates driving influence and trust among decision-makers.',
-            timeframe: 'Project-based',
+            timeframe: '',
           },
           {
             title: 'Content Development Solutions',
             description:
               'Through our brand studio, ScrolliCollabs, we design original storytelling projects, series, and interactive narratives, delivering stories that elevate your brand voice.',
-            timeframe: 'Custom',
+            timeframe: '',
           },
         ],
       },
       {
         __component: 'dynamic-zone.features',
-        heading: 'Alara AI: Strategic Intelligence for Decision-Makers',
+        heading: 'Strategic Intelligence for Decision-Makers',
         sub_heading:
-          'Alara AI equips executives with AI-powered intelligence to anticipate change, manage uncertainty, and make better decisions. From daily briefings to predictive simulations, Alara AI transforms complex data and information into clarity and insight.',
+          'Our AI-Driven Business Suite equips executives with AI-powered intelligence to anticipate change, manage uncertainty, and make better decisions. From daily briefings to predictive simulations, our AI-Intelligence engine transforms complex data and information into clarity and insight.',
         globe_card: {
           title: 'Executive Daily',
           description:
             'AI-curated daily briefings, personalized podcasts, and one-click exports to keep executives ahead every morning.',
           span: 'two',
-        },
-        ray_card: {
-          title: 'AI Content Studio',
-          description:
-            'Generate executive-grade content tailored to the right channel in seconds.',
-          span: 'one',
-          highlighted_text: '+95% accuracy',
-          top_items: {
-            item_1: '1,200 Projects Completed',
-            item_2: '98% Client Satisfaction',
-            item_3: '50+ Global Markets',
-          },
         },
         graph_card: {
           title: 'Market Intelligence',
@@ -82,18 +68,26 @@ export const homepageData = {
             'Advanced trend tracking, early signal detection, and predictive scenario modeling to guide strategic decisions.',
           span: 'one',
           before_ray_items: {
-            item_1:
-              'Ship stuck in Suez Canal due to steering malfunction, delays began.',
+            item_1: 'Ship stuck in Suez Canal due to steering malfunction, delays began.',
             item_2: 'Fed signals potential rate cuts in Q2 2024',
             item_3: 'AI chip shortage affects 15% of tech companies',
           },
           after_ray_items: {
-            item_1:
-              'Recommendation: Consider supply chain disruptions, quickly review alternative transport routes.',
-            item_2:
-              'Investment Insight: Prepare for market volatility, consider defensive stocks',
-            item_3:
-              'Strategy: Diversify supplier base, explore alternative chip manufacturers',
+            item_1: 'Recommendation: Consider supply chain disruptions, review alternative routes.',
+            item_2: 'Investment Insight: Prepare for market volatility, consider defensive stocks',
+            item_3: 'Strategy: Diversify supplier base, explore alternative chip manufacturers',
+          },
+        },
+        ray_card: {
+          title: 'AI Content Studio',
+          description:
+            'AI-generated newsletters, LinkedIn thought leadership, and tailored communication tools for executives and institutions.',
+          span: 'one',
+          highlighted_text: '+95% accuracy',
+          top_items: {
+            item_1: '1,200 Projects Completed',
+            item_2: '98% Client Satisfaction',
+            item_3: '50+ Global Markets',
           },
         },
         social_media_card: {
@@ -112,11 +106,10 @@ export const homepageData = {
       {
         __component: 'dynamic-zone.testimonials',
         heading: 'Client Success Stories',
-        sub_heading:
-          "Hear from industry leaders who have transformed their organizations with Scrolli's strategic intelligence.",
+        sub_heading: '',
         testimonials: [
           {
-            text: '“ScrolliCollabs delivers real value for brands and agencies,  a studio that truly understands the power of storytelling.”',
+            text: '“ScrolliCollabs delivers real value for brands and agencies, a studio that truly understands the power of storytelling.”',
             user: {
               firstname: 'Afşın',
               lastname: 'Avcı',
@@ -147,54 +140,14 @@ export const homepageData = {
         __component: 'dynamic-zone.brands',
         heading: 'Trusted by Industry Leaders',
         sub_heading:
-          "Scrolli's Business Solutions are trusted by global enterprises, policy makers, and innovation leaders.",
+          "Scrolli’s Business Solutions are trusted by global enterprises, policy makers, and innovation leaders.",
         logos: [
-          {
-            name: 'NOJU',
-            image: '/logos/partners/noju.png',
-          },
-          {
-            name: 'IGA',
-            image: '/logos/partners/iga.svg.png',
-          },
-          {
-            name: 'HANSPACE',
-            image: '/logos/partners/hanspace.svg',
-          },
-          {
-            name: 'PRESULT',
-            image: '/logos/partners/presult.svg',
-          },
-          {
-            name: 'TRAI',
-            image: '/logos/partners/trai.png.webp',
-          },
-        ],
-      },
-      {
-        __component: 'dynamic-zone.pricing',
-        heading: 'Strategic Intelligence Packages',
-        sub_heading:
-          'Choose the intelligence package that aligns with your strategic objectives.',
-        plans: [
-          {
-            name: 'Business Intelligence',
-            price: null,
-            description:
-              'Comprehensive intelligence solutions for established companies.',
-            perks: [
-              { text: 'Advanced Market Research' },
-              { text: 'Competitive Analysis' },
-              { text: 'Strategic Planning' },
-              { text: 'Performance Monitoring' },
-            ],
-            additional_perks: [
-              { text: 'Quarterly Reviews' },
-              { text: 'Custom Dashboards' },
-            ],
-            CTA: { text: 'Get a free 30‑minute strategy call' },
-            featured: true,
-          },
+          { name: 'NOJU', image: '/logos/partners/noju.png' },
+          { name: 'IGA', image: '/logos/partners/iga.svg.png' },
+          { name: 'HANSPACES', image: '/logos/partners/hanspace.svg' },
+          { name: 'PRESULT', image: '/logos/partners/presult.svg' },
+          { name: 'ELDER', image: '/logos/partners/elder.png' },
+          { name: 'TRAI', image: '/logos/partners/trai.png.webp' },
         ],
       },
       {
@@ -229,7 +182,7 @@ export const homepageData = {
           'Partner with Scrolli to transform insight into influence and sustainable growth.',
         CTAs: [
           {
-            text: 'Get a free 30‑minute strategy call',
+            text: 'Schedule Consultation',
             URL: '/contact',
             variant: 'primary',
           },
@@ -267,70 +220,65 @@ export const homepageData = {
       {
         __component: 'dynamic-zone.how-it-works',
         heading: '360° Stratejik Hizmetlerimiz',
-        sub_heading:
-          "Scrolli'nin kanıtlanmış metodolojisini keşfedin: karmaşık iş zorluklarını uygulanabilir stratejik istihbarata dönüştürme.",
+        sub_heading: '',
         steps: [
           {
-            title: 'Alara AI: Stratejik İstihbarat',
+            title: 'AI Business Suite',
             description:
               'Gerçek zamanlı küratörlük, yönetici düzeyinde içgörüler ve geleceği görmenize yardımcı olan AI destekli dashboard.',
-            timeframe: 'Devam eden',
+            timeframe: '',
           },
           {
             title: 'Stratejik İletişim Ortaklığı',
             description:
               'Scrolli, karar vericiler arasında etki ve güven oluşturan şirketler için etki odaklı stratejik iletişim ortaklığı sağlar.',
-            timeframe: 'Proje bazlı',
+            timeframe: '',
           },
           {
             title: 'İçerik Geliştirme Çözümleri',
             description:
               'Marka stüdyomuz ScrolliCollabs aracılığıyla, marka sesinizi yükselten hikayeler sunan özgün anlatı projeleri, seriler ve etkileşimli anlatılar tasarlıyoruz.',
-            timeframe: 'Özelleştirilmiş',
+            timeframe: '',
           },
         ],
       },
       {
         __component: 'dynamic-zone.features',
-        heading: 'Alara AI: Karar Vericiler için Stratejik İstihbarat',
+        heading: 'Karar Vericiler için Stratejik İstihbarat',
         sub_heading:
-          'Alara AI, yöneticileri değişimi öngörmeleri, belirsizliği yönetmeleri ve daha iyi kararlar almaları için yapay zeka destekli istihbaratla donatır. Günlük brifinglerden öngörü simülasyonlarına kadar, Alara AI karmaşık veri ve bilgiyi netlik ve içgörüye dönüştürür.',
+          'AI-Driven Business Suite platformumuz yöneticileri değişimi öngörmeleri, belirsizliği yönetmeleri ve daha iyi kararlar almaları için yapay zeka destekli istihbaratla donatır. Günlük brifinglerden öngörü simülasyonlarına kadar, AI-İstihbarat motorumuz karmaşık veri ve bilgiyi netlik ve içgörüye dönüştürür.',
         globe_card: {
           title: 'Executive Daily',
           description:
             'Yöneticileri her sabah önde tutmak için AI küratörlüğünde günlük brifingler, kişiselleştirilmiş podcastler ve tek tıkla dışa aktarma.',
           span: 'two',
         },
-        ray_card: {
-          title: 'AI Content Studio',
+        graph_card: {
+          title: 'Pazar İstihbaratı',
           description:
-            'Saniyeler içinde doğru kanala uygun yönetici düzeyinde içerik üretin.',
+            'Stratejik kararları yönlendirmek için gelişmiş trend takibi, erken sinyal tespiti ve tahmine dayalı senaryo modelleme.',
+          span: 'one',
+          before_ray_items: {
+            item_1: "Süveyş Kanalı'nda gemi dümen arızasıyla sıkıştı, gecikmeler başladı.",
+            item_2: "Fed Q2 2024'te potansiyel faiz indirimi sinyali veriyor",
+            item_3: "AI çip kıtlığı teknoloji şirketlerinin %15'ini etkiliyor",
+          },
+          after_ray_items: {
+            item_1: 'Öneri: Tedarik zinciri kesintileri düşünülmeli, alternatif rotalar gözden geçirilmeli.',
+            item_2: 'Yatırım İçgörüsü: Pazar volatilitesi için hazırlık yapın, savunma hisselerini değerlendirin',
+            item_3: 'Strateji: Tedarikçi tabanını çeşitlendirin, alternatif çip üreticilerini keşfedin',
+          },
+        },
+        ray_card: {
+          title: 'AI İçerik Stüdyosu',
+          description:
+            'Yöneticiler ve kurumlar için AI tarafından oluşturulan bültenler, LinkedIn düşünce liderliği ve özelleştirilmiş iletişim araçları.',
           span: 'one',
           highlighted_text: '+%95 doğruluk',
           top_items: {
             item_1: '1,200 Proje Tamamlandı',
             item_2: '%98 Müşteri Memnuniyeti',
             item_3: '50+ Küresel Pazar',
-          },
-        },
-        graph_card: {
-          title: 'Market Intelligence',
-          description:
-            'Stratejik kararları yönlendirmek için gelişmiş trend takibi, erken sinyal tespiti ve tahmine dayalı senaryo modelleme.',
-          span: 'one',
-          before_ray_items: {
-            item_1:
-              "Süveyş Kanalı'nda gemi dümen arızasıyla sıkıştı, gecikmeler başladı.",
-            item_2: "Fed Q2 2024'te potansiyel faiz indirimi sinyali veriyor",
-            item_3: "AI çip kıtlığı teknoloji şirketlerinin %15'ini etkiliyor",
-          },
-          after_ray_items: {
-            item_1:
-              'Öneri: Tedarik zinciri kesintileri düşünülmeli, alternatif taşımacılık rotaları hızla gözden geçirilmeli.',
-            item_2:
-              'Yatırım İçgörüsü: Pazar volatilitesi için hazırlık yapın, savunma hisselerini değerlendirin',
-            item_3:
-              'Strateji: Tedarikçi tabanını çeşitlendirin, alternatif çip üreticilerini keşfedin',
           },
         },
         social_media_card: {
@@ -349,11 +297,10 @@ export const homepageData = {
       {
         __component: 'dynamic-zone.testimonials',
         heading: 'Müşteri Başarı Hikayeleri',
-        sub_heading:
-          "Scrolli'nin stratejik istihbaratı ile organizasyonlarını dönüştüren sektör liderlerinden dinleyin.",
+        sub_heading: '',
         testimonials: [
           {
-            text: '"Scrolli\'nin stratejik istihbaratı karar verme sürecimizi dönüştürdü. İçgörüleri sayesinde üç yeni pazara başarıyla girdik."',
+            text: '"ScrolliCollabs markalar ve ajanslar için gerçek değer sunuyor; hikaye anlatımının gücünü gerçekten anlayan bir stüdyo."',
             user: {
               firstname: 'Afşın',
               lastname: 'Avcı',
@@ -366,7 +313,7 @@ export const homepageData = {
             },
           },
           {
-            text: '"Scrolli\'nin sağladığı analiz derinliği ve uygulanabilir içgörüler beklentilerimizi aştı. Gerçekten olağanüstü stratejik istihbarat."',
+            text: '"Scrolli ile olan küresel ortaklığımız, gerçek iş etkisi yaratan bir medya ortağı olarak gücünü gösteriyor."',
             user: {
               firstname: 'Ghassan',
               lastname: 'Khalife',
@@ -382,40 +329,16 @@ export const homepageData = {
       },
       {
         __component: 'dynamic-zone.brands',
-        heading: '5. Sektör Liderleri Tarafından Güveniliyor',
+        heading: 'Sektör Liderleri Tarafından Güveniliyor',
         sub_heading:
           "Scrolli'nin İş Çözümleri küresel işletmeler, politika yapıcılar ve inovasyon liderleri tarafından güveniliyor.",
         logos: [
           { name: 'NOJU', image: '/logos/partners/noju.png' },
           { name: 'IGA', image: '/logos/partners/iga.svg.png' },
-          { name: 'HANSPACE', image: '/logos/partners/hanspace.svg' },
+          { name: 'HANSPACES', image: '/logos/partners/hanspace.svg' },
           { name: 'PRESULT', image: '/logos/partners/presult.svg' },
+          { name: 'ELDER', image: '/logos/partners/elder.png' },
           { name: 'TRAI', image: '/logos/partners/trai.png.webp' },
-        ],
-      },
-      {
-        __component: 'dynamic-zone.pricing',
-        heading: 'Stratejik İstihbarat Paketleri',
-        sub_heading:
-          'Stratejik hedeflerinizle uyumlu istihbarat paketini seçin.',
-        plans: [
-          {
-            name: 'İş Zekası',
-            price: null,
-            description: 'Kurulu şirketler için kapsamlı istihbarat çözümleri.',
-            perks: [
-              { text: 'Gelişmiş Pazar Araştırması' },
-              { text: 'Rekabet Analizi' },
-              { text: 'Stratejik Planlama' },
-              { text: 'Performans İzleme' },
-            ],
-            additional_perks: [
-              { text: 'Üç Aylık Değerlendirmeler' },
-              { text: 'Özel Dashboardlar' },
-            ],
-            CTA: { text: 'Ücretsiz Strateji Görüşmesi' },
-            featured: true,
-          },
         ],
       },
       {
@@ -450,7 +373,7 @@ export const homepageData = {
           'İçgörüyü etkiye ve sürdürülebilir büyümeye dönüştürmek için Scrolli ile ortak olun.',
         CTAs: [
           {
-            text: 'Ücretsiz Strateji Görüşmesi',
+            text: 'Danışma Planla',
             URL: '/contact',
             variant: 'primary',
           },
