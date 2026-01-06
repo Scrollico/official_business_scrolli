@@ -29,7 +29,11 @@ export const globalData = {
           URL: 'https://alara.scrolli.co',
           target: '_blank',
         },
-        { text: 'Strategic Comms & Content', URL: '/services' },
+        { 
+          text: 'Strategic Comms & Content', 
+          URL: 'https://www.scrolli.co/scrollicollabs', 
+          target: '_blank' 
+        },
         { text: 'About', URL: '/about' },
         { text: 'Contact', URL: '/contact' },
       ],
@@ -109,7 +113,11 @@ export const globalData = {
           URL: 'https://alara.scrolli.co',
           target: '_blank',
         },
-        { text: 'Stratejik İletişim ve İçerik', URL: '/services' },
+        { 
+          text: 'Stratejik İletişim ve İçerik', 
+          URL: 'https://www.scrolli.co/scrollicollabs', 
+          target: '_blank' 
+        },
         { text: 'Hakkımızda', URL: '/about' },
         { text: 'İletişim', URL: '/contact' },
       ],
