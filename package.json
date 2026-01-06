@@ -1,22 +1,38 @@
 {
-  "name": "roundtables-assistant",
+  "name": "scrolli-business-intelligence",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "description": "Scrolli Business Intelligence & Research Excellence - Monorepo",
+  "workspaces": [
+    "next",
+    "strapi"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "cd next && npm run dev",
+    "dev:next": "cd next && npm run dev",
+    "dev:strapi": "cd strapi && npm run develop",
+    "build": "cd next && npm run build",
+    "build:next": "cd next && npm run build",
+    "build:strapi": "cd strapi && npm run build",
+    "start": "cd next && npm run start",
+    "lint": "cd next && npm run lint",
+    "install:all": "cd next && npm install && cd ../strapi && npm install",
+    "clean": "cd next && rm -rf .next node_modules && cd ../strapi && rm -rf .cache build node_modules"
   },
-  "dependencies": {
-    "react-dom": "^19.2.3",
-    "react": "^19.2.3",
-    "@google/genai": "^1.34.0"
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   },
-  "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Scrollico/official_business_scrolli.git"
+  },
+  "keywords": [
+    "nextjs",
+    "strapi",
+    "business-intelligence",
+    "monorepo"
+  ],
+  "author": "",
+  "license": "MIT"
 }

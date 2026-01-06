@@ -1,20 +1,120 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Scrolli - Business Intelligence & Research Excellence
 
-# Run and deploy your AI Studio app
+![Scrolli](./LaunchPad.jpg)
 
-This contains everything you need to run your app locally.
+**Scrolli** is a leading business intelligence consultancy providing strategic research, market analysis, and media partnerships to drive organizational excellence.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1ssbGzALAUWa6uf8Q-1FffX7Cn8MrdZwP
+This repository contains a modern, responsive website built with Next.js, showcasing Scrolli's comprehensive business intelligence solutions and strategic research services.
 
-## Run Locally
+## 🌟 Features
 
-**Prerequisites:**  Node.js
+- 🌐 **Multi-language Support** - English & Turkish localization
+- 📱 **Fully Responsive** - Optimized for all devices
+- ⚡ **High Performance** - Built with Next.js 15 and Turbopack
+- 🎨 **Modern UI** - Tailwind CSS and Framer Motion animations
+- 📊 **Interactive Components** - Dynamic content sections
+- 🚀 **SEO Optimized** - Search engine friendly
+- 💼 **Business Intelligence Focus** - Strategic insights and analytics
 
+## 🛠️ Tech Stack
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Tabler Icons, React Icons
+- **Language**: TypeScript
+- **Deployment**: Vercel, GitHub Pages
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- Yarn package manager
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Scrollico/official_business_scrolli.git
+cd official_business_scrolli/next
+```
+
+2. Install dependencies:
+
+```bash
+yarn install
+```
+
+3. Run the development server:
+
+```bash
+yarn dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📦 Build & Deployment
+
+### Build for Production
+
+```bash
+yarn build
+```
+
+### Deployment Options
+
+This project is configured for deployment to:
+
+- **Vercel** (Recommended)
+- **GitHub Pages**
+- **Netlify**
+- Any static hosting service
+
+## 📁 Project Structure
+
+```
+next/
+├── app/                    # Next.js app directory
+│   ├── [locale]/          # Internationalization
+│   │   ├── (marketing)/   # Marketing pages
+│   │   └── sign-up/       # Sign-up page
+│   └── globals.css        # Global styles
+├── components/            # Reusable components
+│   ├── dynamic-zone/      # Page sections
+│   ├── elements/          # Basic UI elements
+│   ├── ui/                # Complex UI components
+│   └── navbar/            # Navigation components
+├── lib/                   # Utility functions
+│   ├── data/              # Static data
+│   └── utils.ts           # Helper functions
+├── public/                # Static assets
+│   └── logos/             # Company logos
+└── types/                 # TypeScript definitions
+```
+
+## 🎯 Services
+
+- **Market Intelligence** - Deep-dive market analysis and competitive intelligence
+- **Data Analytics** - Advanced analytics and business intelligence solutions
+- **Strategic Dashboard** - Real-time insights and performance monitoring
+- **Media Partnerships** - Strategic media partnerships and thought leadership
+
+## 📞 Contact
+
+For business inquiries and strategic intelligence services:
+
+- **Website**: [scrolli.com](https://scrolli.com)
+- **Email**: info@scrolli.com
+- **LinkedIn**: [Scrolli](https://linkedin.com/company/scrolli)
+
+## 📄 License
+
+This project is proprietary to **Scrolli INC**.
+
+---
+
+_Transform your organization with strategic insights, data-driven research, and media partnerships that drive sustainable growth._
+
+🚀 **Live Website**: https://next-rin5t87d5-nihats-projects-558cde04.vercel.app
