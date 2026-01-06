@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { gsap } from "gsap";
 import { useMemo, useRef } from "react";
+import Image from "next/image";
 import * as THREE from "three";
 
 // SplitText is a GSAP Premium plugin. 
@@ -242,102 +243,165 @@ export default function InfiniteHero({
     children?: React.ReactNode,
     title?: string,
     description?: string,
-    ctas?: React.ReactNode
+    description?: string,
+    ctas?: React.ReactNode,
+    images?: {
+        executive: string;
+        market: string;
+        content: string;
+        settings: string;
+    }
 }) {
     const rootRef = useRef<HTMLDivElement>(null);
     const bgRef = useRef<HTMLDivElement>(null);
-    const h1Ref = useRef<HTMLHeadingElement>(null);
-    const pRef = useRef<HTMLParagraphElement>(null);
-    const ctaRef = useRef<HTMLDivElement>(null);
+    const textRef = useRef<HTMLDivElement>(null);
+    const gridRef = useRef<HTMLDivElement>(null);
 
 
     useGSAP(
         () => {
-            const ctasElements = ctaRef.current ? Array.from(ctaRef.current.children) : [];
+            // Initial states
+            if (textRef.current) gsap.set(textRef.current, { opacity: 0, y: 30 });
+            if (gridRef.current) gsap.set(gridRef.current, { opacity: 0, y: 50 });
 
-            // Animation for text (Optimized: removed blur filters as they are slow)
-            if (h1Ref.current) gsap.set(h1Ref.current, { opacity: 0, y: 24 });
-            if (pRef.current) gsap.set(pRef.current, { opacity: 0, y: 16 });
-            if (ctasElements.length) gsap.set(ctasElements, { opacity: 0, y: 16 });
+            const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-            const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-            tl.to(
-                h1Ref.current,
-                {
+            tl.to(textRef.current, {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+            }, 0.2)
+                .to(gridRef.current, {
                     opacity: 1,
                     y: 0,
-                    duration: 0.8,
-                },
-                0.3,
-            )
-                .to(
-                    pRef.current,
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.6,
-                    },
-                    "-=0.3",
-                )
-                .to(ctasElements, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08 }, "-=0.2");
+                    duration: 1.2,
+                }, 0.6);
 
         },
         { scope: rootRef },
     );
 
+    // Hardcoded branding palette
+    const palette = {
+        border: "border-white/10",
+        card: "bg-lightblack/50 backdrop-blur-md",
+        subtle: "text-secondary/70",
+    };
+
+    const defaultImages = {
+        executive: "/images/mockups/executive daily.webp",
+        market: "/images/mockups/market intelligence.webp",
+        content: "/images/mockups/content studio.webp",
+        settings: "/images/mockups/settings.webp",
+    };
+
+    const activeImages = images || defaultImages;
+
     return (
         <div
             ref={rootRef}
-            className="relative h-svh w-full overflow-hidden bg-charcoal text-white"
+            className="relative min-h-screen w-full overflow-hidden bg-charcoal text-white"
         >
-            <div className="absolute inset-0" ref={bgRef}>
+            <div className="fixed inset-0 z-0" ref={bgRef}>
                 <ShaderBackground
                     className="h-full w-full"
                 />
             </div>
 
-            <div className="pointer-events-none absolute inset-0 [background:radial-gradient(120%_80%_at_50%_50%,_transparent_40%,_#374152_100%)]" />
+            <div className="pointer-events-none fixed inset-0 z-0 [background:radial-gradient(120%_80%_at_50%_50%,_transparent_40%,_#374152_100%)]" />
 
-            <div className="relative z-10 flex h-svh w-full items-center justify-center px-6">
-                {children ? children : (
-                    <div className="text-center">
-                        <h1
-                            ref={h1Ref}
-                            className="mx-auto max-w-2xl lg:max-w-4xl text-[clamp(2.25rem,6vw,4rem)] font-extralight leading-[0.95] tracking-tight"
-                        >
-                            {title || "The road dissolves in light, the horizon remains unseen."}
-                        </h1>
-                        <p
-                            ref={pRef}
-                            className="mx-auto mt-4 max-w-2xl md:text-balance text-sm/6 md:text-base/7 font-light tracking-tight text-white/70"
-                        >
-                            {description || "Minimal structures fade into a vast horizon where presence and absence merge. A quiet tension invites the eye to wander without end."}
-                        </p>
+            <div className="relative z-10 flex min-h-screen w-full flex-col items-center justify-start px-6 pt-32 pb-24 md:px-10 lg:px-16 xl:px-24">
 
-                        <div
-                            ref={ctaRef}
-                            className="mt-8 flex flex-row items-center justify-center gap-4"
-                        >
-                            {ctas ? ctas : (
-                                <>
-                                    <button
-                                        type="button"
-                                        className="group relative overflow-hidden border border-white/30 bg-gradient-to-r from-white/20 to-white/10 px-4 py-2 text-sm rounded-lg font-medium tracking-wide text-white backdrop-blur-sm transition-[border-color,background-color,box-shadow] duration-500 hover:border-white/50 hover:bg-white/20 hover:shadow-lg hover:shadow-white/10 cursor-pointer"
-                                    >
-                                        Learn more
-                                    </button>
+                {/* 1. Header Section (Title/Desc) */}
+                <div ref={textRef} className="w-full max-w-7xl flex flex-col items-center text-center gap-6 mb-16">
+                    <div className={`inline-flex items-center gap-2 rounded-full border px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.4em] ${palette.border} bg-white/5`}>
+                        Scrolli AI
+                    </div>
+                    <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                        {title || "AI Business Suite"}
+                    </h1>
+                    <p className={`max-w-2xl text-base md:text-lg ${palette.subtle}`}>
+                        {description || "The command deck for leaders. Transform noise into narrative, data into decision, and insight into influence."}
+                    </p>
 
-                                    <button
-                                        type="button"
-                                        className="group relative px-4 py-2 text-sm font-medium tracking-wide text-white/90 transition-[filter,color] duration-500 hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.6)] hover:text-white cursor-pointer"
-                                    >
-                                        View portfolio
-                                    </button>
-                                </>
-                            )}
+                    {/* Optional CTAs */}
+                    {ctas && (
+                        <div className="flex gap-4 mt-4">
+                            {ctas}
+                        </div>
+                    )}
+                </div>
+
+                {/* 2. Grid Layout Underneath */}
+                <div ref={gridRef} className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-12 gap-6">
+
+                    {/* Main Feature: Executive Daily (Span 7) */}
+                    <div className={`col-span-1 md:col-span-7 relative group overflow-hidden rounded-[32px] border ${palette.border} ${palette.card} h-[300px] md:h-[500px]`}>
+                        <div className="absolute inset-x-0 top-0 p-6 z-20 flex justify-between items-start bg-gradient-to-b from-black/60 to-transparent">
+                            <h3 className="text-xs uppercase tracking-[0.35em] text-white">Executive Daily</h3>
+                            <span className="text-white/60 text-xs">01</span>
+                        </div>
+                        <div className="relative w-full h-full">
+                            <Image
+                                src={activeImages.executive}
+                                alt="Executive Daily Interface"
+                                fill
+                                className="object-cover object-top transition duration-700 ease-out group-hover:scale-[1.02]"
+                            />
+                            <div className="absolute inset-0 border-[0.5px] border-white/10 rounded-[32px] pointer-events-none" />
                         </div>
                     </div>
-                )}
+
+                    {/* Secondary Feature: Market Intelligence (Span 5) */}
+                    <div className={`col-span-1 md:col-span-5 relative group overflow-hidden rounded-[32px] border ${palette.border} ${palette.card} h-[300px] md:h-[500px]`}>
+                        <div className="absolute inset-x-0 top-0 p-6 z-20 flex justify-between items-start bg-gradient-to-b from-black/60 to-transparent">
+                            <h3 className="text-xs uppercase tracking-[0.35em] text-white">Market Intelligence</h3>
+                            <span className="text-white/60 text-xs">02</span>
+                        </div>
+                        <div className="relative w-full h-full">
+                            <Image
+                                src={activeImages.market}
+                                alt="Market Intelligence Interface"
+                                fill
+                                className="object-cover object-left-top transition duration-700 ease-out group-hover:scale-[1.02]"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Third Feature: Content Studio (Span 6) */}
+                    <div className={`col-span-1 md:col-span-6 relative group overflow-hidden rounded-[32px] border ${palette.border} ${palette.card} h-[300px]`}>
+                        <div className="absolute inset-x-0 top-0 p-6 z-20 flex justify-between items-start bg-gradient-to-b from-black/60 to-transparent">
+                            <h3 className="text-xs uppercase tracking-[0.35em] text-white">Content Studio</h3>
+                            <span className="text-white/60 text-xs">03</span>
+                        </div>
+                        <div className="relative w-full h-full">
+                            <Image
+                                src={activeImages.content}
+                                alt="Content Studio Interface"
+                                fill
+                                className="object-cover object-top transition duration-700 ease-out group-hover:scale-[1.02]"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Fourth Feature: Settings (Span 6) */}
+                    <div className={`col-span-1 md:col-span-6 relative group overflow-hidden rounded-[32px] border ${palette.border} ${palette.card} h-[300px]`}>
+                        <div className="absolute inset-x-0 top-0 p-6 z-20 flex justify-between items-start bg-gradient-to-b from-black/60 to-transparent">
+                            <h3 className="text-xs uppercase tracking-[0.35em] text-white">Settings & Control</h3>
+                            <span className="text-white/60 text-xs">04</span>
+                        </div>
+                        <div className="relative w-full h-full">
+                            <Image
+                                src={activeImages.settings}
+                                alt="Settings Interface"
+                                fill
+                                className="object-cover object-top transition duration-700 ease-out group-hover:scale-[1.02]"
+                            />
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     );
