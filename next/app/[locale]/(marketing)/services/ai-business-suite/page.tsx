@@ -6,7 +6,7 @@ import { Button } from '@/components/elements/button';
 import { Heading } from '@/components/elements/heading';
 import { Subheading } from '@/components/elements/subheading';
 import { FeatureIconContainer } from '@/components/dynamic-zone/features/feature-icon-container';
-import InfiniteBackground from '@/components/ui/infinite-background';
+import InfiniteHero from '@/components/ui/infinite-hero';
 import { AmbientColor } from '@/components/decorations/ambient-color';
 import { getAIBusinessSuiteData } from '@/lib/data/ai-business-suite';
 import { generateMetadataObject } from '@/lib/shared/metadata';
@@ -35,31 +35,20 @@ export default async function AIBusinessSuitePage(props: {
     const data = getAIBusinessSuiteData(locale);
 
     return (
-        <main className="relative min-h-screen overflow-hidden">
-            {/* Hero Section */}
-            <section className="relative h-screen flex flex-col items-center justify-center text-center bg-charcoal">
-                <InfiniteBackground />
-                <div className="relative z-10 max-w-4xl mx-auto px-6">
-                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-white tracking-tight">
-                        {data.hero.headline}
-                    </h1>
-                    <p className="mt-4 text-xl md:text-2xl text-secondary/80 font-light">
-                        {data.hero.subheadline}
-                    </p>
-                    <p className="mt-6 text-base md:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-                        {data.hero.body}
-                    </p>
-                    <div className="mt-8">
-                        <Button as={Link} href={data.hero.cta.url} variant="primary" target="_blank">
-                            {data.hero.cta.text}
-                        </Button>
-                    </div>
-                </div>
-                <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-charcoal to-transparent z-10 pointer-events-none" />
-            </section>
+        <main className="relative min-h-screen overflow-hidden bg-charcoal">
+            {/* Unified Hero & Grid Section */}
+            <InfiniteHero
+                title={data.hero.headline}
+                description={data.hero.subheadline}
+                ctas={
+                    <Button as={Link} href={data.hero.cta.url} variant="primary" target="_blank" className="cursor-pointer">
+                        {data.hero.cta.text}
+                    </Button>
+                }
+            />
 
             {/* Decision Section */}
-            <section className="relative py-20 md:py-32 bg-charcoal">
+            <section className="relative py-20 md:py-32 bg-charcoal border-t border-white/5">
                 <AmbientColor />
                 <div className="max-w-6xl mx-auto px-6 text-center">
                     <FeatureIconContainer className="flex justify-center items-center overflow-hidden mx-auto">
@@ -86,31 +75,8 @@ export default async function AIBusinessSuitePage(props: {
                 </div>
             </section>
 
-            {/* Features Section */}
-            <section className="relative py-20 md:py-32 bg-lightblack">
-                <div className="max-w-6xl mx-auto px-6">
-                    <Heading className="text-center">{data.features.heading}</Heading>
-
-                    <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {data.features.items.map((feature, index) => (
-                            <div
-                                key={index}
-                                className="group p-8 rounded-2xl bg-charcoal border border-white/10 transition-all duration-300 hover:border-secondary/30 hover:shadow-lg hover:shadow-secondary/5"
-                            >
-                                <FeatureIconContainer className="flex justify-center items-center overflow-hidden">
-                                    {iconMap[feature.icon] || <TbSettings className="h-6 w-6 text-white" />}
-                                </FeatureIconContainer>
-                                <h4 className="mt-4 text-xl font-bold text-white">{feature.title}</h4>
-                                <p className="mt-1 text-sm text-secondary/70 italic">"{feature.tagline}"</p>
-                                <p className="mt-3 text-muted">{feature.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* RAG Section */}
-            <section className="relative py-20 md:py-32 bg-charcoal">
+            <section className="relative py-20 md:py-32 bg-charcoal border-t border-white/5">
                 <AmbientColor />
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <FeatureIconContainer className="flex justify-center items-center overflow-hidden mx-auto">
@@ -126,7 +92,7 @@ export default async function AIBusinessSuitePage(props: {
             </section>
 
             {/* Final CTA Section */}
-            <section className="relative py-20 md:py-32 bg-lightblack">
+            <section className="relative py-20 md:py-32 bg-lightblack border-t border-white/5">
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <Heading>{locale === 'tr' ? 'Başlamaya Hazır mısınız?' : 'Ready to Get Started?'}</Heading>
                     <Subheading>

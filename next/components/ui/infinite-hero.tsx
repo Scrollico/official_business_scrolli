@@ -238,11 +238,11 @@ export default function InfiniteHero({
     children,
     title,
     description,
-    ctas
+    ctas,
+    images
 }: {
     children?: React.ReactNode,
     title?: string,
-    description?: string,
     description?: string,
     ctas?: React.ReactNode,
     images?: {
