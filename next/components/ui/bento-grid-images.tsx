@@ -47,9 +47,9 @@ export default function BentoGridImages({
     };
 
     const defaultImages = {
-        executive: "/images/mockups/executive daily.webp",
-        market: "/images/mockups/market intelligence.webp",
-        content: "/images/mockups/content studio.webp",
+        executive: "/images/mockups/executive-daily.webp",
+        market: "/images/mockups/market-intelligence.webp",
+        content: "/images/mockups/content-studio.webp",
         settings: "/images/mockups/settings.webp",
     };
 
@@ -71,6 +71,7 @@ export default function BentoGridImages({
                             src={activeImages.executive}
                             alt="Executive Daily Interface"
                             fill
+                            unoptimized
                             className="object-cover object-top transition duration-700 ease-out group-hover:scale-[1.02]"
                         />
                         <div className="absolute inset-0 border-[0.5px] border-white/10 rounded-[32px] pointer-events-none" />
@@ -88,6 +89,7 @@ export default function BentoGridImages({
                             src={activeImages.market}
                             alt="Market Intelligence Interface"
                             fill
+                            unoptimized
                             className="object-cover object-left-top transition duration-700 ease-out group-hover:scale-[1.02]"
                         />
                     </div>
@@ -104,6 +106,7 @@ export default function BentoGridImages({
                             src={activeImages.content}
                             alt="Content Studio Interface"
                             fill
+                            unoptimized
                             className="object-cover object-top transition duration-700 ease-out group-hover:scale-[1.02]"
                         />
                     </div>
@@ -120,6 +123,7 @@ export default function BentoGridImages({
                             src={activeImages.settings}
                             alt="Settings Interface"
                             fill
+                            unoptimized
                             className="object-cover object-top transition duration-700 ease-out group-hover:scale-[1.02]"
                         />
                     </div>
