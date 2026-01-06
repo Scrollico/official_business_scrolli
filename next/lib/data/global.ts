@@ -23,11 +23,10 @@ export const globalData = {
         },
       },
       left_navbar_items: [
-        { text: 'Scrolli', URL: '/' },
+        { text: 'Discover', URL: 'https://scrolli.co', target: '_blank' },
         {
-          text: 'Alara AI',
-          URL: 'https://alara.scrolli.co',
-          target: '_blank',
+          text: 'AI Business Suite',
+          URL: '/services/ai-business-suite',
         },
         { 
           text: 'Strategic Comms & Content', 
@@ -35,7 +34,9 @@ export const globalData = {
           target: '_blank' 
         },
       ],
-      right_navbar_items: [],
+      right_navbar_items: [
+        { text: 'Schedule Consultation', URL: 'https://scrolli.co/contact', target: '_blank' },
+      ],
     },
     footer: {
       description:
@@ -102,11 +103,10 @@ export const globalData = {
         },
       },
       left_navbar_items: [
-        { text: 'Scrolli', URL: '/' },
+        { text: 'Keşfet', URL: 'https://scrolli.co', target: '_blank' },
         {
-          text: 'Alara AI',
-          URL: 'https://alara.scrolli.co',
-          target: '_blank',
+          text: 'AI Business Suite',
+          URL: '/services/ai-business-suite',
         },
         { 
           text: 'Stratejik İletişim ve İçerik', 
@@ -114,7 +114,9 @@ export const globalData = {
           target: '_blank' 
         },
       ],
-      right_navbar_items: [],
+      right_navbar_items: [
+        { text: 'Danışma Planla', URL: 'https://scrolli.co/contact', target: '_blank' },
+      ],
     },
     footer: {
       description:
