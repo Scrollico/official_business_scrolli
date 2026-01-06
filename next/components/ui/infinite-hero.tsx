@@ -23,12 +23,13 @@ function ShaderPlane({
     const meshRef = useRef<THREE.Mesh>(null);
     const { size } = useThree();
 
-    const isVisible = uniforms.u_visible.value as boolean;
+    const localTime = useRef(0);
 
-    useFrame((state) => {
-        if (meshRef.current && isVisible) {
+    useFrame((state, delta) => {
+        if (meshRef.current) {
+            localTime.current += delta;
             const material = meshRef.current.material as THREE.ShaderMaterial;
-            material.uniforms.u_time.value = state.clock.elapsedTime * 0.5;
+            material.uniforms.u_time.value = localTime.current * 0.5;
             material.uniforms.u_resolution.value.set(size.width, size.height, 1.0);
         }
     });
@@ -197,10 +198,6 @@ function ShaderBackground({
         fragColor = vec4(col,1.0);
     }
     void main() {
-      if (!u_visible) {
-        gl_FragColor = vec4(0.216, 0.255, 0.322, 1.0);
-        return;
-      }
       vec4 fragColor;
       vec2 fragCoord = vUv * u_resolution.xy;
       mainImage(fragColor, fragCoord);
@@ -214,13 +211,10 @@ function ShaderBackground({
         () => ({
             u_time: { value: 0 },
             u_resolution: { value: new THREE.Vector3(1, 1, 1) },
-            u_visible: { value: true },
             ...uniforms,
         }),
         [uniforms],
     );
-
-    shaderUniforms.u_visible.value = uniforms.u_visible?.value ?? true;
 
     return (
         <div className={className}>
@@ -256,27 +250,6 @@ export default function InfiniteHero({
     const pRef = useRef<HTMLParagraphElement>(null);
     const ctaRef = useRef<HTMLDivElement>(null);
 
-    const [isVisible, setIsVisible] = useMemo(() => {
-        let visible = true;
-        return [visible, (v: boolean) => visible = v] as const;
-    }, []);
-
-    const [visibleState, setVisibleState] = React.useState(true);
-
-    React.useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                setVisibleState(entry.isIntersecting);
-            },
-            { threshold: 0.1 }
-        );
-
-        if (rootRef.current) {
-            observer.observe(rootRef.current);
-        }
-
-        return () => observer.disconnect();
-    }, []);
 
     useGSAP(
         () => {
@@ -320,7 +293,6 @@ export default function InfiniteHero({
             <div className="absolute inset-0" ref={bgRef}>
                 <ShaderBackground
                     className="h-full w-full"
-                    uniforms={{ u_visible: { value: visibleState } }}
                 />
             </div>
 
