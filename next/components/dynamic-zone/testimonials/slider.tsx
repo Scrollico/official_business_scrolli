@@ -119,10 +119,9 @@ export const TestimonialsSlider = ({ testimonials }: { testimonials: any }) => {
               {slicedTestimonials.map((item: any, index: number) => (
                 <button
                   className={cn(
-                    `px-2 py-1 rounded-full m-1.5 text-xs border border-transparent text-neutral-300 transition duration-150 ease-in-out [background:linear-gradient(var(--elevated),var(--elevated))_padding-box,_conic-gradient(theme(colors.neutral.400),_theme(colors.neutral.700)_25%,_theme(colors.neutral.700)_75%,_theme(colors.neutral.400)_100%)_border-box] relative before:absolute before:inset-0 before:bg-elevated/50 before:rounded-full before:pointer-events-none ${
-                      active === index
-                        ? 'border-secondary/50'
-                        : 'border-transparent opacity-70'
+                    `px-2 py-1 rounded-full m-1.5 text-xs border border-transparent text-neutral-300 transition duration-150 ease-in-out [background:linear-gradient(var(--elevated),var(--elevated))_padding-box,_conic-gradient(theme(colors.neutral.400),_theme(colors.neutral.700)_25%,_theme(colors.neutral.700)_75%,_theme(colors.neutral.400)_100%)_border-box] relative before:absolute before:inset-0 before:bg-elevated/50 before:rounded-full before:pointer-events-none ${active === index
+                      ? 'border-secondary/50'
+                      : 'border-transparent opacity-70'
                     }`
                   )}
                   key={index}
@@ -133,7 +132,7 @@ export const TestimonialsSlider = ({ testimonials }: { testimonials: any }) => {
                 >
                   <span className="relative">
                     <span className="text-neutral-50 font-bold">
-                      {(item?.user?.firstname ?? '') + (item?.user?.lastname ?? '')}
+                      {`${item?.user?.firstname ?? ''} ${item?.user?.lastname ?? ''}`.trim()}
                     </span>{' '}
                     <br className="block sm:hidden" />
                     <span className="text-neutral-600 hidden sm:inline-block">
