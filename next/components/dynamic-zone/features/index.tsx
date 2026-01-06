@@ -50,7 +50,7 @@ export const Features = ({
     <GradientContainer className="md:my-20">
       <Container className="py-20 max-w-7xl mx-auto  relative z-40">
         <FeatureIconContainer className="flex justify-center items-center overflow-hidden">
-          <IconRocket className="h-6 w-6 text-white" />
+          <IconRocket className="h-6 w-6 text-[#111827]" />
         </FeatureIconContainer>
         <Heading className="pt-4">{heading}</Heading>
         <Subheading className="max-w-3xl mx-auto">{sub_heading}</Subheading>
@@ -78,7 +78,7 @@ export const Features = ({
             >
               <CardSkeletonContainer className="max-w-[16rem] mx-auto">
                 {ray_card.title === 'AI Content Studio' ? (
-                  <AIContentStudioSkeleton 
+                  <AIContentStudioSkeleton
                     contentTypes={ray_card.contentTypes}
                     channels={ray_card.channels}
                     contentOptions={ray_card.contentOptions}
@@ -102,7 +102,7 @@ export const Features = ({
                 {graph_card.title === 'Market Intelligence' ? (
                   <MarketIntelligenceSkeleton subtitle={graph_card.subtitle} />
                 ) : graph_card.title === 'AI Content Studio' ? (
-                  <AIContentStudioSkeleton 
+                  <AIContentStudioSkeleton
                     contentTypes={graph_card.contentTypes}
                     channels={graph_card.channels}
                     contentOptions={graph_card.contentOptions}

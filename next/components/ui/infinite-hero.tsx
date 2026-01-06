@@ -294,6 +294,9 @@ export default function InfiniteHero({
 
             <div className="pointer-events-none absolute inset-0 z-0 [background:radial-gradient(120%_80%_at_50%_50%,_transparent_40%,_#374152_100%)]" />
 
+            {/* Bottom fade for seamless transition - matching homepage style */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-80 w-full bg-gradient-to-t from-charcoal to-transparent z-10" />
+
             <div className="relative z-10 flex h-svh w-full items-center justify-center px-6">
 
                 {/* 1. Header Section (Title/Desc) */}

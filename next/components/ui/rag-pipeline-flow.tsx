@@ -39,7 +39,7 @@ const RAGPipelineFlow = ({
     >
       {/* SVG Paths for RAG Pipeline */}
       <svg
-        className="h-full sm:w-full text-blue-400"
+        className="h-full sm:w-full text-[#F8F5E4]"
         width="100%"
         height="100%"
         viewBox="0 -40 220 160"
@@ -68,7 +68,7 @@ const RAGPipelineFlow = ({
             keyTimes="0; 1"
           />
         </g>
-        
+
         {/* Blue Lights moving through RAG stages */}
         <g mask="url(#rag-mask-1)">
           <circle
@@ -106,7 +106,7 @@ const RAGPipelineFlow = ({
             fill="url(#rag-blue-grad)"
           />
         </g>
-        
+
         {/* RAG Pipeline Stage Buttons */}
         <g stroke="currentColor" fill="none" strokeWidth="0.4">
           {/* INGEST */}
@@ -133,7 +133,7 @@ const RAGPipelineFlow = ({
               {badgeTexts?.first || "INGEST"}
             </text>
           </g>
-          
+
           {/* PROCESS */}
           <g>
             <rect
@@ -158,7 +158,7 @@ const RAGPipelineFlow = ({
               {badgeTexts?.second || "PROCESS"}
             </text>
           </g>
-          
+
           {/* VECTOR */}
           <g>
             <rect
@@ -183,7 +183,7 @@ const RAGPipelineFlow = ({
               {badgeTexts?.third || "VECTOR"}
             </text>
           </g>
-          
+
           {/* GENERATE */}
           <g>
             <rect
@@ -209,7 +209,7 @@ const RAGPipelineFlow = ({
             </text>
           </g>
         </g>
-        
+
         <defs>
           {/* 1 - INGEST */}
           <mask id="rag-mask-1">
@@ -243,20 +243,20 @@ const RAGPipelineFlow = ({
               stroke="white"
             />
           </mask>
-          
+
           {/* Blue Gradient */}
           <radialGradient id="rag-blue-grad" fx="1">
-            <stop offset="0%" stopColor={lightColor || "#3B82F6"} />
+            <stop offset="0%" stopColor={lightColor || "#D4CFB8"} />
             <stop offset="100%" stopColor="transparent" />
           </radialGradient>
         </defs>
       </svg>
-      
+
       {/* Main RAG Pipeline Box */}
       <div className="absolute bottom-15 flex w-full flex-col items-center">
         {/* Bottom shadow */}
-        <div className="absolute -bottom-4 h-[100px] w-[62%] rounded-lg bg-blue-500/20" />
-        
+        <div className="absolute -bottom-4 h-[100px] w-[62%] rounded-lg bg-[#D4CFB8]/20" />
+
         {/* Box title */}
         <div className="absolute -top-3 z-20 flex items-center justify-center rounded-lg border border-white/20 bg-[#101112] px-2 py-1 sm:-top-4 sm:py-1.5" style={{
           boxShadow: `
@@ -270,39 +270,39 @@ const RAGPipelineFlow = ({
             {title ? title : "RAG-based AI Intelligence Pipeline"}
           </span>
         </div>
-        
+
         {/* Box outer circle */}
-        <div className="absolute -bottom-8 z-30 grid h-[60px] w-[60px] place-items-center rounded-full border-t border-blue-400 bg-[#141516] font-semibold text-xs text-blue-400">
+        <div className="absolute -bottom-8 z-30 grid h-[60px] w-[60px] place-items-center rounded-full border-t border-[#D4CFB8] bg-[#141516] font-semibold text-xs text-[#D4CFB8]">
           {circleText ? circleText : "RAG"}
         </div>
-        
+
         {/* Box content */}
-        <div className="relative z-10 flex h-[180px] w-[400px] items-center justify-center overflow-hidden rounded-lg border border-blue-400/30 bg-background shadow-md">
-          
+        <div className="relative z-10 flex h-[180px] w-[400px] items-center justify-center overflow-hidden rounded-lg border border-[#D4CFB8]/30 bg-background shadow-md">
+
           {/* Animated Circles */}
           <motion.div
-            className="absolute -bottom-14 h-[100px] w-[100px] rounded-full border-t border-blue-400/20 bg-blue-500/5"
+            className="absolute -bottom-14 h-[100px] w-[100px] rounded-full border-t border-[#D4CFB8]/20 bg-[#D4CFB8]/5"
             animate={{
               scale: [0.98, 1.02, 0.98, 1, 1, 1, 1, 1, 1],
             }}
             transition={{ duration: 2, repeat: Infinity }}
           />
           <motion.div
-            className="absolute -bottom-20 h-[145px] w-[145px] rounded-full border-t border-blue-400/20 bg-blue-500/5"
+            className="absolute -bottom-20 h-[145px] w-[145px] rounded-full border-t border-[#D4CFB8]/20 bg-[#D4CFB8]/5"
             animate={{
               scale: [1, 1, 1, 0.98, 1.02, 0.98, 1, 1, 1],
             }}
             transition={{ duration: 2, repeat: Infinity }}
           />
           <motion.div
-            className="absolute -bottom-[100px] h-[190px] w-[190px] rounded-full border-t border-blue-400/20 bg-blue-500/5"
+            className="absolute -bottom-[100px] h-[190px] w-[190px] rounded-full border-t border-[#D4CFB8]/20 bg-[#D4CFB8]/5"
             animate={{
               scale: [1, 1, 1, 1, 1, 0.98, 1.02, 0.98, 1, 1],
             }}
             transition={{ duration: 2, repeat: Infinity }}
           />
           <motion.div
-            className="absolute -bottom-[120px] h-[235px] w-[235px] rounded-full border-t border-blue-400/20 bg-blue-500/5"
+            className="absolute -bottom-[120px] h-[235px] w-[235px] rounded-full border-t border-[#D4CFB8]/20 bg-[#D4CFB8]/5"
             animate={{
               scale: [1, 1, 1, 1, 1, 1, 0.98, 1.02, 0.98, 1],
             }}

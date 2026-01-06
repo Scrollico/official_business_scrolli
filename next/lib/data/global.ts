@@ -35,7 +35,7 @@ export const globalData = {
         },
       ],
       right_navbar_items: [
-        { text: 'Schedule Consultation', URL: 'https://scrolli.co/contact', target: '_blank' },
+        { text: 'Schedule Consultation', URL: '/contact', target: '_blank' },
       ],
     },
     footer: {
@@ -115,7 +115,7 @@ export const globalData = {
         },
       ],
       right_navbar_items: [
-        { text: 'Danışma Planla', URL: 'https://scrolli.co/contact', target: '_blank' },
+        { text: 'Danışma Planla', URL: '/contact', target: '_blank' },
       ],
     },
     footer: {

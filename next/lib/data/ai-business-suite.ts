@@ -18,7 +18,7 @@ export const aiBusinessSuiteData = {
       body: "Scrolli AI Business Suite is an AI-Driven business intelligence engine for decision-makers. Scrolli AI Business Suite transforms complex market data and sectoral news into actionable foresight. We turn global signals into strategic depth, helping you navigate uncertainty with an AI-driven, corporate-grade product.",
       cta: {
         text: 'Request a Demo',
-        url: 'https://scrolli.co/contact',
+        url: '/contact',
       },
     },
     decision: {
@@ -97,7 +97,7 @@ export const aiBusinessSuiteData = {
       body: 'Scrolli AI Business Suite, karar vericiler için AI destekli bir iş zekası motorudur. Scrolli AI Business Suite, karmaşık pazar verilerini ve sektörel haberleri eyleme dönüştürülebilir öngörülere dönüştürür. Küresel sinyalleri stratejik derinliğe dönüştürüyoruz ve AI destekli, kurumsal düzeyde bir ürünle belirsizlikte yol almanıza yardımcı oluyoruz.',
       cta: {
         text: 'Demo Talep Et',
-        url: 'https://scrolli.co/contact',
+        url: '/contact',
       },
     },
     decision: {

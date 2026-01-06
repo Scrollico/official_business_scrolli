@@ -234,15 +234,15 @@ function ShaderBackground({
     );
 }
 
-export default function InfiniteHero({
+export function HeroOrbitDeck({
     children,
     title,
     description,
-    ctas
+    ctas,
+    images
 }: {
     children?: React.ReactNode,
     title?: string,
-    description?: string,
     description?: string,
     ctas?: React.ReactNode,
     images?: {
@@ -309,6 +309,9 @@ export default function InfiniteHero({
             </div>
 
             <div className="pointer-events-none fixed inset-0 z-0 [background:radial-gradient(120%_80%_at_50%_50%,_transparent_40%,_#374152_100%)]" />
+
+            {/* Bottom fade for seamless transition */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-charcoal to-transparent z-10" />
 
             <div className="relative z-10 flex min-h-screen w-full flex-col items-center justify-start px-6 pt-32 pb-24 md:px-10 lg:px-16 xl:px-24">
 

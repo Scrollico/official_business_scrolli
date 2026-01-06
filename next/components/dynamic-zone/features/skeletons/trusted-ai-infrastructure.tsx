@@ -61,7 +61,7 @@ export function TrustedAIInfrastructureSkeleton() {
       {/* Background Security Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(212,207,184,0.1),transparent_50%)]" />
       </div>
 
       {/* Header */}
@@ -69,17 +69,17 @@ export function TrustedAIInfrastructureSkeleton() {
       {/* RAG Pipeline Flow */}
       <div className="relative mb-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4">
         <div className="flex items-center gap-2 mb-4">
-          <IconDatabase className="w-4 h-4 text-blue-400" />
+          <IconDatabase className="w-4 h-4 text-[#F8F5E4]" />
           <span className="text-white text-sm font-medium">RAG Processing Pipeline</span>
         </div>
-        
+
         <div className="flex justify-center">
-          <RAGPipelineFlow 
+          <RAGPipelineFlow
             title="RAG-based AI Intelligence Pipeline"
             circleText="RAG"
             badgeTexts={{
               first: "INGEST",
-              second: "PROCESS", 
+              second: "PROCESS",
               third: "VECTOR",
               fourth: "GENERATE"
             }}
@@ -87,7 +87,7 @@ export function TrustedAIInfrastructureSkeleton() {
               first: "Verified",
               second: "Intelligence"
             }}
-            lightColor="#3B82F6"
+            lightColor="#D4CFB8"
             className="scale-150 h-[420px]"
           />
         </div>
@@ -110,16 +110,16 @@ export function TrustedAIInfrastructureSkeleton() {
             />
           </div>
         </div>
-        
+
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3">
           <div className="flex items-center justify-between mb-2">
             <span className="text-white text-sm font-medium">Security</span>
-            <IconShield className="w-4 h-4 text-blue-400" />
+            <IconShield className="w-4 h-4 text-[#F8F5E4]" />
           </div>
-          <div className="text-2xl font-bold text-blue-400">{systemHealth.security}%</div>
+          <div className="text-2xl font-bold text-[#F8F5E4]">{systemHealth.security}%</div>
           <div className="w-full bg-gray-700 rounded-full h-1 mt-2">
             <motion.div
-              className="bg-blue-400 h-1 rounded-full"
+              className="bg-[#D4CFB8] h-1 rounded-full"
               initial={{ width: 0 }}
               animate={{ width: `${systemHealth.security}%` }}
               transition={{ duration: 1 }}
@@ -140,7 +140,7 @@ export function TrustedAIInfrastructureSkeleton() {
             <span className="text-green-400 text-xs">Active</span>
           </div>
         </div>
-        
+
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
             <div className="text-yellow-400 text-lg font-bold">0</div>
@@ -151,7 +151,7 @@ export function TrustedAIInfrastructureSkeleton() {
             <div className="text-gray-400 text-xs">Accuracy</div>
           </div>
           <div>
-            <div className="text-blue-400 text-lg font-bold">24/7</div>
+            <div className="text-[#F8F5E4] text-lg font-bold">24/7</div>
             <div className="text-gray-400 text-xs">Monitoring</div>
           </div>
         </div>
@@ -161,7 +161,7 @@ export function TrustedAIInfrastructureSkeleton() {
       <div className="flex justify-center relative z-10">
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg"
+          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-[#D4CFB8] rounded-lg"
         >
           <IconCheck className="w-4 h-4 text-white" />
           <span className="text-white text-sm font-medium">Verified Intelligence</span>

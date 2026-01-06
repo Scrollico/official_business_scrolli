@@ -71,7 +71,7 @@ export const Launches = ({
     >
       <div className="px-6">
         <FeatureIconContainer className="flex justify-center items-center overflow-hidden">
-          <IconRocket className="h-6 w-6 text-white" />
+          <IconRocket className="h-6 w-6 text-[#111827]" />
         </FeatureIconContainer>
         <Heading className="mt-4">{heading}</Heading>
         <Subheading>{sub_heading}</Subheading>

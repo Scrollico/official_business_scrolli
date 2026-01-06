@@ -8,6 +8,7 @@ import { Subheading } from '@/components/elements/subheading';
 import { FeatureIconContainer } from '@/components/dynamic-zone/features/feature-icon-container';
 import InfiniteHero from '@/components/ui/infinite-hero';
 import BentoGridImages from '@/components/ui/bento-grid-images';
+import { Features } from '@/components/ui/features-10';
 import { AmbientColor } from '@/components/decorations/ambient-color';
 import { getAIBusinessSuiteData } from '@/lib/data/ai-business-suite';
 import { generateMetadataObject } from '@/lib/shared/metadata';
@@ -48,43 +49,48 @@ export default async function AIBusinessSuitePage(props: {
                 }
             />
 
-            {/* Bento Grid Section */}
-            <BentoGridImages />
-
-            {/* Decision Section */}
-            <section className="relative py-20 md:py-32 bg-charcoal border-t border-white/5">
-                <AmbientColor />
-                <div className="max-w-6xl mx-auto px-6 text-center">
-                    <FeatureIconContainer className="flex justify-center items-center overflow-hidden mx-auto">
-                        <TbBrain className="h-6 w-6 text-white" />
-                    </FeatureIconContainer>
-                    <Heading className="pt-4">{data.decision.heading}</Heading>
-                    <Subheading className="max-w-3xl mx-auto">{data.decision.body}</Subheading>
-
-                    <h3 className="mt-16 text-2xl md:text-3xl font-semibold text-white">
-                        {data.decision.subheading}
-                    </h3>
-
-                    <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {data.decision.pillars.map((pillar, index) => (
-                            <div
-                                key={index}
-                                className="p-6 rounded-2xl bg-elevated/50 border border-white/10 backdrop-blur-sm"
-                            >
-                                <h4 className="text-xl font-bold text-white">{pillar.title}</h4>
-                                <p className="mt-2 text-muted">{pillar.description}</p>
-                            </div>
-                        ))}
-                    </div>
+            {/* Bento Grid (Features) Section */}
+            <section className="relative z-20 bg-charcoal pt-16">
+                <div className="max-w-7xl mx-auto px-6 mb-8 text-center pt-8">
+                    <Heading>{data.features.heading}</Heading>
+                    <Subheading className="max-w-2xl mx-auto">
+                        {locale === 'tr'
+                            ? 'Kurumsal güce sahip bir panel ile veriyi stratejiye dönüştürün.'
+                            : 'A command deck for leaders. Turn data into executive authority.'}
+                    </Subheading>
                 </div>
+
+                <BentoGridImages
+                    textData={{
+                        executive: {
+                            title: data.features.items.find(i => i.icon === 'calendar')?.title || '',
+                            description: data.features.items.find(i => i.icon === 'calendar')?.description || ''
+                        },
+                        market: {
+                            title: data.features.items.find(i => i.icon === 'chart')?.title || '',
+                            description: data.features.items.find(i => i.icon === 'chart')?.description || ''
+                        },
+                        content: {
+                            title: data.features.items.find(i => i.icon === 'pen')?.title || '',
+                            description: data.features.items.find(i => i.icon === 'pen')?.description || ''
+                        },
+                        settings: {
+                            title: data.features.items.find(i => i.icon === 'settings')?.title || '',
+                            description: data.features.items.find(i => i.icon === 'settings')?.description || ''
+                        }
+                    }}
+                />
             </section>
+
+            {/* Features (Decision) Section */}
+            <Features data={data.decision} />
 
             {/* RAG Section */}
             <section className="relative py-20 md:py-32 bg-charcoal border-t border-white/5">
                 <AmbientColor />
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <FeatureIconContainer className="flex justify-center items-center overflow-hidden mx-auto">
-                        <TbBrain className="h-6 w-6 text-white" />
+                        <TbBrain className="h-6 w-6 text-[#111827]" />
                     </FeatureIconContainer>
                     <Heading className="pt-4">{data.rag.heading}</Heading>
                     <Subheading>{data.rag.subheading}</Subheading>
@@ -96,7 +102,7 @@ export default async function AIBusinessSuitePage(props: {
             </section>
 
             {/* Final CTA Section */}
-            <section className="relative py-20 md:py-32 bg-lightblack border-t border-white/5">
+            <section className="relative py-20 md:py-32 bg-charcoal border-t border-white/5">
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <Heading>{locale === 'tr' ? 'Başlamaya Hazır mısınız?' : 'Ready to Get Started?'}</Heading>
                     <Subheading>

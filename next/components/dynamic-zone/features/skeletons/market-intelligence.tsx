@@ -9,7 +9,7 @@ interface MarketIntelligenceSkeletonProps {
   marketSignals?: Array<{ id: string; label: string; trend: string; value: string; color: string }>;
 }
 
-export function MarketIntelligenceSkeleton({ 
+export function MarketIntelligenceSkeleton({
   subtitle = "Advanced trend tracking and signal detection",
   marketSignals: propMarketSignals
 }: MarketIntelligenceSkeletonProps) {
@@ -42,7 +42,7 @@ export function MarketIntelligenceSkeleton({
         setIsAnalyzing(false);
       }, 1000);
     }, 3000);
-    
+
     return () => clearInterval(interval);
   }, [marketSignals.length]);
 
@@ -60,7 +60,7 @@ export function MarketIntelligenceSkeleton({
           0 0 20px rgba(0,0,0,0.3)
         `
       }} />
-      
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -71,7 +71,7 @@ export function MarketIntelligenceSkeleton({
       {/* Header */}
       <div className="relative z-10 mb-6">
         <div className="flex items-center gap-3 mb-2">
-          <IconTarget className="w-6 h-6 text-blue-400" />
+          <IconTarget className="w-6 h-6 text-[#F8F5E4]" />
           <h3 className="text-white font-semibold text-lg">Market Intelligence</h3>
         </div>
         <p className="text-gray-400 text-sm">{subtitle}</p>
@@ -95,7 +95,7 @@ export function MarketIntelligenceSkeleton({
                   strokeWidth="0.5"
                 />
               ))}
-              
+
               {/* Radar Lines */}
               {radarData.map((item, i) => {
                 const angle = (i * 360) / radarData.length;
@@ -113,7 +113,7 @@ export function MarketIntelligenceSkeleton({
                   />
                 );
               })}
-              
+
               {/* Data Points */}
               {radarData.map((item, i) => {
                 const angle = (i * 360) / radarData.length;
@@ -126,14 +126,14 @@ export function MarketIntelligenceSkeleton({
                     cx={x}
                     cy={y}
                     r="2"
-                    fill="#3b82f6"
+                    fill="#D4CFB8"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: i * 0.1 }}
                   />
                 );
               })}
-              
+
               {/* Connecting Lines */}
               <motion.polygon
                 points={radarData.map((item, i) => {
@@ -143,8 +143,8 @@ export function MarketIntelligenceSkeleton({
                   const y = 50 + Math.sin((angle - 90) * Math.PI / 180) * radius;
                   return `${x},${y}`;
                 }).join(' ')}
-                fill="rgba(59, 130, 246, 0.2)"
-                stroke="#3b82f6"
+                fill="rgba(212, 207, 184, 0.2)"
+                stroke="#D4CFB8"
                 strokeWidth="1"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
@@ -161,30 +161,27 @@ export function MarketIntelligenceSkeleton({
           {marketSignals.map((signal, index) => {
             const isActive = index === activeSignal;
             const IconComponent = signal.trend === 'up' ? IconTrendingUp : IconTrendingDown;
-            
+
             return (
               <motion.div
                 key={signal.id}
                 initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ 
-                  opacity: isActive ? 1 : 0.6, 
+                animate={{
+                  opacity: isActive ? 1 : 0.6,
                   scale: isActive ? 1 : 0.95,
-                  backgroundColor: isActive ? 'rgba(59, 130, 246, 0.1)' : 'rgba(255, 255, 255, 0.05)'
+                  backgroundColor: isActive ? 'rgba(212, 207, 184, 0.1)' : 'rgba(255, 255, 255, 0.05)'
                 }}
                 transition={{ duration: 0.3 }}
-                className={`p-3 rounded-lg border transition-all ${
-                  isActive ? 'border-blue-500/30' : 'border-white/10'
-                }`}
+                className={`p-3 rounded-lg border transition-all ${isActive ? 'border-[#D4CFB8]/30' : 'border-white/10'
+                  }`}
               >
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-white text-xs font-medium">{signal.label}</span>
-                  <IconComponent className={`w-3 h-3 ${
-                    signal.trend === 'up' ? 'text-green-400' : 'text-red-400'
-                  }`} />
+                  <IconComponent className={`w-3 h-3 ${signal.trend === 'up' ? 'text-green-400' : 'text-red-400'
+                    }`} />
                 </div>
-                <div className={`text-sm font-semibold ${
-                  signal.trend === 'up' ? 'text-green-400' : 'text-red-400'
-                }`}>
+                <div className={`text-sm font-semibold ${signal.trend === 'up' ? 'text-green-400' : 'text-red-400'
+                  }`}>
                   {signal.value}
                 </div>
               </motion.div>
@@ -199,7 +196,7 @@ export function MarketIntelligenceSkeleton({
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-            className="w-4 h-4 border-2 border-blue-400 border-t-transparent rounded-full"
+            className="w-4 h-4 border-2 border-[#D4CFB8] border-t-transparent rounded-full"
           />
         )}
         <IconAlertTriangle className="w-4 h-4 text-yellow-400" />
