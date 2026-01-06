@@ -34,12 +34,8 @@ export const globalData = {
           URL: 'https://www.scrolli.co/scrollicollabs', 
           target: '_blank' 
         },
-        { text: 'About', URL: '/about' },
-        { text: 'Contact', URL: '/contact' },
       ],
-      right_navbar_items: [
-        { text: 'Schedule Consultation', URL: '/contact' },
-      ],
+      right_navbar_items: [],
     },
     footer: {
       description:
@@ -59,7 +55,6 @@ export const globalData = {
       },
       internal_links: [
         { text: 'Services', URL: '/services' },
-        { text: 'Contact', URL: '/contact' },
         { text: 'FAQ', URL: '/faq' },
       ],
       external_links: [
@@ -118,12 +113,8 @@ export const globalData = {
           URL: 'https://www.scrolli.co/scrollicollabs', 
           target: '_blank' 
         },
-        { text: 'Hakkımızda', URL: '/about' },
-        { text: 'İletişim', URL: '/contact' },
       ],
-      right_navbar_items: [
-        { text: 'Danışma Planla', URL: '/contact' },
-      ],
+      right_navbar_items: [],
     },
     footer: {
       description:
@@ -144,7 +135,6 @@ export const globalData = {
       },
       internal_links: [
         { text: 'Hizmetler', URL: '/services' },
-        { text: 'İletişim', URL: '/contact' },
         { text: 'SSS', URL: '/faq' },
       ],
       external_links: [
